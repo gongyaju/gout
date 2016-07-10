@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/space_142"
+        android:background="@color/main_background">
+
+        <ImageButton
+            android:id="@+id/recipe_btn_goback"
+            android:layout_width="@dimen/space_120"
+            android:layout_height="match_parent"
+            android:background="@null"
+            android:src="@drawable/go_back_brack" />
+
+        <TextView
+            android:id="@+id/recipe_tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:text="--"
+            android:textSize="@dimen/gout_tsize_56" />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/main_line" />
+
+    <TextView
+        android:id="@+id/recipe_tv_source"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/space_100"
+        android:gravity="center_vertical"
+        android:paddingLeft="@dimen/space_50"
+        android:text="来自:--"
+        android:textColor="@color/text_color_9"
+        android:textSize="@dimen/space_40" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/space_370"
+                android:background="@color/main_background"
+                android:orientation="vertical"
+                android:padding="@dimen/space_50">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/recipt_bg"
+                        android:gravity="center"
+                        android:text="菜谱"
+                        android:textColor="@color/mian_green"
+                        android:textSize="@dimen/space_30" />
+
+                    <TextView
+                        android:id="@+id/recipe_btn_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/space_40"
+                        android:gravity="center"
+                        android:text="--"
+                        android:textColor="@color/text_color_3"
+                        android:textSize="@dimen/space_46" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/recipe_btn_ingredient"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/space_40"
+                    android:text="主料"
+                    android:textColor="@color/text_color_6"
+                    android:textSize="@dimen/space_40" />
+
+                <TextView
+                    android:id="@+id/recipe_btn_material"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/space_40"
+                    android:text="配料"
+                    android:textColor="@color/text_color_6"
+                    android:textSize="@dimen/space_40" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/space_100"
+                android:gravity="center_vertical"
+                android:layout_marginTop="@dimen/space_20"
+                android:background="@color/main_background"
+                android:paddingLeft="@dimen/space_50"
+                android:paddingRight="@dimen/space_50"
+                android:text="制作方法："
+                android:textColor="@color/text_color_6"
+                android:textSize="@dimen/space_40" />
+
+
+            <LinearLayout
+                android:id="@+id/recipe_ls_step"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/space_20"
+                android:orientation="vertical"></LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

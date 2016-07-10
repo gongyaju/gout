@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/transparent_bg">
+
+    <LinearLayout
+        android:id="@+id/ll_popup"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/space_720"
+        android:layout_alignParentBottom="true"
+        android:background="@color/main_background"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/space_80"
+        android:paddingRight="@dimen/space_80">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/space_150"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:text="服用剂量多少："
+                android:textColor="@color/text_color_6"
+                android:textSize="@dimen/space_46" />
+
+            <TextView
+                android:id="@+id/birthday_tv_submit"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignTop="@+id/textView3"
+                android:gravity="center_vertical"
+                android:text="提交"
+                android:textColor="@color/mian_green"
+                android:textSize="@dimen/space_46" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@color/main_line"
+            android:visibility="gone" />
+
+        <GridView
+            android:id="@+id/doasge_gv"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/space_400"
+            android:gravity="center"
+            android:numColumns="4"
+            android:scrollbars="none"
+            android:verticalSpacing="@dimen/space_40" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@color/main_line" />
+
+        <Button
+            android:id="@+id/birthday_tv_cancel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:text="取消"
+            android:textColor="@color/text_color_9"
+            android:textSize="@dimen/space_56" />
+    </LinearLayout>
+
+</RelativeLayout>

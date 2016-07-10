@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="@dimen/space_30"
+        android:layout_marginRight="@dimen/space_30"
+        android:layout_marginTop="@dimen/space_30"
+        android:background="@drawable/shape_white_bg"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/space_400"
+            android:orientation="horizontal">
+
+            <com.pu.gouthelper.ui.CircleImageView
+                android:id="@+id/msg_img_pic"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+        </LinearLayout>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/space_142"
+            android:paddingLeft="@dimen/space_30">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/goutmsg_tv_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/space_18"
+                    android:maxLength="13"
+                    android:text="--"
+                    android:textColor="@color/text_color_3"
+                    android:textSize="@dimen/space_42" />
+
+                <TextView
+                    android:id="@+id/goutmsg_tv_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/space_10"
+                    android:text="--"
+                    android:textColor="@color/text_color_9"
+                    android:textSize="@dimen/gout_tsize_36" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/msg_tv_zan"
+                    android:layout_width="@dimen/space_180"
+                    android:layout_height="match_parent"
+                    android:drawableLeft="@drawable/icon_zan"
+                    android:drawablePadding="@dimen/space_20"
+                    android:gravity="center_vertical"
+                    android:singleLine="true"
+                    android:text="111"
+                    android:textColor="@color/text_color_6"
+                    android:textSize="@dimen/gout_tsize_46" />
+
+                <View
+                    android:layout_width="1px"
+                    android:layout_height="match_parent"
+                    android:layout_centerVertical="true"
+                    android:layout_marginBottom="@dimen/space_10"
+                    android:layout_marginRight="@dimen/space_40"
+                    android:layout_marginTop="@dimen/space_10"
+                    android:background="@color/main_line" />
+
+                <TextView
+                    android:id="@+id/msg_tv_msg"
+                    android:layout_width="@dimen/space_180"
+                    android:layout_height="match_parent"
+                    android:drawableLeft="@drawable/icon_msg"
+                    android:drawablePadding="@dimen/space_20"
+                    android:gravity="center_vertical"
+                    android:singleLine="true"
+                    android:text="111"
+                    android:textColor="@color/text_color_6"
+                    android:textSize="@dimen/gout_tsize_46" />
+            </LinearLayout>
+
+        </RelativeLayout>
+    </LinearLayout>
+
+
+</LinearLayout>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/search_tv_info"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/space_180"
+        android:background="@drawable/list_item_selector"
+        android:drawablePadding="@dimen/space_60"
+        android:drawableRight="@drawable/ic_setting_arrow"
+        android:gravity="center_vertical"
+        android:paddingLeft="@dimen/space_60"
+        android:paddingRight="@dimen/space_60"
+        android:text="--"
+        android:textColor="@color/text_color_black"
+        android:textSize="@dimen/gout_tsize_46" />
+
+</LinearLayout>

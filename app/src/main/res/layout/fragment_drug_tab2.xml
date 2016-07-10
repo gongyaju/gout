@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <ListView
+        android:id="@+id/purin_ls_detail"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingLeft="@dimen/space_60"
+        android:paddingRight="@dimen/space_60"></ListView>
+
+    <RelativeLayout
+        android:id="@+id/rl_bottom"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/space_160"
+        android:gravity="center_vertical"
+        android:background="@drawable/edt_shape"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+        <Button
+            android:id="@+id/group_discuss_submit"
+            android:layout_width="@dimen/space_180"
+            android:layout_height="@dimen/space_100"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/space_40"
+            android:background="@drawable/btn_login_bg"
+            android:text="评论"
+            android:textColor="@color/white"
+            android:textSize="@dimen/space_40" />
+
+        <EditText
+            android:id="@+id/group_discuss"
+            android:layout_width="fill_parent"
+            android:paddingLeft="@dimen/space_40"
+            android:layout_height="@dimen/space_100"
+            android:background="@drawable/bg_edittext"
+            android:windowSoftInputMode="stateVisible|adjustResize"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/space_40"
+            android:layout_marginRight="@dimen/space_40"
+            android:layout_toLeftOf="@id/group_discuss_submit"
+            android:hint="说点什么吧"
+            android:singleLine="true"
+            android:textSize="@dimen/space_40"></EditText>
+    </RelativeLayout>
+
+</RelativeLayout>

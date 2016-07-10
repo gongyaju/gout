@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/main_background"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/space_120"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1.输入手机号"
+            android:textColor="@color/mian_green"
+            android:textSize="@dimen/gout_tsize_40" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" >   2.输入验证码 >   3.设置密码"
+            android:textColor="@color/text_color_9"
+            android:textSize="@dimen/gout_tsize_40" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/main_line" />
+
+    <EditText
+        android:id="@+id/register_tv_phone"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/space_120"
+        android:layout_marginLeft="@dimen/space_60"
+        android:layout_marginRight="@dimen/space_60"
+        android:layout_marginTop="@dimen/space_120"
+        android:background="@drawable/bg_edittext"
+        android:hint="请输入手机号"
+        android:inputType="number"
+        android:maxLength="11"
+        android:paddingLeft="30px"
+        android:singleLine="true"
+        android:textColor="@color/text_color_9"
+        android:textColorHint="@color/text_color_c"
+        android:textSize="@dimen/gout_tsize_46" />
+
+
+    <Button
+        android:id="@+id/register_btn_next1"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/space_120"
+        android:layout_marginLeft="@dimen/space_60"
+        android:layout_marginRight="@dimen/space_60"
+        android:layout_marginTop="@dimen/space_40"
+        android:background="@drawable/btn_login_bg"
+        android:text="下一步"
+        android:textColor="@color/main_background"
+        android:textSize="18.0sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/space_600"
+        android:layout_marginLeft="@dimen/space_120"
+        android:layout_marginRight="@dimen/space_120"
+        android:text="截止2013年，我国有高尿酸血症患者的人数已经达到1.2亿，其中患有痛风疾病的患者超过7800多万人。"
+        android:textColor="@color/mian_green"
+        android:textSize="@dimen/gout_tsize_40" />
+</LinearLayout>

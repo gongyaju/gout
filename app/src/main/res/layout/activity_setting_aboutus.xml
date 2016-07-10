@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_color"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/space_180"
+        android:background="@color/mian_green">
+
+        <ImageButton
+            android:id="@+id/break_btn_goback"
+            android:layout_width="@dimen/space_142"
+            android:layout_height="match_parent"
+            android:background="@null"
+            android:src="@drawable/go_back_bg" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:paddingTop="@dimen/space_40"
+            android:layout_height="match_parent"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center"
+            android:text="关于我们"
+            android:textColor="@color/white"
+            android:textSize="@dimen/gout_tsize_56" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_120"
+            android:drawablePadding="@dimen/space_40"
+            android:drawableTop="@drawable/ic_setting_touxiang"
+            android:text="痛风助手"
+            android:textColor="@color/text_color_6"
+            android:textSize="@dimen/space_46" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/space_60"
+            android:lineSpacingExtra="@dimen/space_10"
+            android:text="惠民网[2]  是中商惠民电子商务有限公司旗下的国内最大的社区O2O服务平台[1]  ，以全国近百万家社区超市（便利店）为基础[1]  ，倡导民生为先，诚信惠民的经营理念[1]  ，依托互联网整合社区实体店资源，创造性提出虚拟和实体相结合的O2O发展模式[6]  ，致力于全球领先的社区O2O平台建设"
+            android:textColor="@color/text_color_6"
+            android:textSize="@dimen/space_46" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/space_390"
+            android:layout_marginLeft="@dimen/space_60"
+            android:layout_marginRight="@dimen/space_60"
+            android:background="@drawable/about_us_address" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/space_60"
+            android:lineSpacingExtra="@dimen/space_10"
+            android:text="公司地址：北京市朝阳区广顺北大街5号\n联系电话：010-3214213"
+            android:textColor="@color/text_color_6"
+            android:textSize="@dimen/space_46" />
+    </LinearLayout>
+
+</LinearLayout>

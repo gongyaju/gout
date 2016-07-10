@@ -1,0 +1,8 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <!-- so. ppi=480 1dp=3px     -->
+    <dimen name="activity_dialog_width">293dp</dimen>
+    <dimen name="space_60">60px</dimen>
+    <dimen name="space_120">120px</dimen>
+
+</resources>

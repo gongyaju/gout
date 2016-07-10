@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ImageView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/topic_img"
+    android:layout_width="@dimen/space_210"
+    android:layout_height="@dimen/space_210"
+    android:layout_marginLeft="@dimen/space_20"
+    android:clickable="false"
+    android:focusable="false"
+    android:focusableInTouchMode="false" />
+

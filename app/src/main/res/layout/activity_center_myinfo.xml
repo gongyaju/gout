@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/space_180"
+        android:background="@color/main_click">
+
+        <ImageButton
+            android:id="@+id/break_btn_goback"
+            android:layout_width="@dimen/space_142"
+            android:layout_height="match_parent"
+            android:background="@null"
+            android:src="@drawable/go_back_bg" />
+
+        <ImageButton
+            android:id="@+id/break_btn_more"
+            android:layout_width="@dimen/space_142"
+            android:layout_height="match_parent"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:background="@null"
+            android:src="@drawable/btn_more_bg" />
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/space_480"
+                    android:background="@drawable/break_bg"></RelativeLayout>
+
+                <TextView
+                    android:id="@+id/myinfo_tv_nickname"
+                    android:layout_width="@dimen/space_480"
+                    android:layout_height="@dimen/space_90"
+                    android:layout_below="@+id/break_center"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="@dimen/space_80"
+                    android:gravity="center"
+                    android:text="--"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/space_46" />
+
+                <TextView
+                    android:id="@+id/break_tv_click"
+                    android:layout_width="@dimen/space_270"
+                    android:layout_height="@dimen/space_270"
+                    android:layout_below="@+id/myinfo_tv_nickname"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="@dimen/space_100"
+                    android:background="@drawable/ic_img_user_default"
+                    android:textColor="@color/white" />
+            </RelativeLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:orientation="vertical"
+                android:paddingBottom="@dimen/space_40"
+                android:paddingTop="@dimen/space_40">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:text="最近30天，你共计查询了:"
+                    android:textColor="@color/text_color_6"
+                    android:textSize="@dimen/space_46" />
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/space_80"
+                    android:layout_marginRight="@dimen/space_80"
+                    android:layout_marginTop="@dimen/space_50">
+
+                    <ProgressBar
+                        android:id="@+id/progressBar1"
+                        style="?android:attr/progressBarStyleHorizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/space_80"
+                        android:max="100"
+                        android:progress="100"
+                        android:progressDrawable="@drawable/progressbar" />
+
+                    <TextView
+                        android:id="@+id/progressBar1_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/space_80"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="@dimen/space_40"
+                        android:text="安全类食物：--次"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/space_36" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/space_80"
+                    android:layout_marginRight="@dimen/space_80"
+                    android:layout_marginTop="@dimen/space_30">
+
+                    <ProgressBar
+                        android:id="@+id/progressBar2"
+                        style="?android:attr/progressBarStyleHorizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/space_80"
+                        android:max="100"
+                        android:progress="100"
+                        android:progressDrawable="@drawable/progressbar2" />
+
+                    <TextView
+                        android:id="@+id/progressBar2_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/space_80"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="@dimen/space_40"
+                        android:text="限制类食物：--次"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/space_36" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/space_80"
+                    android:layout_marginRight="@dimen/space_80"
+                    android:layout_marginTop="@dimen/space_30">
+
+                    <ProgressBar
+                        android:id="@+id/progressBar3"
+                        style="?android:attr/progressBarStyleHorizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/space_80"
+                        android:max="100"
+                        android:progress="100"
+                        android:progressDrawable="@drawable/progressbar3" />
+
+                    <TextView
+                        android:id="@+id/progressBar3_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/space_80"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="@dimen/space_40"
+                        android:text="高危类食物：--次"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/space_36" />
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/myinfo_tv_msg"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/space_130"
+                    android:layout_marginLeft="@dimen/space_80"
+                    android:layout_marginRight="@dimen/space_80"
+                    android:layout_marginTop="@dimen/space_30"
+                    android:background="@drawable/shape"
+                    android:drawableLeft="@drawable/clock"
+                    android:drawablePadding="@dimen/space_40"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="@dimen/space_60"
+                    android:text="--"
+                    android:textColor="@color/mian_red"
+                    android:textSize="@dimen/space_40" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/space_30"
+                android:background="@color/white"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/space_420"
+                    android:background="@color/white"
+                    android:orientation="vertical"
+                    android:paddingLeft="@dimen/space_60"
+                    android:paddingRight="@dimen/space_60">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/space_30">
+
+                        <TextView
+                            android:id="@+id/goutmsg_tv_title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/space_18"
+                            android:maxLength="13"
+                            android:text="--"
+                            android:textColor="@color/text_color_3"
+                            android:textSize="@dimen/space_40" />
+
+                        <TextView
+                            android:id="@+id/goutmsg_tv_time"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/goutmsg_tv_title"
+                            android:layout_marginTop="@dimen/space_20"
+                            android:text="--"
+                            android:textColor="@color/text_color_9"
+                            android:textSize="@dimen/gout_tsize_30" />
+
+                        <TextView
+                            android:id="@+id/goutmsg_tv_change"
+                            android:layout_width="wrap_content"
+                            android:layout_height="@dimen/space_80"
+                            android:layout_alignBottom="@+id/goutmsg_tv_time"
+                            android:layout_alignParentEnd="true"
+                            android:layout_alignParentRight="true"
+                            android:layout_alignParentTop="true"
+                            android:gravity="center_vertical"
+                            android:paddingRight="@dimen/space_30"
+                            android:text="换一换"
+                            android:textColor="@color/mian_green"
+                            android:textSize="@dimen/space_36" />
+                    </RelativeLayout>
+
+
+                    <TextView
+                        android:id="@+id/goutmsg_tv_content"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:lines="2"
+                        android:layout_marginTop="@dimen/space_20"
+                        android:text="--"
+                        android:textColor="@color/text_color_9"
+                        android:textSize="@dimen/space_36" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1px"
+                        android:layout_marginTop="@dimen/space_20"
+                        android:background="@color/main_line" />
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentTop="true">
+
+                        <TextView
+                            android:id="@+id/msg_tv_zan"
+                            android:layout_width="@dimen/space_180"
+                            android:layout_height="match_parent"
+                            android:drawableLeft="@drawable/icon_zan"
+                            android:drawablePadding="@dimen/space_20"
+                            android:gravity="center_vertical"
+                            android:singleLine="true"
+                            android:text="--"
+                            android:textColor="@color/text_color_6"
+                            android:textSize="@dimen/gout_tsize_46" />
+
+
+                        <TextView
+                            android:id="@+id/msg_tv_msg"
+                            android:layout_width="@dimen/space_180"
+                            android:layout_height="match_parent"
+                            android:layout_alignParentEnd="true"
+                            android:layout_alignParentRight="true"
+                            android:layout_alignParentTop="true"
+                            android:drawableLeft="@drawable/icon_msg"
+                            android:drawablePadding="@dimen/space_20"
+                            android:gravity="center_vertical"
+                            android:singleLine="true"
+                            android:text="--"
+                            android:textColor="@color/text_color_6"
+                            android:textSize="@dimen/gout_tsize_46" />
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/space_480"
+                android:layout_marginTop="@dimen/space_30"
+                android:background="@color/white"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="@dimen/space_40"
+                    android:text="向其他小酸人求助？"
+                    android:textColor="@color/mian_green"
+                    android:textSize="@dimen/space_40" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/space_40"
+                    android:paddingLeft="@dimen/space_60"
+                    android:paddingRight="@dimen/space_60"
+                    android:text="中国棋手唐韦星执黑第203手不计点胜金志锡中国棋手唐韦星执黑第203手不计点胜金志锡中国棋手唐韦星执黑第203手不计点胜金志锡中国棋手唐韦星执黑第203手不计点胜金志锡"
+                    android:textColor="@color/text_color_6"
+                    android:textSize="@dimen/space_36" />
+
+                <Button
+                    android:id="@+id/myinfo_btn_help"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/space_120"
+                    android:layout_marginBottom="@dimen/space_80"
+                    android:layout_marginLeft="@dimen/space_60"
+                    android:layout_marginRight="@dimen/space_60"
+                    android:layout_marginTop="@dimen/space_40"
+                    android:background="@drawable/btn_login_bg"
+                    android:text="发布求助"
+                    android:textColor="#ffffffff"
+                    android:textSize="@dimen/space_50" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+
+</LinearLayout>

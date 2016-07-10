@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/space_270"
+        android:background="@color/white"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="秋水"
+                android:id="@+id/remind_tv_title"
+                android:textSize="@dimen/space_46" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_10"
+                android:text="秋水"
+                android:id="@+id/remind_tv_days"
+                android:textColor="@color/text_color_9"
+                android:textSize="@dimen/space_40" />
+
+            <TextView
+                android:id="@+id/remind_tv_dosage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_10"
+                android:text="秋水"
+                android:textSize="@dimen/space_40" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="1px"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="@dimen/space_60"
+            android:layout_marginTop="@dimen/space_60"
+            android:background="@color/main_line" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_10"
+                android:text="下次服药"
+                android:textColor="@color/text_color_9"
+                android:textSize="@dimen/space_36" />
+
+            <TextView
+                android:id="@+id/remind_tv_dtm"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/mian_green"
+                android:layout_marginTop="@dimen/space_20"
+                android:text="无"
+                android:textSize="@dimen/space_56" />
+        </LinearLayout>
+    </LinearLayout>
+
+
+</LinearLayout>

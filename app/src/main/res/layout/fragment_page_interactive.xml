@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/main_background"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/space_180">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:paddingTop="@dimen/space_40"
+            android:layout_height="match_parent"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:background="@color/main_background"
+            android:gravity="center"
+            android:text="互动社区"
+            android:textSize="@dimen/gout_tsize_56" />
+
+        <TextView
+            android:id="@+id/topic_tv_send"
+            android:layout_width="wrap_content"
+            android:paddingTop="@dimen/space_40"
+            android:layout_height="match_parent"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:background="@color/main_background"
+            android:gravity="center"
+            android:paddingRight="@dimen/space_30"
+            android:text="发帖"
+            android:textColor="@color/mian_green"
+            android:textSize="@dimen/gout_tsize_46" />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/main_line" />
+
+    <com.pu.gouthelper.ui.pulltorefresh.PullToRefreshListView xmlns:ptr="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/gout_ls_msg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:divider="@color/gray_white"
+        android:dividerHeight="@dimen/space_20"
+        ptr:ptrAnimationStyle="flip"
+        ptr:ptrHeaderTextColor="@color/gray"
+        ptr:ptrListViewExtrasEnabled="true" />
+</LinearLayout>

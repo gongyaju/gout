@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingLeft="@dimen/space_60"
+        android:paddingRight="@dimen/space_60"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_100"
+            android:gravity="center"
+            android:text="您服用过一下哪种药物?   (可多选)"
+            android:textColor="@color/mian_green"
+            android:textSize="@dimen/gout_tsize_56" />
+
+        <GridView
+            android:id="@+id/infomation_gv_druglist"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/space_600"
+            android:layout_marginTop="@dimen/space_60"
+            android:numColumns="3"
+            android:scrollbars="none"></GridView>
+
+        <Button
+            android:id="@+id/infomation_btn_submit"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/space_120"
+            android:layout_marginTop="@dimen/space_60"
+            android:background="@drawable/btn_login_bg"
+            android:text="选择完毕"
+            android:textColor="#ffffffff"
+            android:textSize="@dimen/space_50" />
+
+        <ImageButton
+            android:id="@+id/recipe_btn_goback"
+            android:layout_width="@dimen/space_120"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/space_120"
+            android:background="@null"
+            android:src="@drawable/btn_sos_close_bg" />
+
+    </LinearLayout>
+
+
+</LinearLayout>

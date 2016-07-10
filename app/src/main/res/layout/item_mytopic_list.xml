@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/space_330"
+        android:paddingTop="@dimen/space_40">
+
+        <ImageView
+            android:id="@+id/mytopic_img_icon"
+            android:layout_width="@dimen/space_150"
+            android:layout_height="@dimen/space_150"
+            android:src="@drawable/ic_img_user_default" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/space_40"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/mytopic_tv_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="--"
+                    android:textColor="@color/mian_green"
+                    android:textSize="@dimen/space_40" />
+                <TextView
+                    android:id="@+id/mytopic_tv_toshare"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentTop="true"
+                    android:drawableLeft="@drawable/topic_toshare"
+                    android:drawablePadding="@dimen/space_20"
+                    android:gravity="center_vertical"
+                    android:text="分享到"
+                    android:textColor="@color/text_color_6"
+                    android:textSize="@dimen/gout_tsize_46" />
+            </RelativeLayout>
+
+
+            <TextView
+                android:id="@+id/mytopic_tv_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_18"
+                android:lines="2"
+                android:text="--"
+                android:textColor="@color/text_color_6"
+                android:textSize="@dimen/space_36" />
+
+            <TextView
+                android:id="@+id/mytopic_tv_time"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="--"
+                android:layout_marginTop="@dimen/space_18"
+                android:textColor="@color/text_color_9"
+                android:textSize="@dimen/space_36" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

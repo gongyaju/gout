@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/main_background"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/space_142"
+        android:background="@color/main_background">
+
+        <ImageButton
+            android:id="@+id/remind_btn_goback"
+            android:layout_width="@dimen/space_120"
+            android:layout_height="match_parent"
+            android:background="@null"
+            android:src="@drawable/go_back_brack" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:text="新增提醒计划"
+            android:textSize="@dimen/gout_tsize_56" />
+
+        <ImageButton
+            android:id="@+id/remind_btn_add"
+            android:layout_width="@dimen/space_150"
+            android:layout_height="match_parent"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:background="@null"
+            android:src="@drawable/keyao_add" />
+
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/main_line" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/space_150"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="@dimen/space_340"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="服什么药物"
+            android:textColor="@color/text_color_3"
+            android:textSize="@dimen/space_46" />
+
+        <View
+            android:layout_width="1px"
+            android:layout_height="match_parent"
+            android:background="@color/main_line" />
+
+        <EditText
+            android:id="@+id/remind_edt_name"
+            android:layout_width="@dimen/space_580"
+            android:layout_height="match_parent"
+            android:background="@null"
+            android:hint="可按自己的喜好输入名称"
+            android:paddingLeft="@dimen/space_20"
+            android:singleLine="true"
+            android:textSize="@dimen/space_46" />
+        <View
+            android:layout_width="1px"
+            android:layout_height="match_parent"
+            android:background="@color/main_line" />
+        <LinearLayout
+            android:id="@+id/remind_img_color"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/main_line" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/space_190"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/remind_tv_dosage"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:drawableRight="@drawable/ic_setting_arrow"
+            android:gravity="center_vertical"
+            android:paddingLeft="@dimen/space_60"
+            android:paddingRight="@dimen/space_60"
+            android:text="服什么计量？"
+            android:textColor="@color/text_color_3"
+            android:textSize="@dimen/space_46" />
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/main_line" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/space_190"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/remind_tv_dtm"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:drawableRight="@drawable/ic_setting_arrow"
+            android:gravity="center_vertical"
+            android:paddingLeft="@dimen/space_60"
+            android:paddingRight="@dimen/space_60"
+            android:text="每日都在何时使用？"
+            android:textColor="@color/text_color_3"
+            android:textSize="@dimen/space_46" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/main_line" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/space_190"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/remind_tv_days"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:drawableRight="@drawable/ic_setting_arrow"
+            android:gravity="center_vertical"
+            android:paddingLeft="@dimen/space_60"
+            android:paddingRight="@dimen/space_60"
+            android:text="需要服用多少天？"
+            android:textColor="@color/text_color_3"
+            android:textSize="@dimen/space_46" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/main_line" />
+
+
+</LinearLayout>

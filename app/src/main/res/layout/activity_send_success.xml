@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/main_background"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:background="@color/main_background"
+        android:orientation="vertical"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_340"
+            android:gravity="center_horizontal"
+            android:background="@color/main_background"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:gravity="center"
+                android:text="恭喜你,发布成功 !"
+                android:textColor="@color/mian_green"
+                android:textSize="@dimen/gout_tsize_56" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/space_50"
+                android:gravity="center"
+                android:text="奖励积分：100"
+                android:textColor="@color/text_color_6"
+                android:textSize="@dimen/gout_tsize_46" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/space_20"
+                android:gravity="center"
+                android:text="待积分商城开放后即可兑换"
+                android:textColor="@color/text_color_6"
+                android:textSize="@dimen/gout_tsize_46" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/space_60"
+            android:background="@color/main_background"
+            android:layout_marginRight="@dimen/space_60"
+            android:orientation="vertical">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:layout_marginTop="@dimen/space_100"
+                android:background="@color/main_line" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/space_290"
+                android:background="@color/main_background"
+                android:orientation="horizontal"
+                android:paddingTop="@dimen/space_40">
+
+                <LinearLayout
+                    android:layout_width="@dimen/space_150"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/topicdetail_img_icon"
+                        android:layout_width="@dimen/space_150"
+                        android:layout_height="@dimen/space_150"
+                        android:src="@drawable/ic_launcher" />
+
+                    <TextView
+                        android:id="@+id/topicdetail_tv_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal"
+                        android:text="丰爹"
+                        android:textColor="@color/mian_green"
+                        android:textSize="@dimen/space_40" />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="@dimen/space_40"
+                    android:orientation="vertical">
+
+
+                    <TextView
+                        android:id="@+id/topicdetail_tv_title"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/space_18"
+                        android:lines="2"
+                        android:text="--"
+                        android:textColor="@color/text_color_3"
+                        android:textSize="@dimen/space_40" />
+
+                    <TextView
+                        android:id="@+id/topicdetail_tv_time"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/space_18"
+                        android:text="--"
+                        android:textColor="@color/text_color_6"
+                        android:textSize="@dimen/space_40" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/success_btn_tocheck"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/space_120"
+                android:background="@drawable/bg_edittext"
+                android:drawableRight="@drawable/ic_setting_arrow"
+                android:gravity="left|center_vertical"
+                android:paddingLeft="@dimen/space_40"
+                android:paddingRight="@dimen/space_60"
+                android:text="发帖记录，点击这里查看"
+                android:textColor="@color/text_color_6" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/space_30"
+                android:gravity="center"
+                android:text="如果没有激活健康中心，您将无法查看历史发帖记录."
+                android:textColor="@color/text_color_9"
+                android:textSize="@dimen/space_40" />
+
+            <Button
+                android:id="@+id/success_btn_close"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/space_120"
+                android:layout_marginTop="@dimen/space_150"
+                android:background="@drawable/btn_login_bg"
+                android:text="知道了"
+                android:textColor="#ffffffff"
+                android:textSize="@dimen/space_56" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

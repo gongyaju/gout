@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_color"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+
+    <ImageButton
+        android:id="@+id/break_btn_goback"
+        android:layout_width="@dimen/space_142"
+        android:layout_height="@dimen/space_142"
+        android:background="@null"
+        android:src="@drawable/go_back_bg" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="@dimen/space_290"
+            android:layout_height="@dimen/space_290"
+            android:background="@drawable/break_record_write" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_80"
+            android:text="痛风复发"
+            android:textColor="@color/mian_red"
+            android:textSize="@dimen/space_110" />
+
+        <TextView
+            android:id="@+id/break_tv_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_20"
+            android:text="今日日期：2031-12-21"
+            android:textColor="@color/mian_green"
+            android:textSize="@dimen/space_40" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_50"
+            android:text="*忠实记录发作日期控制它击破它"
+            android:textColor="@color/text_color_6"
+            android:textSize="@dimen/space_46" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="@dimen/space_60"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_50"
+            android:text="复发心得"
+            android:textColor="@color/text_color_6"
+            android:textSize="@dimen/space_46" />
+
+        <EditText
+            android:id="@+id/breakrecord_edt_content"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/space_380"
+            android:layout_marginTop="@dimen/space_40"
+            android:background="@drawable/bg_edittext"
+            android:gravity="top|left"
+            android:hint="记录这次发作的小情绪吧"
+            android:padding="@dimen/space_18"
+            android:singleLine="false"
+            android:textColor="@color/text_color_6"
+            android:textSize="@dimen/space_40" />
+        <Button
+            android:id="@+id/break_btn_submit"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/space_120"
+            android:layout_marginTop="@dimen/space_40"
+            android:background="@drawable/btn_login_bg"
+            android:text="提交"
+            android:textColor="#ffffffff"
+            android:textSize="18.0sp" />
+    </LinearLayout>
+
+</LinearLayout>

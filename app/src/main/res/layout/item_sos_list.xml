@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:minHeight="@dimen/space_260"
+    android:orientation="horizontal">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="4"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <View
+            android:id="@+id/sos_v_topline"
+            android:layout_width="1px"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/mian_green" />
+
+        <ImageView
+            android:layout_width="@dimen/space_60"
+            android:layout_height="@dimen/space_60"
+            android:src="@drawable/sos_gou" />
+
+        <View
+            android:id="@+id/sos_v_btline"
+            android:layout_width="1px"
+            android:layout_height="match_parent"
+            android:layout_weight="1.5"
+            android:background="@color/mian_green" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/sos_tv_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/space_50"
+        android:layout_weight="1"
+        android:text="xxxx"
+        android:textColor="@color/white"
+        android:textSize="@dimen/space_40" />
+</LinearLayout>

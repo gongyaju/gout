@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_color">
+
+    <RelativeLayout
+        android:id="@+id/history_rl"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/space_180"
+        android:background="@color/mian_green">
+
+        <ImageButton
+            android:id="@+id/history_btn_goback"
+            android:layout_width="@dimen/space_120"
+            android:layout_height="match_parent"
+            android:background="@null"
+            android:src="@drawable/go_back"
+            android:visibility="gone" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:text="电子病历"
+            android:paddingTop="@dimen/space_40"
+            android:textColor="@color/white"
+            android:textSize="@dimen/gout_tsize_56" />
+
+        <ImageButton
+            android:id="@+id/topic_btn_send"
+            android:layout_width="@dimen/space_150"
+            android:layout_height="match_parent"
+            android:paddingTop="@dimen/space_40"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:background="@null"
+            android:src="@drawable/btn_more_bg" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/history_rl"
+        android:layout_marginLeft="@dimen/space_50"
+        android:layout_marginRight="@dimen/space_50"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/space_140">
+
+            <TextView
+                android:id="@+id/history_tv_age"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:text="年龄：--"
+                android:textColor="@color/text_color_6"
+                android:textSize="@dimen/space_46" />
+
+            <TextView
+                android:id="@+id/history_tv_height"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_centerHorizontal="true"
+                android:gravity="center_vertical"
+                android:text="身高：--"
+                android:textColor="@color/text_color_6"
+                android:textSize="@dimen/space_46" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@color/main_line" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/space_140">
+
+            <TextView
+                android:id="@+id/history_tv_year"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:text="病史：--"
+                android:textColor="@color/text_color_6"
+                android:textSize="@dimen/space_46" />
+
+            <TextView
+                android:id="@+id/history_tv_weight"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_centerHorizontal="true"
+                android:gravity="center_vertical"
+                android:text="体重：--"
+                android:textColor="@color/text_color_6"
+                android:textSize="@dimen/space_46" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@color/main_line" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/space_140">
+
+            <TextView
+                android:id="@+id/history_tv_buwei"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:text="发作部位：--"
+                android:textColor="@color/text_color_6"
+                android:textSize="@dimen/space_46" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@color/main_line" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/space_140">
+
+            <TextView
+                android:id="@+id/history_tv_breaktime"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:text="上次发作时间：--"
+                android:textColor="@color/text_color_6"
+                android:textSize="@dimen/space_46" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@color/main_line" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/space_140">
+
+            <TextView
+                android:id="@+id/history_tv_durg"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:text="服用药物：--"
+                android:textColor="@color/text_color_6"
+                android:textSize="@dimen/space_46" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@color/main_line" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/space_140">
+
+            <TextView
+                android:id="@+id/history_tv_other"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:text="有无其他病史：--"
+                android:textColor="@color/text_color_6"
+                android:textSize="@dimen/space_46" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@color/main_line" />
+    </LinearLayout>
+
+    <ImageButton
+        android:id="@+id/history_btn_close"
+        android:layout_width="@dimen/space_100"
+        android:layout_height="@dimen/space_100"
+        android:layout_above="@+id/textView2"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="@dimen/space_60"
+        android:background="@null"
+        android:src="@drawable/btn_history_close_bg" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/space_40"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:background="@color/mian_green" />
+</RelativeLayout>

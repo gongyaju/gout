@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:su="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/transparent_bg">
+
+    <LinearLayout
+        android:id="@+id/ll_popup"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/space_680"
+        android:layout_alignParentBottom="true"
+        android:background="@color/main_background"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/space_80"
+        android:paddingRight="@dimen/space_80">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/space_120"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:text="连续服用多少天："
+                android:textColor="@color/text_color_6"
+                android:textSize="@dimen/space_46" />
+
+            <TextView
+                android:id="@+id/birthday_tv_submit"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignTop="@+id/textView3"
+                android:gravity="center_vertical"
+                android:text="提交"
+                android:textColor="@color/mian_green"
+                android:textSize="@dimen/space_46" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@color/main_line" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/space_400"
+            android:orientation="horizontal">
+
+            <com.pu.gouthelper.ui.picker.ScrollerNumberPicker
+                android:id="@+id/days_picker_1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                su:itemNumber="3"
+                su:lineColor="@color/main_line"
+                su:maskHight="32dp"
+                su:noEmpty="true"
+                su:normalTextColor="#777"
+                su:normalTextSize="14sp"
+                su:selecredTextColor="#ff000000"
+                su:selecredTextSize="22sp"
+                su:unitHight="50dp" />
+
+            <com.pu.gouthelper.ui.picker.ScrollerNumberPicker
+                android:id="@+id/days_picker_2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                su:itemNumber="3"
+                su:lineColor="@color/main_line"
+                su:maskHight="32dp"
+                su:noEmpty="true"
+                su:normalTextColor="#777"
+                su:normalTextSize="14sp"
+                su:selecredTextColor="#ff000000"
+                su:selecredTextSize="22sp"
+                su:unitHight="50dp" />
+
+            <com.pu.gouthelper.ui.picker.ScrollerNumberPicker
+                android:id="@+id/days_picker_3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                su:itemNumber="3"
+                su:lineColor="@color/main_line"
+                su:maskHight="32dp"
+                su:noEmpty="true"
+                su:normalTextColor="#777"
+                su:normalTextSize="14sp"
+                su:selecredTextColor="#ff000000"
+                su:selecredTextSize="22sp"
+                su:unitHight="50dp" />
+        </LinearLayout>
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@color/main_line" />
+
+        <Button
+            android:id="@+id/birthday_tv_cancel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:text="取消"
+            android:textColor="@color/text_color_9"
+            android:textSize="@dimen/space_56" />
+    </LinearLayout>
+
+</RelativeLayout>

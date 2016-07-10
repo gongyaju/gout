@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_color"
+
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/space_210"
+        android:background="@color/mian_green"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:paddingBottom="@dimen/space_30"
+        android:paddingTop="@dimen/space_60">
+
+        <EditText
+            android:id="@+id/drug_edt_search"
+            android:layout_width="@dimen/space_800"
+            android:layout_height="@dimen/space_120"
+            android:layout_marginLeft="@dimen/space_18"
+            android:background="@drawable/bg_edittext"
+            android:drawableLeft="@drawable/icon_search"
+            android:drawablePadding="@dimen/space_20"
+            android:gravity="center_vertical"
+            android:paddingLeft="@dimen/space_30"
+            android:singleLine="true"
+            android:hint="搜索您要找的药品名称"
+            android:textColor="@color/text_color_9"
+            android:textColorHint="@color/text_color_c"
+            android:textSize="@dimen/gout_tsize_40" />
+
+        <TextView
+            android:id="@+id/search_tv_cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/space_40"
+            android:text="取消"
+            android:textColor="@color/white"
+            android:textSize="@dimen/gout_tsize_46" />
+    </LinearLayout>
+    <ListView
+        android:id="@+id/drug_ls_search"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"></ListView>
+</LinearLayout>

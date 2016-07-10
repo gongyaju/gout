@@ -1,0 +1,94 @@
+<resources>
+	<!-- Default screen margins, per the Android Design guidelines. -->
+	<dimen name="activity_horizontal_margin">16dp</dimen>
+	<dimen name="activity_vertical_margin">16dp</dimen>
+
+	<!-- Per the design guidelines, navigation drawers should be between 240dp and 320dp:
+		 https://developer.android.com/design/patterns/navigation-drawer.html -->
+	<dimen name="navigation_drawer_width">240dp</dimen>
+
+
+	<!-- UI统一设置 -->
+	<dimen name="title_height">48.0dip</dimen>
+	<dimen name="title_btn_width">50.0dip</dimen>
+
+	<dimen name="text_large">30sp</dimen>
+	<dimen name="text_max">18sp</dimen>
+	<dimen name="text_med">15sp</dimen>
+	<dimen name="text_min">13sp</dimen>
+
+	<dimen name="margin_min">5dp</dimen>
+	<dimen name="margin_med">10dp</dimen>
+	<dimen name="margin_max">15dp</dimen>
+	<dimen name="margin_large">30dp</dimen>
+	<dimen name="margin_large_more">35dp</dimen>
+
+
+
+
+
+	<!--痛风助手-->
+	<dimen name="gout_tsize_56">56px</dimen>
+	<dimen name="gout_tsize_50">50px</dimen>
+	<dimen name="gout_tsize_46">46px</dimen>
+	<dimen name="gout_tsize_40">40px</dimen>
+	<dimen name="gout_tsize_36">36px</dimen>
+	<dimen name="gout_tsize_30">30px</dimen>
+	<dimen name="gout_tsize_24">24px</dimen>
+	<dimen name="space_10">10px</dimen>
+	<dimen name="space_18">18px</dimen>
+	<dimen name="space_20">20px</dimen>
+	<dimen name="space_30">30px</dimen>
+	<dimen name="space_36" >36px</dimen>
+	<dimen name="space_40">40px</dimen>
+	<dimen name="space_42">42px</dimen>
+	<dimen name="space_46">46px</dimen>
+	<dimen name="space_56" >56px</dimen>
+	<dimen name="space_60">60px</dimen>
+	<dimen name="space_80">80px</dimen>
+	<dimen name="space_90">90px</dimen>
+	<dimen name="space_110">110px</dimen>
+	<dimen name="space_120">120px</dimen>
+	<dimen name="space_130">130px</dimen>
+	<dimen name="space_142">142px</dimen>
+	<dimen name="space_150">150px</dimen>
+	<dimen name="space_180">180px</dimen>
+	<dimen name="space_190">190px</dimen>
+	<dimen name="space_200">200px</dimen>
+	<dimen name="space_210">210px</dimen>
+	<dimen name="space_260">260px</dimen>
+	<dimen name="space_280">280px</dimen>
+	<dimen name="space_300">300px</dimen>
+	<dimen name="space_340">340px</dimen>
+	<dimen name="space_400">400px</dimen>
+	<dimen name="space_480">480px</dimen>
+	<dimen name="space_580">580px</dimen>
+	<dimen name="space_80_minus">-80px</dimen>
+	<dimen name="space_510">510px</dimen>
+	<dimen name="space_270">270px</dimen>
+	<dimen name="space_290">290px</dimen>
+	<dimen name="space_50">50px</dimen>
+	<dimen name="space_380">380px</dimen>
+	<dimen name="space_170">170px</dimen>
+	<dimen name="space_440">440px</dimen>
+	<dimen name="space_240">240px</dimen>
+	<dimen name="space_390">390px</dimen>
+	<dimen name="space_680">680px</dimen>
+	<dimen name="space_100">100px</dimen>
+	<dimen name="space_370">370px</dimen>
+	<dimen name="space_140">140px</dimen>
+	<dimen name="space_600">600px</dimen>
+	<dimen name="space_34">34px</dimen>
+	<dimen name="space_720">720px</dimen>
+	<dimen name="color_swatch_small">50.0dip</dimen>
+	<dimen name="color_swatch_margins_small">10dip</dimen>
+	<dimen name="space_420">420px</dimen>
+	<dimen name="space_330">330px</dimen>
+	<dimen name="space_880">880px</dimen>
+	<dimen name="space_160">160px</dimen>
+	<dimen name="space_630">630px</dimen>
+	<dimen name="space_800">800px</dimen>
+	<dimen name="space_530">530px</dimen>
+	<dimen name="space_920">920px</dimen>
+	<dimen name="space_780">780px</dimen>
+</resources>

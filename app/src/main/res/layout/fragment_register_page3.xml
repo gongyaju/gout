@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/main_background"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/space_120"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1.输入手机号 >   2.输入验证码 >   3.设置密码"
+            android:textColor="@color/mian_green"
+            android:textSize="@dimen/gout_tsize_40" />
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/main_line" />
+
+    <EditText
+        android:id="@+id/register_edt_pass1"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/space_120"
+        android:layout_marginLeft="@dimen/space_60"
+        android:layout_marginRight="@dimen/space_60"
+        android:layout_marginTop="@dimen/space_120"
+        android:background="@drawable/bg_edittext"
+        android:hint="输入密码，最少8位，数字英文均可"
+        android:inputType="number"
+        android:maxLength="11"
+        android:paddingLeft="30px"
+        android:singleLine="true"
+        android:textColor="@color/text_color_9"
+        android:textColorHint="@color/text_color_c"
+        android:textSize="@dimen/gout_tsize_46" />
+
+    <EditText
+        android:id="@+id/register_edt_pass2"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/space_120"
+        android:layout_marginLeft="@dimen/space_60"
+        android:layout_marginRight="@dimen/space_60"
+        android:layout_marginTop="@dimen/space_40"
+        android:background="@drawable/bg_edittext"
+        android:hint="再次输入密码"
+        android:inputType="number"
+        android:maxLength="11"
+        android:paddingLeft="30px"
+        android:singleLine="true"
+        android:textColor="@color/text_color_9"
+        android:textColorHint="@color/text_color_c"
+        android:textSize="@dimen/gout_tsize_46" />
+
+    <Button
+        android:id="@+id/register_btn_submit"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/space_120"
+        android:layout_marginLeft="@dimen/space_60"
+        android:layout_marginRight="@dimen/space_60"
+        android:layout_marginTop="@dimen/space_40"
+        android:background="@drawable/btn_login_bg"
+        android:text="提交注册"
+        android:textColor="@color/main_background"
+        android:textSize="18.0sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/space_120"
+        android:layout_marginRight="@dimen/space_120"
+        android:layout_marginTop="@dimen/space_600"
+        android:text="痛风疾病已成为我国仅次于糖尿病的第二大代谢类疾病，肆意吞噬着人们的健康。"
+        android:textColor="@color/mian_green"
+        android:textSize="@dimen/gout_tsize_40" />
+</LinearLayout>

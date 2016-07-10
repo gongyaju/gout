@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_marginTop="@dimen/space_300"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginRight="@dimen/space_20"
+        android:gravity="center"
+        android:text="恭喜你！注册成功"
+        android:textColor="@color/mian_green"
+        android:textSize="@dimen/space_56" />
+
+    <ImageView
+        android:layout_width="@dimen/space_300"
+        android:layout_height="@dimen/space_300"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/space_100"
+        android:src="@drawable/logo_gout" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/register_tv_count"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="@dimen/space_100"
+        android:layout_marginRight="@dimen/space_20"
+        android:gravity="center"
+        android:text="你是第172166位小酸人\n你咋才来呢?"
+        android:textColor="@color/text_color_6"
+        android:textSize="@dimen/space_46" />
+
+    <TextView
+        android:id="@+id/register_tv_tohealthcenter"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/space_120"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="@dimen/space_60"
+        android:layout_marginTop="@dimen/space_120"
+        android:layout_marginRight="@dimen/space_60"
+        android:background="@drawable/bg_edittext"
+        android:drawableRight="@drawable/ic_setting_arrow"
+        android:gravity="center|left"
+        android:paddingLeft="@dimen/space_40"
+        android:paddingRight="@dimen/space_60"
+        android:text="完善资料，激活健康中心"
+        android:textColor="@color/text_color_6"
+        android:textSize="@dimen/space_46" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="@dimen/space_100"
+        android:layout_marginTop="@dimen/space_30"
+        android:gravity="center"
+        android:singleLine="true"
+        android:text="没有健康中心的客户端是不完整的！"
+        android:textColor="@color/text_color_9"
+        android:textSize="@dimen/space_40" />
+    <Button
+        android:id="@+id/register_btn_go"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/space_120"
+        android:layout_marginLeft="@dimen/space_60"
+        android:layout_marginRight="@dimen/space_60"
+        android:layout_marginTop="@dimen/space_200"
+        android:background="@drawable/btn_login_bg"
+        android:text="跳过此步，直接进入"
+        android:textColor="#ffffffff"
+        android:textSize="@dimen/space_50" />
+</LinearLayout>

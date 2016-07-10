@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/doasge_tv"
+        android:layout_width="@dimen/space_210"
+        android:layout_height="@dimen/space_90"
+        android:background="@drawable/btn_no_select"
+        android:gravity="center"
+        android:text="1/1"
+        android:textColor="@color/text_color_6"
+        android:textSize="@dimen/space_46" />
+
+</LinearLayout>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:fitsSystemWindows="true"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/space_142"
+        android:background="@color/white"
+        android:gravity="center"
+        android:text="碱性食谱"
+        android:textSize="@dimen/gout_tsize_56" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white">
+
+        <EditText
+            android:id="@+id/purin_edt_search"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/space_120"
+            android:layout_marginBottom="@dimen/space_40"
+            android:layout_marginLeft="@dimen/space_40"
+            android:layout_marginRight="@dimen/space_40"
+            android:background="@drawable/bg_edittext"
+            android:drawableLeft="@drawable/icon_search"
+            android:drawablePadding="@dimen/space_20"
+            android:gravity="center_vertical"
+            android:hint="输入你想知道的嘌呤含量的食物名称"
+            android:paddingLeft="30px"
+            android:singleLine="true"
+            android:textColor="@color/text_color_9"
+            android:textColorHint="@color/text_color_c"
+            android:textSize="@dimen/gout_tsize_40" />
+    </LinearLayout>
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/main_line" />
+
+    <com.pu.gouthelper.ui.pulltorefresh.PullToRefreshListView xmlns:ptr="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/food_ls_show"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:paddingLeft="@dimen/space_30"
+        android:paddingRight="@dimen/space_30"
+        ptr:ptrAnimationStyle="flip"
+        ptr:ptrHeaderTextColor="@color/text_color_6"
+        ptr:ptrListViewExtrasEnabled="true" />
+</LinearLayout>

@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/text_color_c"
+    android:orientation="vertical">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:background="@color/main_background"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:gravity="center_vertical"
+                android:background="@color/white"
+                android:layout_height="@dimen/space_260">
+                <ImageView
+                    android:src="@drawable/ic_setting_touxiang"
+                    android:id="@+id/center_img_toux"
+                    android:layout_width="@dimen/space_190"
+                    android:layout_marginLeft="@dimen/space_60"
+                    android:layout_height="@dimen/space_190" />
+                <TextView
+                    android:id="@+id/center_tv_toux"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/list_item_selector"
+                    android:drawablePadding="@dimen/space_60"
+                    android:drawableRight="@drawable/ic_setting_arrow"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="@dimen/space_60"
+                    android:paddingRight="@dimen/space_60"
+                    android:text="--"
+                    android:textColor="@color/text_color_black"
+                    android:textSize="@dimen/gout_tsize_46" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/center_tv_breakrecode"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/space_190"
+                android:layout_marginTop="@dimen/space_20"
+                android:background="@drawable/list_item_selector"
+                android:drawableLeft="@drawable/ic_setting_break"
+                android:drawablePadding="@dimen/space_60"
+                android:drawableRight="@drawable/ic_setting_arrow"
+                android:gravity="center_vertical"
+                android:paddingLeft="@dimen/space_60"
+                android:paddingRight="@dimen/space_60"
+                android:text="发作记录"
+                android:textColor="@color/text_color_black"
+                android:textSize="@dimen/gout_tsize_46" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:layout_marginLeft="@dimen/space_60"
+                android:background="@drawable/list_view_divider" />
+
+            <TextView
+                android:id="@+id/center_tv_food"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/space_190"
+                android:background="@drawable/list_item_selector"
+                android:drawableLeft="@drawable/ic_setting_food"
+                android:drawablePadding="@dimen/space_60"
+                android:drawableRight="@drawable/ic_setting_arrow"
+                android:gravity="center_vertical"
+                android:paddingLeft="@dimen/space_60"
+                android:paddingRight="@dimen/space_60"
+                android:text="碱性食谱"
+                android:textColor="@color/text_color_black"
+                android:textSize="@dimen/gout_tsize_46" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:layout_marginLeft="@dimen/space_60"
+                android:background="@drawable/list_view_divider" />
+
+            <TextView
+                android:id="@+id/center_tv_drug"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/space_190"
+                android:background="@drawable/list_item_selector"
+                android:drawableLeft="@drawable/ic_setting_drug"
+                android:drawablePadding="@dimen/space_60"
+                android:drawableRight="@drawable/ic_setting_arrow"
+                android:gravity="center_vertical"
+                android:paddingLeft="@dimen/space_60"
+                android:paddingRight="@dimen/space_60"
+                android:text="嗑药提醒"
+                android:textColor="@color/text_color_black"
+                android:textSize="@dimen/gout_tsize_46" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:layout_marginLeft="@dimen/space_60"
+                android:background="@drawable/list_view_divider" />
+
+            <TextView
+                android:id="@+id/center_tv_myhistory"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/space_190"
+                android:layout_marginTop="@dimen/space_20"
+                android:background="@drawable/list_item_selector"
+                android:drawableLeft="@drawable/ic_setting_history"
+                android:drawablePadding="@dimen/space_60"
+                android:drawableRight="@drawable/ic_setting_arrow"
+                android:gravity="center_vertical"
+                android:paddingLeft="@dimen/space_60"
+                android:paddingRight="@dimen/space_60"
+                android:text="我的病历"
+                android:textColor="@color/text_color_black"
+                android:textSize="@dimen/gout_tsize_46" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:layout_marginLeft="@dimen/space_60"
+                android:background="@drawable/list_view_divider" />
+
+            <TextView
+                android:id="@+id/center_tv_topic"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/space_190"
+                android:background="@drawable/list_item_selector"
+                android:drawableLeft="@drawable/ic_setting_topic"
+                android:drawablePadding="@dimen/space_80"
+                android:drawableRight="@drawable/ic_setting_arrow"
+                android:gravity="center_vertical"
+                android:paddingLeft="@dimen/space_60"
+                android:paddingRight="@dimen/space_60"
+                android:text="我的贴子"
+                android:textColor="@color/text_color_black"
+                android:textSize="@dimen/gout_tsize_46" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:layout_marginLeft="@dimen/space_60"
+                android:background="@drawable/list_view_divider" />
+
+            <TextView
+                android:id="@+id/center_tv_msg"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/space_190"
+                android:background="@drawable/list_item_selector"
+                android:drawableLeft="@drawable/ic_setting_msg"
+                android:drawablePadding="@dimen/space_60"
+                android:drawableRight="@drawable/ic_setting_arrow"
+                android:gravity="center_vertical"
+                android:paddingLeft="@dimen/space_60"
+                android:paddingRight="@dimen/space_60"
+                android:text="我的消息"
+                android:textColor="@color/text_color_black"
+                android:textSize="@dimen/gout_tsize_46" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:layout_marginLeft="@dimen/space_60"
+                android:background="@drawable/list_view_divider" />
+
+            <TextView
+                android:id="@+id/center_tv_score"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/space_190"
+                android:background="@drawable/list_item_selector"
+                android:drawableLeft="@drawable/ic_setting_scoreshop"
+                android:drawablePadding="@dimen/space_60"
+                android:drawableRight="@drawable/ic_setting_arrow"
+                android:gravity="center_vertical"
+                android:layout_marginTop="@dimen/space_20"
+                android:paddingLeft="@dimen/space_60"
+                android:paddingRight="@dimen/space_60"
+                android:text="积分商城"
+                android:textColor="@color/text_color_black"
+                android:textSize="@dimen/gout_tsize_46" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:layout_marginLeft="@dimen/space_60"
+                android:background="@drawable/list_view_divider" />
+
+            <TextView
+                android:id="@+id/center_tv_setting"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/space_190"
+                android:background="@drawable/list_item_selector"
+                android:drawableLeft="@drawable/ic_setting_set"
+                android:drawablePadding="@dimen/space_60"
+                android:drawableRight="@drawable/ic_setting_arrow"
+                android:gravity="center_vertical"
+                android:paddingLeft="@dimen/space_60"
+                android:paddingRight="@dimen/space_60"
+                android:text="设置"
+                android:textColor="@color/text_color_black"
+                android:textSize="@dimen/gout_tsize_46" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:layout_marginLeft="@dimen/space_60"
+                android:layout_marginBottom="@dimen/space_20"
+                android:background="@drawable/list_view_divider" />
+        </LinearLayout>
+
+    </ScrollView>
+</LinearLayout>

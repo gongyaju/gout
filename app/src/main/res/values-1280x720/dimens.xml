@@ -1,0 +1,73 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <!-- so. /1.5   -->
+    <dimen name="activity_dialog_width">293dp</dimen>
+    <!--痛风助手-->
+    <dimen name="gout_tsize_56">38px</dimen>
+    <dimen name="gout_tsize_50">34px</dimen>
+    <dimen name="gout_tsize_46">30px</dimen>
+    <dimen name="gout_tsize_40">26px</dimen>
+    <dimen name="gout_tsize_36">24px</dimen>
+    <dimen name="gout_tsize_30">20px</dimen>
+    <dimen name="gout_tsize_24">16px</dimen>
+    <dimen name="space_20">14px</dimen>
+    <dimen name="space_30">20px</dimen>
+    <dimen name="space_40">26px</dimen>
+    <dimen name="space_60">40px</dimen>
+    <dimen name="space_90">60px</dimen>
+    <dimen name="space_120">80px</dimen>
+    <dimen name="space_142">94px</dimen>
+    <dimen name="space_180">120px</dimen>
+    <dimen name="space_210">140px</dimen>
+
+    <dimen name="space_10">6px</dimen>
+    <dimen name="space_18">13px</dimen>
+
+    <dimen name="space_36" >24px</dimen>
+
+    <dimen name="space_42">28px</dimen>
+    <dimen name="space_46">30px</dimen>
+    <dimen name="space_56" >38px</dimen>
+
+    <dimen name="space_80">54px</dimen>
+    <dimen name="space_110">74px</dimen>
+    <dimen name="space_130">86px</dimen>
+    <dimen name="space_150">100px</dimen>
+    <dimen name="space_190">126px</dimen>
+    <dimen name="space_200">134px</dimen>
+    <dimen name="space_260">174px</dimen>
+    <dimen name="space_280">186px</dimen>
+    <dimen name="space_300">200px</dimen>
+    <dimen name="space_340">226px</dimen>
+    <dimen name="space_400">266px</dimen>
+    <dimen name="space_480">320px</dimen>
+    <dimen name="space_580">386px</dimen>
+    <dimen name="space_80_minus">-54px</dimen>
+    <dimen name="space_510">340px</dimen>
+    <dimen name="space_270">180px</dimen>
+    <dimen name="space_290">194px</dimen>
+    <dimen name="space_50">34px</dimen>
+    <dimen name="space_380">254px</dimen>
+    <dimen name="space_170">114px</dimen>
+    <dimen name="space_440">294px</dimen>
+    <dimen name="space_240">160px</dimen>
+    <dimen name="space_390">260px</dimen>
+    <dimen name="space_680">680px</dimen>
+    <dimen name="space_100">100px</dimen>
+    <dimen name="space_370">370px</dimen>
+    <dimen name="space_140">140px</dimen>
+    <dimen name="space_600">454px</dimen>
+    <dimen name="space_34">22px</dimen>
+    <dimen name="space_720">480px</dimen>
+    <dimen name="color_swatch_small">50.0dip</dimen>
+    <dimen name="color_swatch_margins_small">10dip</dimen>
+    <dimen name="space_420">280px</dimen>
+    <dimen name="space_330">220px</dimen>
+    <dimen name="space_880">586px</dimen>
+    <dimen name="space_160">106px</dimen>
+    <dimen name="space_630">420px</dimen>
+    <dimen name="space_800">534px</dimen>
+    <dimen name="space_530">354px</dimen>
+    <dimen name="space_920">614px</dimen>
+    <dimen name="space_780">520px</dimen>
+</resources>

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layoutFooter"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/space_142"
+    android:background="@color/main_footer_bg">
+    <!--android:background="@color/main_footer_bg"-->
+
+    <View
+        android:id="@+id/viewSplit"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#EDEDED" />
+
+    <RadioGroup
+        android:id="@+id/group"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/foot_bar_home"
+            style="@style/main_footer_bar_radio"
+            android:checked="true"
+            android:drawableTop="@drawable/widget_bar_home_bg"
+            android:text="@string/main_navigation_home" />
+
+        <RadioButton
+            android:id="@+id/foot_bar_im"
+            style="@style/main_footer_bar_radio"
+            android:drawableTop="@drawable/widget_bar_im_bg"
+            android:text="@string/main_navigation_im" />
+
+        <RadioButton
+            android:id="@+id/foot_bar_interest"
+            style="@style/main_footer_bar_radio"
+            android:drawableTop="@drawable/widget_bar_interest_bg"
+            android:text="@string/main_navigation_interest" />
+
+        <RadioButton
+            android:id="@+id/main_footbar_user"
+            style="@style/main_footer_bar_radio"
+            android:drawableTop="@drawable/widget_bar_user_bg"
+            android:text="@string/main_navigation_user" />
+        <RadioButton
+            android:id="@+id/main_footbar_health"
+            style="@style/main_footer_bar_radio"
+            android:drawableTop="@drawable/widget_bar_user_health"
+            android:text="健康中心" />
+    </RadioGroup>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@null"
+        android:orientation="horizontal">
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+    </LinearLayout>
+</RelativeLayout>

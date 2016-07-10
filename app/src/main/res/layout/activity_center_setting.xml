@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/main_background"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/space_142"
+        android:background="@color/white"
+        android:gravity="center"
+        android:text="设置"
+        android:textSize="@dimen/gout_tsize_56" />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/main_line" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/setting_tv_msg"
+                    android:layout_width="match_parent"
+
+                    android:layout_height="@dimen/space_142"
+                    android:layout_marginTop="@dimen/space_20"
+                    android:background="@drawable/list_item_selector"
+                    android:drawablePadding="@dimen/space_60"
+                    android:drawableRight="@drawable/ic_setting_arrow"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="@dimen/space_60"
+                    android:paddingRight="@dimen/space_60"
+                    android:text="新消息通知"
+                    android:textColor="@color/text_color_black"
+                    android:textSize="@dimen/gout_tsize_46" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:layout_marginLeft="@dimen/space_60"
+                    android:background="@drawable/list_view_divider" />
+
+                <TextView
+                    android:id="@+id/setting_tv_psw"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/space_142"
+                    android:background="@drawable/list_item_selector"
+                    android:drawablePadding="@dimen/space_60"
+                    android:drawableRight="@drawable/ic_setting_arrow"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="@dimen/space_60"
+                    android:paddingRight="@dimen/space_60"
+                    android:text="密码修改"
+                    android:textColor="@color/text_color_black"
+                    android:textSize="@dimen/gout_tsize_46" />
+
+
+
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:background="@drawable/list_view_divider" />
+
+                <TextView
+                    android:id="@+id/setting_tv_complain"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/space_142"
+                    android:layout_marginTop="@dimen/space_20"
+                    android:background="@drawable/list_item_selector"
+                    android:drawablePadding="@dimen/space_60"
+                    android:drawableRight="@drawable/ic_setting_arrow"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="@dimen/space_60"
+                    android:paddingRight="@dimen/space_60"
+                    android:text="意见反馈"
+                    android:textColor="@color/text_color_black"
+                    android:textSize="@dimen/gout_tsize_46" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:background="@drawable/list_view_divider" />
+
+                <TextView
+                    android:id="@+id/setting_tv_us"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/space_142"
+                    android:background="@drawable/list_item_selector"
+                    android:drawablePadding="@dimen/space_60"
+                    android:drawableRight="@drawable/ic_setting_arrow"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="@dimen/space_60"
+                    android:paddingRight="@dimen/space_60"
+                    android:text="关于我们"
+                    android:textColor="@color/text_color_black"
+                    android:textSize="@dimen/gout_tsize_46" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:background="@drawable/list_view_divider" />
+
+                <TextView
+                    android:id="@+id/setting_tv_hlepme"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/space_142"
+                    android:background="@drawable/list_item_selector"
+                    android:drawablePadding="@dimen/space_60"
+                    android:drawableRight="@drawable/ic_setting_arrow"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="@dimen/space_60"
+                    android:paddingRight="@dimen/space_60"
+                    android:text="帮助评分"
+                    android:textColor="@color/text_color_black"
+                    android:textSize="@dimen/gout_tsize_46" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:background="@drawable/list_view_divider" />
+
+                <TextView
+                    android:id="@+id/setting_tv_exit"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/space_142"
+                    android:background="@drawable/list_item_selector"
+                    android:drawablePadding="@dimen/space_60"
+                    android:gravity="center"
+                    android:layout_marginTop="@dimen/space_20"
+                    android:paddingLeft="@dimen/space_60"
+                    android:paddingRight="@dimen/space_60"
+                    android:text="退出我的账号"
+                    android:textColor="@color/text_color_black"
+                    android:textSize="@dimen/gout_tsize_46" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:layout_marginBottom="@dimen/space_20"
+                    android:background="@drawable/list_view_divider" />
+            </LinearLayout>
+
+        </ScrollView>
+
+</LinearLayout>
