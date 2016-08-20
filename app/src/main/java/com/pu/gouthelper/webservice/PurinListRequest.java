@@ -32,7 +32,7 @@ public class PurinListRequest extends BaseRequest {
     public PurinListRequest(Handler mHandler, String len, String type) {
         this.mHandler = mHandler;
         RequestParams params = new RequestParams(URLlist.PURIN_LIST);
-        params.addBodyParameter("len", len);
+        params.addBodyParameter("len", "12");
         params.addBodyParameter("type", type);
         sendGet(params,true);
     }

@@ -44,7 +44,6 @@ public class CommentListRequest extends BaseRequest {
 
 
     public void onSuccessed(String result) {
-        F.E("CommentListRequest", result);
         JSONObject object = JSON.parseObject(result);
         int state = object.getIntValue("state");
         if (state == 1) {

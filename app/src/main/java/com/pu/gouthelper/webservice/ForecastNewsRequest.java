@@ -36,7 +36,6 @@ public class ForecastNewsRequest extends BaseRequest {
 
     public void onSuccessed(String result) {
         JSONObject object = JSON.parseObject(result);
-        F.E("ForecastNewsRequest", result);
         int state = object.getIntValue("state");
         if (state == 1) {
             Message msg = mHandler.obtainMessage();

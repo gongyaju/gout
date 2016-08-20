@@ -238,22 +238,6 @@ public class StringUtils {
         return data.substring(0, data.lastIndexOf("@"));
     }
 
-    /**
-     * @param date (时间戳)
-     * @return 年－月－日 (2013-03-01)
-     */
-    public static String convertDate(String date) {
-        try {
-            if (date == null || "".equals(date))
-                return "";
-            if (isNumeric(date))
-                return computingTime(Long.parseLong(date));
-            else
-                return date;
-        } catch (Exception e) {
-            return "";
-        }
-    }
 
     /**
      * 确定是否是时间戳
@@ -273,26 +257,7 @@ public class StringUtils {
 
     }
 
-    /**
-     * 计算时间1-59分钟前，
-     *
-     * @param date
-     * @return
-     */
-    private static String computingTime(Long date) {
-        if (date < 10000)
-            return "";
-        long currentTime = System.currentTimeMillis();
-        float i = ((currentTime - date) / 3600 / 1000);
-        if (i < 1) {
-            int time = (int) FloatMath.ceil(i * 60);
-            return time + 1 + "分钟前";
-        } else if (i < 24) {
-            return (int) i + "小时前";
-        } else if (i < 48)
-            return "昨天";
-        return toNYR(date);
-    }
+
 
     /**
      * 截取年月日 如（2013-01-08）

@@ -1,6 +1,8 @@
 package com.pu.gouthelper.base;
 
 
+import com.orhanobut.logger.Logger;
+
 import org.xutils.common.Callback;
 import org.xutils.common.util.KeyValue;
 import org.xutils.common.util.MD5;
@@ -13,8 +15,6 @@ import java.util.List;
 public class BaseRequest {
 
     Callback.Cancelable cancelable;
-
-    public static final String TAG = "BaseRequest";
 
     public void cancel() {
         if (cancelable != null) {
@@ -37,7 +37,7 @@ public class BaseRequest {
     protected void sendGet(RequestParams params, boolean isCache) {
 
         String time = System.currentTimeMillis() / 1000 + "";
-        params.addBodyParameter("uid",  SharedPreferences.getInstance().getString("userid", ""));
+        params.addBodyParameter("uid", SharedPreferences.getInstance().getString("userid", ""));
         params.addBodyParameter("time", time);
         params.addBodyParameter("appid", "tf001");
         params.addBodyParameter("auth", MD5.md5(SharedPreferences.getInstance().getString("userid", "") + time + "tf001" + "890Ofas5UjJAzFFBkV1Qjt4FQMUhWtUX"));
@@ -50,14 +50,14 @@ public class BaseRequest {
             params.setCacheDirName(x.app().getCacheDir().getAbsolutePath());
             params.setCacheSize(1024 * 1024 * 5);
         }
-        F.E(TAG, params.getUri());
+        Logger.e(params.getUri());
+        Logger.w(params.toJSONString());
         cancelable = x.http().get(params, new Callback.CommonCallback<String>() {
             @Override
             public void onSuccess(String result) {
                 try {
+                    Logger.json(result);
                     onSuccessed(result);
-                    F.E(TAG, result + "");
-                    // F.E(TAG, StringUtils.decodeUnicode(result) + "");
                 } catch (Exception e) {
                     e.printStackTrace();
                     onFailed(new HttpException(400, "ERROR"), "返回错误" + result);
@@ -100,14 +100,14 @@ public class BaseRequest {
             params.setCacheDirName(x.app().getCacheDir().getAbsolutePath());
             params.setCacheSize(1024 * 1024 * 5);
         }
-        F.E(TAG, params.getUri());
+        Logger.e(params.getUri());
+        Logger.w(params.toJSONString());
         cancelable = x.http().post(params, new Callback.CommonCallback<String>() {
             @Override
             public void onSuccess(String result) {
                 try {
+                    Logger.json(result);
                     onSuccessed(result);
-                    F.E(TAG, result + "");
-                    //     F.E(TAG, StringUtils.decodeUnicode(result) + "");
                 } catch (Exception e) {
                     e.printStackTrace();
                     onFailed(new HttpException(400, "ERROR"), "返回错误" + result);

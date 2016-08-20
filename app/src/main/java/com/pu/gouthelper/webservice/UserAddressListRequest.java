@@ -38,7 +38,6 @@ public class UserAddressListRequest extends BaseRequest {
 
 
     public void onSuccessed(String result) {
-        F.E("UserAddressListRequest",result);
         JSONObject object = JSON.parseObject(result);
         int state = object.getIntValue("state");
 

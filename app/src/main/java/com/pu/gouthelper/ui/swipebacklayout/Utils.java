@@ -54,7 +54,7 @@ public class Utils {
             for (Class clazz : classes) {
                 if (clazz.getSimpleName().contains("TranslucentConversionListener")) {
                     translucentConversionListenerClazz = clazz;
-                    F.E("xxx","没走");
+
                 }
             }
             Method method = Activity.class.getDeclaredMethod("convertToTranslucent",
@@ -64,7 +64,7 @@ public class Utils {
                 null
             });
         } catch (Throwable t) {
-            F.E("xxx","catch");
+
         }
     }
 }
