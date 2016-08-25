@@ -49,20 +49,13 @@ public class MyTopicAdapter extends BaseAdapter {
         MyTopic entity = mlist.get(position);
         convertView = LayoutInflater.from(context).inflate(R.layout.item_mytopic_list, null);
         ImageView mytopic_img_icon = (ImageView) convertView.findViewById(R.id.mytopic_img_icon);
-       // BitmapUtils.getInstance().display(mytopic_img_icon, entity.getUser().getAvatar());
+        BitmapUtils.getInstance().display(mytopic_img_icon, entity.getUser().getAvatar());
         TextView mytopic_tv_name = (TextView) convertView.findViewById(R.id.mytopic_tv_name);
         mytopic_tv_name.setText(entity.getUser().getNickname());
         TextView mytopic_tv_content = (TextView) convertView.findViewById(R.id.mytopic_tv_content);
         mytopic_tv_content.setText(entity.getTitle());
         TextView mytopic_tv_time = (TextView) convertView.findViewById(R.id.mytopic_tv_time);
         mytopic_tv_time.setText(DateUtil.date2String(Long.parseLong(entity.getTm()) * 1000, "yyyy-MM-dd HH:mm"));
-        TextView mytopic_tv_toshare = (TextView) convertView.findViewById(R.id.mytopic_tv_toshare);
-        mytopic_tv_toshare.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                ShareUtils.share(context, "分享痛风助手到...");
-            }
-        });
 
         return convertView;
     }

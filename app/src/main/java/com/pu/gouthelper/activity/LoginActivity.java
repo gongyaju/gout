@@ -104,6 +104,7 @@ public class LoginActivity extends BaseFragmentActivity implements Callback, Pla
                 } else {
                     SharedPreferences.getInstance().putString("username", "");
                     SharedPreferences.getInstance().putString("password", "");
+                    SharedPreferences.getInstance().getString("userid", "");
                 }
                 showLoading(this);
                 break;

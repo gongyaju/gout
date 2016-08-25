@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.pu.gouthelper.R;
@@ -66,6 +67,19 @@ public class CenterMyTopicActivity extends SwipeBackActivity {
     private void initView() {
         myTopicAdapter = new MyTopicAdapter(mContext, mList);
         mytopic_ls_show.setAdapter(myTopicAdapter);
+        mytopic_ls_show.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                try{
+                    Intent intent = new Intent(mContext, TopicDetailActivity.class);
+                    intent.putExtra("id", mList.get(position).getId());
+                    startActivity(intent);
+                }catch (Exception e){
+                    e.printStackTrace();
+                }
+
+            }
+        });
     }
 
     private void initData() {

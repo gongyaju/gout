@@ -67,6 +67,8 @@ public class CenterSettingActivity extends SwipeBackActivity {
             case R.id.setting_tv_exit:
                 SharedPreferences.getInstance().putString("username", "");
                 SharedPreferences.getInstance().putString("password", "");
+                SharedPreferences.getInstance().getString("userid", "");
+                SharedPreferences.getInstance().putString("mobile", "");
                 UIHelper.showLogin(CenterSettingActivity.this);
                 finish();
                 break;

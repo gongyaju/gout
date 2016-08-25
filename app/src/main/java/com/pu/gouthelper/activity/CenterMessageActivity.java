@@ -37,7 +37,7 @@ import mehdi.sakout.dynamicbox.DynamicBox;
 @ContentView(R.layout.activity_center_message)
 public class CenterMessageActivity extends SwipeBackActivity {
     @ViewInject(R.id.mymsg_ls_show)
-    private PullToRefreshListView listView;
+    private PullToRefreshListView mymsg_ls_show;
     @ViewInject(R.id.mymsg_ls_dx)
     private LinearLayout mymsg_ls_dx;
     private Context mContext;
@@ -51,16 +51,18 @@ public class CenterMessageActivity extends SwipeBackActivity {
             super.handleMessage(msg);
             switch (msg.what) {
                 case MessageRequest.SUCCESS:
-                    List<GoutMessage> goutDrugList = (List<GoutMessage>) msg.obj;
                     mList.clear();
-                    mList.addAll(goutDrugList);
+                    mList.addAll((List<GoutMessage>) msg.obj);
                     adapter.notifyDataSetChanged();
                     break;
                 case MessageRequest.ERROR:
+                    box = new DynamicBox(CenterMessageActivity.this, mymsg_ls_dx);
+                    View customView = getLayoutInflater().inflate(R.layout.hint_no_message, null, false);
+                    box.addCustomView(customView, "hint_no_message");
                     box.showCustomView("hint_no_message");
                     break;
             }
-            listView.onRefreshComplete();
+            mymsg_ls_show.onRefreshComplete();
         }
     };
 
@@ -69,43 +71,24 @@ public class CenterMessageActivity extends SwipeBackActivity {
         super.onCreate(savedInstanceState);
         mContext = this;
         initView();
-        loadData();
-
+        new MessageRequest(mHandler, "1000");
     }
 
     private void initView() {
-        box = new DynamicBox(this, mymsg_ls_dx);
-        View customView = getLayoutInflater().inflate(R.layout.hint_no_message, null, false);
-        box.addCustomView(customView,"hint_no_message");
-
-//        adapter = new MyMessageAdapter(mContext, mList);
-//        listView.setAdapter(adapter);
-//        // 下拉刷新
-//        listView.setOnRefreshListener(new PullToRefreshBase.OnRefreshListener<ListView>() {
-//            @Override
-//            public void onRefresh(PullToRefreshBase<ListView> refreshView) {
-//                loadData();
-//            }
-//        });
-//        // 加载更多
-//        listView.setOnLastItemVisibleListener(new PullToRefreshBase.OnLastItemVisibleListener() {
-//            @Override
-//            public void onLastItemVisible() {
-//                loadData();
-//            }
-//        });
-//        // 点击事件
-//        listView.setOnItemClickListener(new ListView.OnItemClickListener() {
-//            @Override
-//            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-//
-//            }
-//        });
+        adapter = new MyMessageAdapter(mContext, mList);
+        mymsg_ls_show.setAdapter(adapter);
+        mymsg_ls_show.setOnItemClickListener(new ListView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                try {
+                    Intent intent = new Intent(mContext, TopicDetailActivity.class);
+                    intent.putExtra("id", mList.get(i-1).getId());
+                    startActivity(intent);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        });
     }
-
-    private void loadData() {
-        new MessageRequest(mHandler, "100");
-    }
-
 
 }

@@ -7,6 +7,7 @@ import android.os.Message;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.text.TextUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
@@ -94,9 +95,11 @@ public class SplashActivity extends FragmentActivity {
             public void run() {
                 String user = SharedPreferences.getInstance().getString("username", "");
                 String psw = SharedPreferences.getInstance().getString("password", "");
-                if (user.equals("") || psw.equals("")) {
+                if (TextUtils.isEmpty(user) ||TextUtils.isEmpty(psw)) {
                     SharedPreferences.getInstance().putString("username", "");
                     SharedPreferences.getInstance().putString("password", "");
+                    SharedPreferences.getInstance().getString("userid", "");
+                    SharedPreferences.getInstance().putString("mobile", "");
                     UIHelper.showLogin(SplashActivity.this);
                     SplashActivity.this.finish();
                 } else {

@@ -6,7 +6,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="@dimen/space_290"
+        android:layout_height="@dimen/space_280"
         android:paddingTop="@dimen/space_40">
 
         <ImageView
@@ -34,7 +34,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/space_18"
-                android:lines="2"
                 android:text="--"
                 android:textColor="@color/text_color_3"
                 android:textSize="@dimen/space_40" />

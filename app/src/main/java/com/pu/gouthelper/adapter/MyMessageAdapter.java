@@ -53,7 +53,7 @@ public class MyMessageAdapter extends BaseAdapter {
         TextView mytopic_tv_name = (TextView) convertView.findViewById(R.id.mytopic_tv_name);
         mytopic_tv_name.setText(entity.getUser().getNickname());
         TextView mytopic_tv_content = (TextView) convertView.findViewById(R.id.mytopic_tv_content);
-        mytopic_tv_content.setText(entity.getContent());
+        mytopic_tv_content.setText(entity.getTitle());
         TextView mytopic_tv_time = (TextView) convertView.findViewById(R.id.mytopic_tv_time);
         mytopic_tv_time.setText(DateUtil.date2String(Long.parseLong(entity.getTm()) * 1000, "yyyy-MM-dd HH:mm"));
         return convertView;

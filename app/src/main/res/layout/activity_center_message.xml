@@ -58,8 +58,8 @@
                 android:id="@+id/mymsg_ls_show"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:divider="@color/text_color_c"
-                android:dividerHeight="@dimen/space_20"
+                android:paddingRight="@dimen/space_20"
+                android:paddingLeft="@dimen/space_20"
                 ptr:ptrAnimationStyle="flip"
                 ptr:ptrHeaderTextColor="@color/gray"
                 ptr:ptrListViewExtrasEnabled="true" />
