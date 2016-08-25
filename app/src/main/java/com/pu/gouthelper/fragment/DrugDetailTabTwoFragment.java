@@ -55,10 +55,7 @@ public class DrugDetailTabTwoFragment extends BaseFragment implements Callback, 
     private CommentAdapter adapter = null;
     private Context mContext;
 
-    @ViewInject(R.id.rl_bottom)
-    private RelativeLayout rl_bottom;
-    @ViewInject(R.id.group_discuss)
-    private EditText group_discuss;
+
     private DynamicBox box;
 
     private String tid = "";
@@ -81,7 +78,7 @@ public class DrugDetailTabTwoFragment extends BaseFragment implements Callback, 
                     break;
                 case CommentAddRequest.SUCCESS:
                     setData(tid);
-                    group_discuss.setText("");
+                  //  group_discuss.setText("");
                     UIHelper.ToastMessage(mContext, msg.obj + "");
                     mActivity.endLoading();
                     break;
@@ -117,27 +114,27 @@ public class DrugDetailTabTwoFragment extends BaseFragment implements Callback, 
         adapter = new CommentAdapter(mContext, mList, this, replyToReplyListener);
         purin_ls_detail.setAdapter(adapter);
 
-        purin_ls_detail.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View v, MotionEvent event) {
-                group_discuss.clearFocus();
-                return false;
-            }
-        });
-        group_discuss.setOnFocusChangeListener(new View.OnFocusChangeListener() {
-            @Override
-            public void onFocusChange(View v, boolean hasFocus) {
-                mActivity.isShowLiner(hasFocus);
-            }
-        });
-        group_discuss.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                InputMethodManager imm = (InputMethodManager) mActivity.getSystemService(Context.INPUT_METHOD_SERVICE);
-                boolean isOpen = imm.isActive();
-                mActivity.isShowLiner(isOpen);
-            }
-        });
+//        purin_ls_detail.setOnTouchListener(new View.OnTouchListener() {
+//            @Override
+//            public boolean onTouch(View v, MotionEvent event) {
+//                group_discuss.clearFocus();
+//                return false;
+//            }
+//        });
+//        group_discuss.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+//            @Override
+//            public void onFocusChange(View v, boolean hasFocus) {
+//                mActivity.isShowLiner(hasFocus);
+//            }
+//        });
+//        group_discuss.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                InputMethodManager imm = (InputMethodManager) mActivity.getSystemService(Context.INPUT_METHOD_SERVICE);
+//                boolean isOpen = imm.isActive();
+//                mActivity.isShowLiner(isOpen);
+//            }
+//        });
     }
 
     /**
@@ -162,25 +159,25 @@ public class DrugDetailTabTwoFragment extends BaseFragment implements Callback, 
     }
 
 
-    @Event(value = {R.id.group_discuss_submit}, type = View.OnClickListener.class)
-    private void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.group_discuss_submit:
-                String content = group_discuss.getText().toString().trim();
-                if (StringUtils.isEmpty(content)) {
-                    UIHelper.ToastMessage(mContext, "先说点什么再发表吧~");
-                    return;
-                }
-                if (StringUtils.isEmpty(tid)) {
-                    UIHelper.ToastMessage(mContext, "出错啦！稍等一会再评论吧~");
-                    return;
-                }
-                new CommentAddRequest(mHandler, "3", tid, "", "", content);
-                mActivity.showLoading(mContext);
-                break;
-
-        }
-    }
+//    @Event(value = {R.id.group_discuss_submit}, type = View.OnClickListener.class)
+//    private void onClick(View v) {
+//        switch (v.getId()) {
+//            case R.id.group_discuss_submit:
+//                String content = group_discuss.getText().toString().trim();
+//                if (StringUtils.isEmpty(content)) {
+//                    UIHelper.ToastMessage(mContext, "先说点什么再发表吧~");
+//                    return;
+//                }
+//                if (StringUtils.isEmpty(tid)) {
+//                    UIHelper.ToastMessage(mContext, "出错啦！稍等一会再评论吧~");
+//                    return;
+//                }
+//                new CommentAddRequest(mHandler, "3", tid, "", "", content);
+//                mActivity.showLoading(mContext);
+//                break;
+//
+//        }
+//    }
 
     @Override
     public void click(View v) {

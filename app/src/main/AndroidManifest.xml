@@ -23,6 +23,19 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <service
+            android:name=".service.ClockService"
+            android:enabled="true"
+            android:exported="false"
+            android:process=":clock" />
+
+        <receiver android:name=".service.alarmreceiver">
+            <intent-filter>
+                <action android:name="com.gout.alarm" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </receiver>
 
         <activity
             android:name=".activity.MainActivity"

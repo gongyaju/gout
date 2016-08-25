@@ -16,6 +16,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.alibaba.fastjson.JSON;
@@ -33,6 +34,7 @@ import com.pu.gouthelper.ui.UIHelper;
 import com.pu.gouthelper.ui.swipebacklayout.SwipeBackActivity;
 import com.pu.gouthelper.ui.tabstrip.PagerSlidingTabStrip;
 import com.pu.gouthelper.utils.Utils;
+import com.pu.gouthelper.webservice.CommentAddRequest;
 import com.pu.gouthelper.webservice.GoutDrugInfoRequest;
 import com.pu.gouthelper.webservice.ZDownRequest;
 import com.pu.gouthelper.webservice.ZUpRequest;
@@ -74,6 +76,10 @@ public class DrugDetailActivity extends SwipeBackActivity {
     private TextView progressBar1_text2;
     @ViewInject(R.id.progressBar1)
     private ProgressBar progressBar1;
+    @ViewInject(R.id.rl_bottom)
+    private RelativeLayout rl_bottom;
+    @ViewInject(R.id.group_discuss)
+    private EditText group_discuss;
     private DrugDetailTabOneFragment drugDetailTabOneFragment;
     private DrugDetailTabTwoFragment drugDetailTabTwoFragment;
     private DrugDetail entity = null;
@@ -98,6 +104,13 @@ public class DrugDetailActivity extends SwipeBackActivity {
                 case ZUpRequest.SUCCESS:
                 case ZDownRequest.ERROR:
                 case ZDownRequest.SUCCESS:
+                    UIHelper.ToastMessage(mContext, msg.obj + "");
+                    break;
+                case CommentAddRequest.ERROR:
+                    UIHelper.ToastMessage(mContext, msg.obj + "");
+                    break;
+                case CommentAddRequest.SUCCESS:
+                    group_discuss.setText("");
                     UIHelper.ToastMessage(mContext, msg.obj + "");
                     break;
             }
@@ -125,6 +138,26 @@ public class DrugDetailActivity extends SwipeBackActivity {
         final int pageMargin = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 2, getResources().getDisplayMetrics());
         pager.setPageMargin(pageMargin);
         tabs.setViewPager(pager);
+        tabs.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
+            }
+
+            @Override
+            public void onPageSelected(int position) {
+                if (position == 0) {
+                    rl_bottom.setVisibility(View.GONE);
+                } else {
+                    rl_bottom.setVisibility(View.VISIBLE);
+                }
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int state) {
+
+            }
+        });
     }
 
 
@@ -171,9 +204,9 @@ public class DrugDetailActivity extends SwipeBackActivity {
         drug_tv_title.setText(entity.getTitle());
         drug_tv_price.setText("￥" + entity.getMin_price() + "-" + "￥" + entity.getMax_price());
         drug_btn_zan.setText(entity.getUps());
-        progressBar1_text1.setText(entity.getUps()+"人顶");
+        progressBar1_text1.setText(entity.getUps() + "人顶");
         drug_btn_cai.setText(entity.getDowns());
-        progressBar1_text2.setText(entity.getDowns()+"人踩");
+        progressBar1_text2.setText(entity.getDowns() + "人踩");
         progressBar1.setMax(Integer.parseInt(entity.getUps()) + Integer.parseInt(entity.getDowns()));
         progressBar1.setProgress(Integer.parseInt(entity.getUps()));
         if (drugDetailTabOneFragment != null) {
@@ -184,7 +217,7 @@ public class DrugDetailActivity extends SwipeBackActivity {
         }
     }
 
-    @Event(value = {R.id.drug_btn_goback, R.id.drug_btn_buy, R.id.drug_btn_cai, R.id.drug_btn_zan}, type = View.OnClickListener.class)
+    @Event(value = {R.id.drug_btn_goback, R.id.drug_btn_buy, R.id.drug_btn_cai, R.id.drug_btn_zan, R.id.group_discuss_submit}, type = View.OnClickListener.class)
     private void onClick(View v) {
         switch (v.getId()) {
             case R.id.drug_btn_goback:
@@ -203,6 +236,19 @@ public class DrugDetailActivity extends SwipeBackActivity {
                 break;
             case R.id.drug_btn_cai:
                 new ZDownRequest(mHandler, entity.getId());
+                showLoading(mContext);
+                break;
+            case R.id.group_discuss_submit:
+                String content = group_discuss.getText().toString().trim();
+                if (StringUtils.isEmpty(content)) {
+                    UIHelper.ToastMessage(mContext, "先说点什么再发表吧~");
+                    return;
+                }
+                if (StringUtils.isEmpty(entity.getId())) {
+                    UIHelper.ToastMessage(mContext, "出错啦！稍等一会再评论吧~");
+                    return;
+                }
+                new CommentAddRequest(mHandler, "3", entity.getId(), "", "", content);
                 showLoading(mContext);
                 break;
         }

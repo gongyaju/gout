@@ -22,41 +22,31 @@
             android:id="@+id/indicator"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:visibility="gone"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
             android:layout_marginBottom="5dp"
             android:padding="5dp" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
+
+        <TextView
+            android:id="@+id/purin_edt_search"
+            android:layout_width="@dimen/space_900"
             android:layout_height="@dimen/space_120"
-            android:layout_marginTop="@dimen/space_80"
-            android:gravity="center"
-            android:orientation="horizontal">
+            android:layout_marginBottom="@dimen/space_60"
+            android:background="@drawable/bg_edittext"
+            android:drawableLeft="@drawable/icon_search"
+            android:layout_centerHorizontal="true"
+            android:drawablePadding="@dimen/space_20"
+            android:gravity="center_vertical"
+            android:paddingLeft="@dimen/space_30"
+            android:layout_alignParentBottom="true"
+            android:singleLine="true"
+            android:text="输入你想知道的嘌呤含量的食物名称"
+            android:textColor="@color/text_color_9"
+            android:textColorHint="@color/text_color_c"
+            android:textSize="@dimen/gout_tsize_40" />
 
-            <TextView
-                android:id="@+id/purin_edt_search"
-                android:layout_width="880px"
-                android:layout_height="@dimen/space_120"
-                android:layout_marginLeft="@dimen/space_18"
-                android:background="@drawable/bg_edittext"
-                android:drawableLeft="@drawable/icon_search"
-                android:drawablePadding="@dimen/space_20"
-                android:gravity="center_vertical"
-                android:paddingLeft="30px"
-                android:singleLine="true"
-                android:text="输入你想知道的嘌呤含量的食物名称"
-                android:textColor="@color/text_color_9"
-                android:textColorHint="@color/text_color_c"
-                android:textSize="@dimen/gout_tsize_40" />
-
-            <ImageButton
-                android:id="@+id/purin_edt_sos"
-                android:layout_width="80px"
-                android:layout_height="80px"
-                android:layout_marginLeft="@dimen/space_18"
-                android:background="@drawable/btn_sos_bg" />
-        </LinearLayout>
     </RelativeLayout>
 
     <com.pu.gouthelper.ui.tabstrip.PagerSlidingTabStrip

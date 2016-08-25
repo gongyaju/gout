@@ -1,5 +1,6 @@
 package com.pu.gouthelper.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -15,6 +16,7 @@ import android.widget.ImageView;
 
 import com.pu.gouthelper.R;
 import com.pu.gouthelper.base.SharedPreferences;
+import com.pu.gouthelper.service.ClockService;
 import com.pu.gouthelper.ui.UIHelper;
 import com.pu.gouthelper.ui.viewpagerindicator.CirclePageIndicator;
 import com.pu.gouthelper.webservice.LoginRequest;
@@ -60,6 +62,8 @@ public class SplashActivity extends FragmentActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
+        Intent intent = new Intent(this, ClockService.class);
+        startService(intent);
         /**
          * / 初始化 JPush。如果已经初始化，但没有登录成功，则执行重新登录。
          */

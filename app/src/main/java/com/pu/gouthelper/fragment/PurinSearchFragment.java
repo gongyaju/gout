@@ -141,7 +141,7 @@ public class PurinSearchFragment extends BaseFragment {
         }
     }
 
-    @Event(value = {R.id.purin_edt_search, R.id.purin_edt_sos}, type = View.OnClickListener.class)
+    @Event(value = {R.id.purin_edt_search}, type = View.OnClickListener.class)
     private void onClick(View v) {
         switch (v.getId()) {
             case R.id.purin_edt_search:
@@ -149,10 +149,6 @@ public class PurinSearchFragment extends BaseFragment {
                 getActivity().overridePendingTransition(R.anim.slide_in_from_bottom, R.anim.slide_in_from_top);
                 startActivity(intent_search);
 
-                break;
-            case R.id.purin_edt_sos:
-                Intent intent = new Intent(mContext, SosActivity.class);
-                startActivity(intent);
                 break;
         }
     }

@@ -8,6 +8,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.text.method.ScrollingMovementMethod;
 import android.util.TypedValue;
 import android.view.View;
 import android.widget.ImageView;
@@ -26,9 +27,7 @@ import com.pu.gouthelper.bean.PurinNews;
 import com.pu.gouthelper.bean.PurinRecipe;
 import com.pu.gouthelper.fragment.PurinDetailTabOneFragment;
 import com.pu.gouthelper.fragment.PurinDetailTabTwoFragment;
-import com.pu.gouthelper.fragment.PurinTabOneFragment;
-import com.pu.gouthelper.fragment.PurinTabThreeFragment;
-import com.pu.gouthelper.fragment.PurinTabTwoFragment;
+
 import com.pu.gouthelper.ui.UIHelper;
 import com.pu.gouthelper.ui.swipebacklayout.SwipeBackActivity;
 import com.pu.gouthelper.ui.tabstrip.PagerSlidingTabStrip;
@@ -155,6 +154,7 @@ public class PurinDetailActivity extends SwipeBackActivity {
     private void setData(PurinFoodInfoEntity entity) {
         detail_tv_title.setText(entity.getTitle());
         BitmapView.getInstance().display(detail_img_show, entity.getPic());
+        purin_tv_content.setMovementMethod(ScrollingMovementMethod.getInstance());
         purin_tv_content.setText(entity.getDesc());
         purin_tv_calorie.setText(entity.getCalorie());
         purin_tv_fat.setText(entity.getFat());

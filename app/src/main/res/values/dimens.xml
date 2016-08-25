@@ -91,4 +91,6 @@
 	<dimen name="space_530">530px</dimen>
 	<dimen name="space_920">920px</dimen>
 	<dimen name="space_780">780px</dimen>
+	<dimen name="space_900">900px</dimen>
+	<dimen name="space_8">8px</dimen>
 </resources>

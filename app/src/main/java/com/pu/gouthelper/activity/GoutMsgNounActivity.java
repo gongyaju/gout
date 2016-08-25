@@ -76,7 +76,7 @@ public class GoutMsgNounActivity extends SwipeBackActivity {
     private void initData() {
         adapter = new NounParsetAdapter(mContext, goutKnowList);
         noun_ls_show.setAdapter(adapter);
-        new GoutKnowListRequest(mHandler, "100", "3","0");//名词
+        new GoutKnowListRequest(mHandler, "1000", "0","3");//名词
         showLoading(mContext);
     }
 
