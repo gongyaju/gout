@@ -32,6 +32,7 @@ import com.pu.gouthelper.ui.UIHelper;
 import com.pu.gouthelper.ui.swipebacklayout.SwipeBackActivity;
 import com.pu.gouthelper.ui.tabstrip.PagerSlidingTabStrip;
 import com.pu.gouthelper.utils.BitmapUtil;
+import com.pu.gouthelper.utils.ShareUtils;
 import com.pu.gouthelper.webservice.PurinListInfoRequest;
 
 import org.json.JSONException;
@@ -86,7 +87,7 @@ public class PurinDetailActivity extends SwipeBackActivity {
                     JSONObject jsonObject = object.getJSONObject("correlation");
                     List<PurinNews> pList = JSONArray.parseArray(jsonObject.getString("news"), PurinNews.class);
                     entity.setPurinNews(pList);
-                    List<PurinRecipe> rList = JSONArray.parseArray(jsonObject.getString("news"), PurinRecipe.class);
+                    List<PurinRecipe> rList = JSONArray.parseArray(jsonObject.getString("recipe"), PurinRecipe.class);
                     entity.setPurinRecipes(rList);
                     setData(entity);
                     break;
@@ -174,11 +175,14 @@ public class PurinDetailActivity extends SwipeBackActivity {
         purinDetailTabTwoFragment.setdata(entity.getPurinNews());
     }
 
-    @Event(value = {R.id.detail_btn_goback}, type = View.OnClickListener.class)
+    @Event(value = {R.id.detail_btn_goback,R.id.btn_share}, type = View.OnClickListener.class)
     private void onClick(View v) {
         switch (v.getId()) {
             case R.id.detail_btn_goback:
                 finish();
+                break;
+            case R.id.btn_share:
+                ShareUtils.share(this, "分享痛风助手到...");
                 break;
         }
     }

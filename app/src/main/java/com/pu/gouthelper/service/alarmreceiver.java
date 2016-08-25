@@ -23,7 +23,6 @@ public class alarmreceiver extends BroadcastReceiver {
     @Override
     public void onReceive(Context context, Intent intent) {
         messageNotificationManager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
-
         Notification.Builder builder1 = new Notification.Builder(context);
         builder1.setSmallIcon(R.drawable.ic_launcher); //设置图标
         builder1.setContentTitle("喝水提醒"); //设置标题

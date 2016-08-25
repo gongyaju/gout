@@ -87,7 +87,6 @@ public class GoutDrugFragment extends BaseFragment {
     private void initView() {
         adapter = new DrugListAdapter(mContext, mList);
         listView.setAdapter(adapter);
-        // 下拉刷新
         listView.setOnRefreshListener(new PullToRefreshBase.OnRefreshListener<ListView>() {
             @Override
             public void onRefresh(PullToRefreshBase<ListView> refreshView) {
@@ -97,7 +96,6 @@ public class GoutDrugFragment extends BaseFragment {
             }
         });
 
-        // 加载更多
         listView.setOnLastItemVisibleListener(new PullToRefreshBase.OnLastItemVisibleListener() {
             @Override
             public void onLastItemVisible() {
@@ -108,22 +106,24 @@ public class GoutDrugFragment extends BaseFragment {
                 }
             }
         });
-        // 点击事件
         listView.setOnItemClickListener(new ListView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                GoutDrug goutDrug = mList.get(i - 1);
-                Intent it = new Intent(mContext, DrugDetailActivity.class);
-                it.putExtra("id", goutDrug.getId());
-                startActivity(it);
-
+                try {
+                    GoutDrug goutDrug = mList.get(i - 1);
+                    Intent it = new Intent(mContext, DrugDetailActivity.class);
+                    it.putExtra("id", goutDrug.getId());
+                    startActivity(it);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
             }
         });
     }
 
     private void loadData() {
         listView.withLoadMoreView();
-        new GoutDrugListRequest(mHandler, page+"");
+        new GoutDrugListRequest(mHandler, page + "");
         page++;
     }
 

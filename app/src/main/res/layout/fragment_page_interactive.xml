@@ -21,20 +21,17 @@
             android:text="互动社区"
             android:textSize="@dimen/gout_tsize_56" />
 
-        <TextView
-            android:id="@+id/topic_tv_send"
-            android:layout_width="wrap_content"
-            android:paddingTop="@dimen/space_40"
+
+        <ImageButton
+            android:id="@+id/topic_btn_send"
+            android:layout_width="@dimen/space_150"
             android:layout_height="match_parent"
             android:layout_alignParentEnd="true"
+            android:paddingTop="@dimen/space_40"
             android:layout_alignParentRight="true"
-            android:layout_alignParentTop="true"
-            android:background="@color/main_background"
-            android:gravity="center"
-            android:paddingRight="@dimen/space_30"
-            android:text="发帖"
-            android:textColor="@color/mian_green"
-            android:textSize="@dimen/gout_tsize_46" />
+            android:layout_centerVertical="true"
+            android:background="@null"
+            android:src="@drawable/btn_topic_send_bg" />
     </RelativeLayout>
 
     <View

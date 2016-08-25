@@ -14,7 +14,9 @@ import android.widget.GridView;
 import android.widget.ListView;
 
 import com.pu.gouthelper.R;
+import com.pu.gouthelper.activity.GoutMsgDetailActivity;
 import com.pu.gouthelper.activity.PurinDetailActivity;
+import com.pu.gouthelper.activity.RecipeDetailActivity;
 import com.pu.gouthelper.adapter.PurinFoodAdapter;
 import com.pu.gouthelper.adapter.PurinListAdapter;
 import com.pu.gouthelper.base.BaseFragment;
@@ -54,7 +56,16 @@ public class PurinDetailTabOneFragment extends BaseFragment {
     }
 
     private void initView() {
-
+        purin_ls_detail.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                if (rList != null && rList.size() > 0) {
+                    Intent it = new Intent(mContext, RecipeDetailActivity.class);
+                    it.putExtra("id", rList.get(position).getId());
+                    startActivity(it);
+                }
+            }
+        });
     }
 
     public void setdata(List<PurinRecipe> rList) {

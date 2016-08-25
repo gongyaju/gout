@@ -53,7 +53,8 @@
                 <ImageView
                     android:id="@+id/drug_img_pic"
                     android:layout_width="match_parent"
-                    android:layout_height="@dimen/space_400" />
+                    android:scaleType="fitCenter"
+                    android:layout_height="@dimen/space_680" />
 
                 <LinearLayout
                     android:id="@+id/drug_liner_vs"

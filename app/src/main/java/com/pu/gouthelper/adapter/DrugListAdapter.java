@@ -55,15 +55,15 @@ public class DrugListAdapter extends BaseAdapter {
         TextView drug_tv_content = (TextView) convertView.findViewById(R.id.drug_tv_content);
         TextView drug_tv_zan = (TextView) convertView.findViewById(R.id.progressBar1_text1);
         TextView drug_tv_cai = (TextView) convertView.findViewById(R.id.progressBar1_text2);
-        TextView drug_tv_msg = (TextView) convertView.findViewById(R.id.drug_tv_msg);
+
         ProgressBar progressBar = (ProgressBar) convertView.findViewById(R.id.progressBar1);
         drug_tv_title.setText(entity.getTitle());
-        drug_tv_content.setText(DateUtil.date2String(Long.parseLong(entity.getTm()) * 1000, "yyyy-MM-dd HH:mm"));
+        drug_tv_content.setText(entity.getSummary());
         drug_tv_zan.setText(entity.getUps() + "人顶");
         drug_tv_cai.setText(entity.getDowns() + "人踩");
         progressBar.setMax(Integer.parseInt(entity.getUps()) + Integer.parseInt(entity.getDowns()));
         progressBar.setProgress(Integer.parseInt(entity.getUps()));
-        drug_tv_msg.setText(entity.getRecom());
+
         return convertView;
     }
 

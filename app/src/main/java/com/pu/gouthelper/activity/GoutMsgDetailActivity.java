@@ -23,6 +23,7 @@ import com.pu.gouthelper.common.CommentFun;
 import com.pu.gouthelper.ui.MyListView;
 import com.pu.gouthelper.ui.UIHelper;
 import com.pu.gouthelper.ui.swipebacklayout.SwipeBackActivity;
+import com.pu.gouthelper.utils.ShareUtils;
 import com.pu.gouthelper.webservice.CommentAddRequest;
 import com.pu.gouthelper.webservice.CommentListRequest;
 import com.pu.gouthelper.webservice.GoutKnowInfoRequest;
@@ -52,6 +53,12 @@ public class GoutMsgDetailActivity extends SwipeBackActivity implements Callback
     private EditText say_edt_content;
     @ViewInject(R.id.purin_ls_say)
     private MyListView purin_ls_say;
+    @ViewInject(R.id.textView5)
+    private TextView textView5;
+    @ViewInject(R.id.textView6)
+    private TextView textView6;
+    @ViewInject(R.id.msg_tv_zan)
+    private TextView msg_tv_zan;
     private DynamicBox box;
     private List<Comment> mList = new ArrayList<>();
     private CommentAdapter adapter = null;
@@ -116,6 +123,11 @@ public class GoutMsgDetailActivity extends SwipeBackActivity implements Callback
     }
 
     private void setData() {
+        if (entity.getAuthor() != null && entity.getAuthor().getId().equals("2")) {
+            textView5.setText("网络");
+            textView6.setText("本文章摘录于互联网");
+        }
+        msg_tv_zan.setText(entity.getUps());
         noun_btn_title.setText(entity.getTitle());
         detail_web_content.loadDataWithBaseURL(null, entity.getContent(), "text/html", "utf-8", null);
     }
@@ -124,7 +136,7 @@ public class GoutMsgDetailActivity extends SwipeBackActivity implements Callback
         new CommentListRequest(mHandler, "2", id, "" + F.PAGE_SIZE);
     }
 
-    @Event(value = {R.id.noun_btn_goback, R.id.say_bnt_send}, type = View.OnClickListener.class)
+    @Event(value = {R.id.noun_btn_goback, R.id.say_bnt_send, R.id.btn_share}, type = View.OnClickListener.class)
     private void onClick(View v) {
         switch (v.getId()) {
             case R.id.noun_btn_goback:
@@ -142,6 +154,9 @@ public class GoutMsgDetailActivity extends SwipeBackActivity implements Callback
                 }
                 new CommentAddRequest(mHandler, "2", id, "", "", content);
                 showLoading(mContext);
+                break;
+            case R.id.btn_share:
+                ShareUtils.share(this, "分享痛风助手到...");
                 break;
         }
     }
@@ -174,7 +189,7 @@ public class GoutMsgDetailActivity extends SwipeBackActivity implements Callback
     }
 
     @Override
-    public void onClickPublish(Dialog dialog, EditText input, TextView btn,UserEntity userEntity) {
+    public void onClickPublish(Dialog dialog, EditText input, TextView btn, UserEntity userEntity) {
         final String content = input.getText().toString();
         if (content.trim().equals("")) {
             UIHelper.ToastMessage(mContext, "评论不能为空");

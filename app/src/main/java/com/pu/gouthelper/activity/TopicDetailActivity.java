@@ -16,6 +16,7 @@ import android.widget.TextView;
 import com.pu.gouthelper.R;
 import com.pu.gouthelper.adapter.Callback;
 import com.pu.gouthelper.adapter.CommentAdapter;
+import com.pu.gouthelper.base.BitmapUtils;
 import com.pu.gouthelper.base.BitmapView;
 import com.pu.gouthelper.base.F;
 import com.pu.gouthelper.base.StringUtils;
@@ -51,7 +52,7 @@ import mehdi.sakout.dynamicbox.DynamicBox;
  * 帖子详情
  */
 @ContentView(R.layout.activity_topic_detail)
-public class TopicDetailActivity extends SwipeBackActivity implements TitlePopup.OnItemOnClickListener, Callback , CommentFun.CommentDialogListener {
+public class TopicDetailActivity extends SwipeBackActivity implements TitlePopup.OnItemOnClickListener, Callback, CommentFun.CommentDialogListener {
 
     private Context mContext;
     private String id = "";
@@ -161,16 +162,14 @@ public class TopicDetailActivity extends SwipeBackActivity implements TitlePopup
         }
     };
 
-    @Event(value = {R.id.topic_btn_send, R.id.topic_btn_goback, R.id.topic_tv_share, R.id.group_discuss_submit}, type = View.OnClickListener.class)
+    @Event(value = {R.id.btn_share, R.id.topic_btn_goback, R.id.topic_tv_share, R.id.group_discuss_submit}, type = View.OnClickListener.class)
     private void onClick(View v) {
         switch (v.getId()) {
             case R.id.topic_btn_goback:
                 finish();
                 break;
-            case R.id.topic_btn_send:
-                Intent intent = new Intent(mContext, SendTopicActivity.class);
-                startActivity(intent);
-                finish();
+            case R.id.btn_share:
+                ShareUtils.share(this, "分享痛风助手到...");
                 break;
             case R.id.topic_tv_share:
                 ShareUtils.share(this, "分享痛风助手到...");
@@ -198,7 +197,7 @@ public class TopicDetailActivity extends SwipeBackActivity implements TitlePopup
             topicdetail_img_pic.addView(imageView);
         }
 
-        BitmapView.getInstance().display(topicdetail_img_icon, data.getUser().getAvatar());
+        BitmapUtils.getInstance().display(topicdetail_img_icon, data.getUser().getAvatar());
         topicdetail_tv_name.setText(data.getUser().getNickname());
         topicdetail_tv_title.setText(data.getTitle());
         topicdetail_tv_time.setText(DateUtil.date2String(Long.parseLong(data.getTm()) * 1000, "yyyy-MM-dd HH:mm"));

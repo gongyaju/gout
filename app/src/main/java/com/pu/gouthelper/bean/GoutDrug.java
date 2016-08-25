@@ -13,6 +13,7 @@ public class GoutDrug {
     private String tm;
     private String downs;
     private boolean isSelect = false;
+    private String summary;
 
     public void setId(String id) {
         this.id = id;
@@ -84,5 +85,13 @@ public class GoutDrug {
 
     public void setDowns(String downs) {
         this.downs = downs;
+    }
+
+    public String getSummary() {
+        return summary;
+    }
+
+    public void setSummary(String summary) {
+        this.summary = summary;
     }
 }

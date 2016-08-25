@@ -32,7 +32,6 @@
         <receiver android:name=".service.alarmreceiver">
             <intent-filter>
                 <action android:name="com.gout.alarm" />
-
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </receiver>

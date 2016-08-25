@@ -33,7 +33,7 @@ public class GoutKnowDetail {
     private String pic;
     private String redirect;
     private String content;
-    private Object author;
+    private Source author;
     private Object source;
     private String keywords;
     private String ups;
@@ -101,21 +101,7 @@ public class GoutKnowDetail {
         this.content = content;
     }
 
-    public Object getAuthor() {
-        return author;
-    }
 
-    public void setAuthor(Object author) {
-        this.author = author;
-    }
-
-    public Object getSource() {
-        return source;
-    }
-
-    public void setSource(Object source) {
-        this.source = source;
-    }
 
     public String getKeywords() {
         return keywords;
@@ -187,5 +173,21 @@ public class GoutKnowDetail {
 
     public void setUptm(String uptm) {
         this.uptm = uptm;
+    }
+
+    public Source getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(Source author) {
+        this.author = author;
+    }
+
+    public Object getSource() {
+        return source;
+    }
+
+    public void setSource(Object source) {
+        this.source = source;
     }
 }

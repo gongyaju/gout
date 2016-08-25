@@ -36,7 +36,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/space_18"
                     android:text="111111111111"
-                    android:textColor="@color/mian_green"
+                    android:textColor="@color/text_color_6"
                     android:textSize="@dimen/gout_tsize_46" />
 
                 <RelativeLayout
@@ -87,25 +87,7 @@
                     android:textColor="@color/text_color_6"
                     android:textSize="@dimen/gout_tsize_36" />
 
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/space_80">
 
-                    <TextView
-                        android:id="@+id/drug_tv_msg"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginRight="@dimen/space_10"
-                        android:drawableLeft="@drawable/icon_msg"
-                        android:drawablePadding="@dimen/space_20"
-                        android:singleLine="true"
-                        android:text="111"
-                        android:textColor="@color/text_color_6"
-                        android:textSize="@dimen/gout_tsize_46"
-                        android:layout_alignParentTop="true"
-                        android:layout_alignParentRight="true"
-                        android:layout_alignParentEnd="true" />
-                </RelativeLayout>
 
 
             </LinearLayout>

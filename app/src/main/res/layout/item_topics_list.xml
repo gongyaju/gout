@@ -2,10 +2,10 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingLeft="@dimen/space_40"
-    android:paddingRight="@dimen/space_40"
     android:descendantFocusability="blocksDescendants"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:paddingLeft="@dimen/space_40"
+    android:paddingRight="@dimen/space_40">
 
 
     <LinearLayout
@@ -31,8 +31,8 @@
                 android:id="@+id/topic_tv_title"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="111111111111"
-                android:textColor="@color/text_color_3"
+                android:text="--"
+                android:textColor="@color/mian_green"
                 android:textSize="@dimen/gout_tsize_40" />
 
             <TextView
@@ -40,7 +40,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/space_20"
-                android:text="111111111111"
+                android:text="--"
                 android:textColor="@color/text_color_6"
                 android:textSize="@dimen/gout_tsize_30" />
         </LinearLayout>
@@ -54,33 +54,40 @@
     <RelativeLayout
         android:id="@+id/container"
         android:layout_width="match_parent"
-        android:focusable="false"
-        android:focusableInTouchMode="false"
-        android:descendantFocusability="blocksDescendants"
+        android:layout_height="@dimen/space_440"
         android:clickable="false"
-        android:layout_height="@dimen/space_440">
+        android:descendantFocusability="blocksDescendants"
+        android:focusable="false"
+        android:focusableInTouchMode="false">
 
         <TextView
             android:id="@+id/topic_tv_content"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/space_20"
-            android:lines="3"
+            android:lines="2"
             android:text="--"
             android:textColor="@color/text_color_6"
             android:textSize="@dimen/space_36" />
-        <LinearLayout
-            android:id="@+id/topic_gy_imgs"
-            android:descendantFocusability="blocksDescendants"
+
+        <HorizontalScrollView
             android:layout_width="match_parent"
-            android:layout_height="@dimen/space_240"
-            android:focusable="false"
-            android:focusableInTouchMode="false"
-            android:clickable="false"
-            android:orientation="horizontal"
+            android:layout_height="wrap_content"
             android:layout_below="@id/topic_tv_content"
-            android:layout_centerVertical="true"
-            android:scrollbars="none" />
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:id="@+id/topic_gy_imgs"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/space_280"
+                android:layout_centerVertical="true"
+                android:clickable="false"
+                android:descendantFocusability="blocksDescendants"
+                android:focusable="false"
+                android:focusableInTouchMode="false"
+                android:orientation="horizontal" />
+        </HorizontalScrollView>
+
     </RelativeLayout>
 
     <View
@@ -104,7 +111,8 @@
             android:singleLine="true"
             android:text="0"
             android:textColor="@color/text_color_6"
-            android:textSize="@dimen/gout_tsize_46" />
+            android:textSize="@dimen/gout_tsize_46"
+            android:visibility="invisible" />
 
         <TextView
             android:id="@+id/topic_tv_msg"

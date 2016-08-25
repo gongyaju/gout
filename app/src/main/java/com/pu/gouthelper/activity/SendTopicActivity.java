@@ -97,10 +97,10 @@ public class SendTopicActivity extends SwipeBackActivity {
                 finish();
                 break;
             case R.id.topic_tv_sendok:
-                String title = topic_edt_title.getText().toString().trim();
+                String title = "";
                 String content = topic_edt_content.getText().toString().trim();
-                if (StringUtils.isEmpty(title) || StringUtils.isEmpty(content)) {
-                    UIHelper.ToastMessage(mContext, "标题内容不能空着~");
+                if (StringUtils.isEmpty(content)) {
+                    UIHelper.ToastMessage(mContext, "内容不能空着~");
                 } else {
                     new TopicSendRequest(mHandler, title, content, mSelectPath);
                     showLoading(mContext);
@@ -147,18 +147,24 @@ public class SendTopicActivity extends SwipeBackActivity {
                         topic_img_2.setImageBitmap(AppUtils.getImageOption(mSelectPath.get(1)));
                         topic_img_3.setImageResource(0);
                         topic_img_4.setImageResource(0);
+                        topic_img_2.setVisibility(View.VISIBLE);
                         break;
                     case 3:
                         topic_img_1.setImageBitmap(AppUtils.getImageOption(mSelectPath.get(0)));
                         topic_img_2.setImageBitmap(AppUtils.getImageOption(mSelectPath.get(1)));
                         topic_img_3.setImageBitmap(AppUtils.getImageOption(mSelectPath.get(2)));
                         topic_img_4.setImageResource(0);
+                        topic_img_2.setVisibility(View.VISIBLE);
+                        topic_img_3.setVisibility(View.VISIBLE);
                         break;
                     case 4:
                         topic_img_1.setImageBitmap(AppUtils.getImageOption(mSelectPath.get(0)));
                         topic_img_2.setImageBitmap(AppUtils.getImageOption(mSelectPath.get(1)));
                         topic_img_3.setImageBitmap(AppUtils.getImageOption(mSelectPath.get(2)));
                         topic_img_4.setImageBitmap(AppUtils.getImageOption(mSelectPath.get(3)));
+                        topic_img_2.setVisibility(View.VISIBLE);
+                        topic_img_3.setVisibility(View.VISIBLE);
+                        topic_img_4.setVisibility(View.VISIBLE);
                         break;
 
                 }

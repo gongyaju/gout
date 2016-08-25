@@ -1,6 +1,7 @@
 
 package com.pu.gouthelper.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -16,6 +17,7 @@ import com.pu.gouthelper.fragment.GoutMsgFragment;
 import com.pu.gouthelper.fragment.HealthCenterFragment;
 import com.pu.gouthelper.fragment.InteractiveFragment;
 import com.pu.gouthelper.fragment.PurinSearchFragment;
+import com.pu.gouthelper.service.ClockService;
 import com.pu.gouthelper.ui.UIHelper;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -48,6 +50,8 @@ public class MainActivity extends BaseFragmentActivity {
             initFromSavedInstantsState(savedInstanceState);
         }
         F.SCREEN_SIZE(this);
+        Intent intent = new Intent(this, ClockService.class);
+        startService(intent);
     }
 
     @Override

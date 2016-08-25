@@ -58,6 +58,7 @@
         android:paddingRight="@dimen/space_40">
 
         <EditText
+            android:visibility="gone"
             android:id="@+id/topic_edt_title"
             android:layout_width="match_parent"
             android:layout_height="@dimen/space_390"
@@ -70,18 +71,15 @@
             android:singleLine="false"
             android:textColorHint="@color/text_color_c" />
 
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1px"
-            android:background="@color/main_line" />
 
         <EditText
             android:id="@+id/topic_edt_content"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/space_680"
+            android:layout_marginTop="@dimen/space_40"
+            android:layout_height="@dimen/space_780"
             android:background="@color/main_background"
             android:gravity="top|left"
-            android:hint="输入您的帖子详情，不得少于10个字，且最多600字"
+            android:hint="输入您的帖子详情，最多600字"
             android:maxLength="600"
             android:paddingLeft="@dimen/space_18"
             android:paddingTop="@dimen/space_40"
@@ -96,6 +94,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="@dimen/space_120"
+            android:layout_marginTop="@dimen/space_40"
             android:gravity="center_vertical"
             android:paddingLeft="@dimen/space_18"
             android:text="加入图片："
@@ -106,7 +105,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/main_background"
-            android:gravity="center_horizontal"
             android:orientation="horizontal">
 
             <ImageView
@@ -119,6 +117,7 @@
                 android:id="@+id/topic_img_2"
                 android:layout_width="@dimen/space_200"
                 android:layout_height="@dimen/space_200"
+                android:visibility="gone"
                 android:layout_marginLeft="@dimen/space_60"
                 android:background="@drawable/btn_upload_image_bg" />
 
@@ -127,12 +126,14 @@
                 android:layout_width="@dimen/space_200"
                 android:layout_height="@dimen/space_200"
                 android:layout_marginLeft="@dimen/space_60"
+                android:visibility="gone"
                 android:background="@drawable/btn_upload_image_bg" />
 
             <ImageView
                 android:id="@+id/topic_img_4"
                 android:layout_width="@dimen/space_200"
                 android:layout_height="@dimen/space_200"
+                android:visibility="gone"
                 android:layout_marginLeft="@dimen/space_60"
                 android:background="@drawable/btn_upload_image_bg" />
         </LinearLayout>

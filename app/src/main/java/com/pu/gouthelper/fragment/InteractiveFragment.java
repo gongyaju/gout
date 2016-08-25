@@ -124,10 +124,10 @@ public class InteractiveFragment extends BaseFragment {
     }
 
 
-    @Event(value = {R.id.topic_tv_send}, type = View.OnClickListener.class)
+    @Event(value = {R.id.topic_btn_send}, type = View.OnClickListener.class)
     private void onClick(View v) {
         switch (v.getId()) {
-            case R.id.topic_tv_send:
+            case R.id.topic_btn_send:
                 Intent intent = new Intent(mContext, SendTopicActivity.class);
                 startActivity(intent);
                 break;

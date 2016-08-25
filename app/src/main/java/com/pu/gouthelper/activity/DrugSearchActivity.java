@@ -98,7 +98,6 @@ public class DrugSearchActivity extends SwipeBackActivity {
                     return;
                 }
                 GoutDrug entity = mList.get(position);
-                UIHelper.ToastMessage(mContext,entity.getTitle());
                 Intent it = new Intent(mContext, DrugDetailActivity.class);
                 it.putExtra("id", entity.getId());
                 startActivity(it);

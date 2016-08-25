@@ -194,6 +194,14 @@
             android:text="嘌呤详情"
             android:textColor="@color/white"
             android:textSize="@dimen/gout_tsize_56" />
-
+        <ImageButton
+            android:id="@+id/btn_share"
+            android:layout_width="@dimen/space_142"
+            android:layout_height="match_parent"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:background="@null"
+            android:src="@drawable/btn_more_bg" />
     </RelativeLayout>
 </RelativeLayout>
