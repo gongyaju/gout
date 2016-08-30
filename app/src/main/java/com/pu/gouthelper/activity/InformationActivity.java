@@ -5,6 +5,7 @@ import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.text.TextUtils;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
@@ -35,7 +36,6 @@ import org.xutils.view.annotation.Event;
 import org.xutils.view.annotation.ViewInject;
 
 
-
 /**
  * Created by Requiem on 16/03/13.
  * 完善资料
@@ -52,15 +52,15 @@ public class InformationActivity extends SwipeBackActivity {
     @ViewInject(R.id.infomation_tv_birthday)
     private TextView infomation_tv_birthday;
     @ViewInject(R.id.infomation_tv_history)
-    private TextView infomation_tv_history;
+    private EditText infomation_tv_history;
     @ViewInject(R.id.infomation_edt_height)
     private EditText infomation_edt_height;
     @ViewInject(R.id.infomation_edt_weight)
     private EditText infomation_edt_weight;
     private PopupWindow mpopupWindow;
 
-    private String pain;
-
+    private String pain = "";
+    private String drug = "";
     private MyInfo info = null;
     private int sex = 1;
     private Handler mHandler = new Handler() {
@@ -69,6 +69,7 @@ public class InformationActivity extends SwipeBackActivity {
             super.handleMessage(msg);
             switch (msg.what) {
                 case SubmitMyInfoRequest.SUCCESS:
+                    SharedPreferences.getInstance().putBoolean("first-time-center", false);
                     UIHelper.ToastMessage(InformationActivity.this, "" + msg.obj);
                     finish();
                     break;
@@ -131,7 +132,7 @@ public class InformationActivity extends SwipeBackActivity {
         }
     }
 
-    @Event(value = {R.id.infomation_btn_submit, R.id.recipe_btn_goback, R.id.infomation_tv_pain, R.id.infomation_tv_drug, R.id.infomation_tv_birthday, R.id.infomation_tv_history}, type = View.OnClickListener.class)
+    @Event(value = {R.id.infomation_btn_submit, R.id.recipe_btn_goback, R.id.infomation_tv_pain, R.id.infomation_tv_drug, R.id.infomation_tv_birthday}, type = View.OnClickListener.class)
     private void onClick(View v) {
         switch (v.getId()) {
             case R.id.infomation_btn_submit:
@@ -152,9 +153,9 @@ public class InformationActivity extends SwipeBackActivity {
                 PopupBirthday popupBirthday = new PopupBirthday(this, mHandler);
                 popupBirthday.showPopupWindow(infomation_tv_birthday);
                 break;
-            case R.id.infomation_tv_history:
-                showPopup(infomation_tv_history);
-                break;
+//            case R.id.infomation_tv_history:
+//                showPopup(infomation_tv_history);
+//                break;
         }
     }
 
@@ -163,11 +164,14 @@ public class InformationActivity extends SwipeBackActivity {
         super.onActivityResult(requestCode, resultCode, data);
         switch (requestCode) {
             case 0:
-                if (data!=null){
+                if (data != null) {
                     pain = data.getStringExtra("pain");
                 }
                 break;
             case 1:
+                if (data != null) {
+                    drug = data.getStringExtra("drug");
+                }
                 break;
         }
     }
@@ -175,10 +179,9 @@ public class InformationActivity extends SwipeBackActivity {
     private void send() {
         String nikename = infomation_tv_nikename.getText().toString().trim();
         String birthday = infomation_tv_birthday.getText().toString();
-        String history = infomation_tv_history.getText().toString();
+        String history = infomation_tv_history.getText().toString().trim();
         String height = infomation_edt_height.getText().toString().trim();
         String weight = infomation_edt_weight.getText().toString().trim();
-
         if (StringUtils.isEmpty(weight)) {
             UIHelper.ToastMessage(this, "您还没有填写体重呢~");
             return;
@@ -197,27 +200,29 @@ public class InformationActivity extends SwipeBackActivity {
         } else {
             info.setNickname(nikename);
         }
-        if (StringUtils.isEmpty(birthday) || birthday.equals("请选择")) {
+        if (TextUtils.isEmpty(birthday) || birthday.equals("请选择")) {
             UIHelper.ToastMessage(this, "您还没有填写生日~");
             return;
         } else {
             info.setBirthday(birthday);
         }
-        if (StringUtils.isEmpty(history) || history.equals("请选择")) {
+        if (TextUtils.isEmpty(history) || history.equals("请选择")) {
             UIHelper.ToastMessage(this, "您还没有填写病历~");
             return;
         } else {
-            if (history.equals("有过")) {
-                info.setHistory("1");
-            } else {
-                info.setHistory("2");
-            }
+            info.setHistory(history);
         }
-        if (StringUtils.isEmpty(pain)) {
+        if (TextUtils.isEmpty(pain)) {
             UIHelper.ToastMessage(this, "您还没有选择疼痛区域呢~");
             return;
         } else {
             info.setTarea(pain);
+        }
+        if (TextUtils.isEmpty(drug)) {
+            UIHelper.ToastMessage(this, "您还没有选择疼痛区域呢~");
+            return;
+        } else {
+            info.setDrug(drug);
         }
         info.setSex(sex + "");
         new SubmitMyInfoRequest(mHandler, info);

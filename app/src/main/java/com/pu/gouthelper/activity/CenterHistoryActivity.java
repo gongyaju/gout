@@ -80,15 +80,36 @@ public class CenterHistoryActivity extends SwipeBackActivity {
     }
 
     private void setData(LoginResult login_msg) {
-        history_tv_age.setText("年龄：" + login_msg.getAge());
-        history_tv_height.setText("身高：" + login_msg.getHeight() + "cm");
-        history_tv_year.setText("病史：" + login_msg.getHistory() + "年");
-        history_tv_weight.setText("体重：" + login_msg.getWeight() + "KG");
-        history_tv_buwei.setText("发作部位：" + login_msg.getTarea());
-        history_tv_breaktime.setText("上次发作时间：" + DateUtil.date2String(Long.parseLong(login_msg.getTm()) *
-                1000, "yyyy-MM-dd HH:mm"));
-        history_tv_durg.setText("服用药物：" + login_msg.getDrug());
-        history_tv_other.setText("有无其他病史：无");
+        try {
+            history_tv_age.setText("年龄：" + login_msg.getAge());
+            history_tv_height.setText("身高：" + login_msg.getHeight() + "cm");
+            history_tv_year.setText("病史：" + login_msg.getHistory() + "年");
+            history_tv_weight.setText("体重：" + login_msg.getWeight() + "KG");
+            history_tv_breaktime.setText("上次发作时间：" + DateUtil.date2String(Long.parseLong(login_msg.getTm()) *
+                    1000, "yyyy-MM-dd HH:mm"));
+            history_tv_durg.setText("服用药物：" + login_msg.getDrug());
+            history_tv_other.setText("有无其他病史：无");
+            StringBuilder builder = new StringBuilder();
+            //1.肘 2.手指 3.膝盖 4.脚 5.踝
+            if (login_msg.getTarea().contains("1")) {
+                builder.append("肘"+" ");
+            }
+            if (login_msg.getTarea().contains("2")) {
+                builder.append("手指"+" ");
+            }
+            if (login_msg.getTarea().contains("3")) {
+                builder.append("膝盖"+" ");
+            }
+            if (login_msg.getTarea().contains("4")) {
+                builder.append("脚"+" ");
+            }
+            if (login_msg.getTarea().contains("5")) {
+                builder.append("踝"+" ");
+            }
+            history_tv_buwei.setText("发作部位：" + builder.toString());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     @Event(value = {R.id.history_btn_close}, type = View.OnClickListener.class)

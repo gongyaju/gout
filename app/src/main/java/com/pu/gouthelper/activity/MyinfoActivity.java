@@ -80,6 +80,7 @@ public class MyinfoActivity extends SwipeBackActivity {
                 startActivityForResult(intent, REQUEST_IMAGE);
                 break;
             case R.id.myinfo_tv_name:
+                startActivity(new Intent(mContext,NickNameActivity.class));
                 break;
             case R.id.myinfo_tv_address:
                 startActivity(new Intent(mContext,AddressActivity.class));

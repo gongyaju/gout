@@ -14,13 +14,13 @@ import com.orhanobut.logger.Logger;
 import com.pu.gouthelper.R;
 
 import java.util.Calendar;
+import java.util.Locale;
 
 /**
  * Created by Requiem on 2016/8/20.
  */
 public class ClockService extends Service {
 
-    private final long INTERVAL = 1000 * 60 * 60 * 24;
 
     @Nullable
     @Override
@@ -41,22 +41,10 @@ public class ClockService extends Service {
                 PendingIntent.getBroadcast(this, 0, intent, 0);
         AlarmManager am = (AlarmManager) getApplication()
                 .getSystemService(Context.ALARM_SERVICE);
-        Calendar calendar1 = Calendar.getInstance();
+        Calendar calendar1 = Calendar.getInstance(Locale.getDefault());
+        calendar1.setTimeInMillis(System.currentTimeMillis());
         calendar1.set(Calendar.HOUR_OF_DAY, 10);
-        Calendar calendar2 = Calendar.getInstance();
-        calendar2.set(Calendar.HOUR_OF_DAY, 13);
-        Calendar calendar3 = Calendar.getInstance();
-        calendar3.set(Calendar.HOUR_OF_DAY, 17);
-        Calendar calendar4 = Calendar.getInstance();
-        calendar4.set(Calendar.HOUR_OF_DAY, 21);
-
         am.setRepeating(AlarmManager.RTC_WAKEUP, calendar1.getTimeInMillis(),
-                INTERVAL, sender);
-        am.setRepeating(AlarmManager.RTC_WAKEUP, calendar2.getTimeInMillis(),
-                INTERVAL, sender);
-        am.setRepeating(AlarmManager.RTC_WAKEUP, calendar3.getTimeInMillis(),
-                INTERVAL, sender);
-        am.setRepeating(AlarmManager.RTC_WAKEUP, calendar4.getTimeInMillis(),
-                INTERVAL, sender);
+                AlarmManager.INTERVAL_DAY, sender);
     }
 }

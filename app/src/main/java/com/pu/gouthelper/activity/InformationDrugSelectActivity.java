@@ -1,6 +1,7 @@
 package com.pu.gouthelper.activity;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -11,6 +12,7 @@ import android.widget.TextView;
 
 import com.pu.gouthelper.R;
 import com.pu.gouthelper.adapter.InformationDrugAdapter;
+import com.pu.gouthelper.base.F;
 import com.pu.gouthelper.bean.GoutDrug;
 import com.pu.gouthelper.ui.UIHelper;
 import com.pu.gouthelper.ui.swipebacklayout.SwipeBackActivity;
@@ -58,7 +60,7 @@ public class InformationDrugSelectActivity extends SwipeBackActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mContext = this;
-        new GoutDrugListRequest(mHandler, "18", "");
+        new GoutDrugListRequest(mHandler, F.PAGE_SIZE + "", "");
         informationDrugAdapter = new InformationDrugAdapter(mContext, drugs);
         infomation_gv_druglist.setAdapter(informationDrugAdapter);
         infomation_gv_druglist.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -79,7 +81,16 @@ public class InformationDrugSelectActivity extends SwipeBackActivity {
     private void onClick(View v) {
         switch (v.getId()) {
             case R.id.infomation_btn_submit:
-                UIHelper.ToastMessage(this, "提交");
+                StringBuilder drug = new StringBuilder();
+                for (GoutDrug e : drugs) {
+                    if (e.isSelect()) {
+                        drug.append(e.getId() + ",");
+                    }
+                }
+                Intent it = new Intent(this, InformationActivity.class);
+                it.putExtra("drug", drug.toString());
+                setResult(1, it);
+                finish();
                 break;
             case R.id.recipe_btn_goback:
                 finish();

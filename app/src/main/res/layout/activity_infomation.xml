@@ -157,20 +157,21 @@
                 android:text="病史"
                 android:textColor="@color/text_color_6"
                 android:textSize="@dimen/space_46" />
-
-            <TextView
+            <EditText
                 android:id="@+id/infomation_tv_history"
                 android:layout_width="@dimen/space_300"
                 android:layout_height="@dimen/space_120"
                 android:layout_marginLeft="@dimen/space_40"
                 android:background="@drawable/bg_edittext"
-                android:drawableRight="@drawable/xiangxia"
                 android:gravity="center|left"
+                android:hint="年"
+                android:inputType="number"
+                android:maxLength="3"
                 android:paddingLeft="@dimen/space_30"
                 android:paddingRight="@dimen/space_40"
                 android:singleLine="true"
-                android:text="请选择"
                 android:textColor="@color/text_color_6"
+                android:textColorHint="@color/text_color_c"
                 android:textSize="@dimen/space_46" />
         </LinearLayout>
 
@@ -194,6 +195,7 @@
                 android:layout_height="@dimen/space_120"
                 android:layout_marginLeft="@dimen/space_40"
                 android:background="@drawable/bg_edittext"
+                android:inputType="number"
                 android:gravity="center|left"
                 android:hint="cm"
                 android:maxLength="3"
@@ -221,6 +223,7 @@
                 android:gravity="center|left"
                 android:hint="kg"
                 android:maxLength="3"
+                android:inputType="number"
                 android:paddingLeft="@dimen/space_30"
                 android:paddingRight="@dimen/space_40"
                 android:singleLine="true"

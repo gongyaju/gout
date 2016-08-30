@@ -44,6 +44,8 @@ public class GoutKnowDetail {
     private String comments;
     private String tm;
     private String uptm;
+    private Like like;
+
 
     public String getId() {
         return id;
@@ -100,7 +102,6 @@ public class GoutKnowDetail {
     public void setContent(String content) {
         this.content = content;
     }
-
 
 
     public String getKeywords() {
@@ -189,5 +190,13 @@ public class GoutKnowDetail {
 
     public void setSource(Object source) {
         this.source = source;
+    }
+
+    public Like getLike() {
+        return like;
+    }
+
+    public void setLike(Like like) {
+        this.like = like;
     }
 }

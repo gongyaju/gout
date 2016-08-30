@@ -2,11 +2,13 @@ package com.pu.gouthelper.webservice;
 
 import android.os.Handler;
 import android.os.Message;
+
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.pu.gouthelper.base.BaseRequest;
 import com.pu.gouthelper.base.URLlist;
 import com.pu.gouthelper.bean.GoutKnowDetail;
+import com.pu.gouthelper.bean.Like;
 
 import org.xutils.ex.HttpException;
 import org.xutils.http.RequestParams;
@@ -38,7 +40,9 @@ public class GoutKnowInfoRequest extends BaseRequest {
         int state = object.getIntValue("state");
         if (state == 1) {
             Message msg = mHandler.obtainMessage();
-            GoutKnowDetail entity = JSONObject.parseObject(object.getString("data"), GoutKnowDetail.class);
+            Like like = JSON.parseObject(object.getString("like"), Like.class);
+            GoutKnowDetail entity = JSON.parseObject(object.getString("data"), GoutKnowDetail.class);
+            entity.setLike(like);
             msg.obj = entity;
             msg.what = SUCCESS;
             mHandler.sendMessage(msg);

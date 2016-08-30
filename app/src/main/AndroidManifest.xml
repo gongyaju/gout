@@ -150,6 +150,9 @@
             android:name=".activity.InformationDrugSelectActivity"
             android:screenOrientation="portrait" />
         <activity
+            android:name=".activity.GiveActivity"
+            android:screenOrientation="portrait" />
+        <activity
             android:name=".activity.InformationPainSelectActivity"
             android:screenOrientation="portrait" />
         <activity

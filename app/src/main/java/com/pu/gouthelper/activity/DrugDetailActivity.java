@@ -2,6 +2,7 @@ package com.pu.gouthelper.activity;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -27,6 +28,7 @@ import com.pu.gouthelper.base.F;
 import com.pu.gouthelper.base.StringUtils;
 import com.pu.gouthelper.bean.ActionItem;
 import com.pu.gouthelper.bean.DrugDetail;
+import com.pu.gouthelper.bean.Like;
 import com.pu.gouthelper.dialog.TitlePopup;
 import com.pu.gouthelper.fragment.DrugDetailTabOneFragment;
 import com.pu.gouthelper.fragment.DrugDetailTabTwoFragment;
@@ -83,7 +85,7 @@ public class DrugDetailActivity extends SwipeBackActivity {
     private DrugDetailTabOneFragment drugDetailTabOneFragment;
     private DrugDetailTabTwoFragment drugDetailTabTwoFragment;
     private DrugDetail entity = null;
-
+    private Like like = null;
 
     private Handler mHandler = new Handler() {
         @Override
@@ -93,7 +95,8 @@ public class DrugDetailActivity extends SwipeBackActivity {
                 case GoutDrugInfoRequest.SUCCESS:
                     JSONObject object = JSON.parseObject(msg.obj + "");
                     if (object.getIntValue("state") == 1) {
-                        entity = JSONObject.parseObject(object.getString("data"), DrugDetail.class);
+                        like = JSON.parseObject(object.getString("like"), Like.class);
+                        entity = JSON.parseObject(object.getString("data"), DrugDetail.class);
                         setDate(entity);
                     }
                     break;
@@ -105,6 +108,7 @@ public class DrugDetailActivity extends SwipeBackActivity {
                 case ZDownRequest.ERROR:
                 case ZDownRequest.SUCCESS:
                     UIHelper.ToastMessage(mContext, msg.obj + "");
+                    new GoutDrugInfoRequest(mHandler, id);
                     break;
                 case CommentAddRequest.ERROR:
                     UIHelper.ToastMessage(mContext, msg.obj + "");
@@ -204,6 +208,24 @@ public class DrugDetailActivity extends SwipeBackActivity {
         drug_tv_title.setText(entity.getTitle());
         drug_tv_price.setText("￥" + entity.getMin_price() + "-" + "￥" + entity.getMax_price());
         drug_btn_zan.setText(entity.getUps());
+        if(like!=null&&like.getUp().equals("1")){
+            Drawable drawable = mContext.getResources().getDrawable(R.drawable.zan_click);
+            drawable.setBounds(0, 0, drawable.getMinimumWidth(), drawable.getMinimumHeight());//必须设置图片大小，否则不显示
+            drug_btn_zan.setCompoundDrawables(drawable, null, null, null);
+        }else{
+            Drawable drawable = mContext.getResources().getDrawable(R.drawable.icon_zan);
+            drawable.setBounds(0, 0, drawable.getMinimumWidth(), drawable.getMinimumHeight());//必须设置图片大小，否则不显示
+            drug_btn_zan.setCompoundDrawables(drawable, null, null, null);
+        }
+        if(like!=null&&like.getDown().equals("1")){
+            Drawable drawable = mContext.getResources().getDrawable(R.drawable.cai_click);
+            drawable.setBounds(0, 0, drawable.getMinimumWidth(), drawable.getMinimumHeight());//必须设置图片大小，否则不显示
+            drug_btn_cai.setCompoundDrawables(drawable, null, null, null);
+        }else{
+            Drawable drawable = mContext.getResources().getDrawable(R.drawable.icon_cai);
+            drawable.setBounds(0, 0, drawable.getMinimumWidth(), drawable.getMinimumHeight());//必须设置图片大小，否则不显示
+            drug_btn_cai.setCompoundDrawables(drawable, null, null, null);
+        }
         progressBar1_text1.setText(entity.getUps() + "人顶");
         drug_btn_cai.setText(entity.getDowns());
         progressBar1_text2.setText(entity.getDowns() + "人踩");
@@ -231,10 +253,18 @@ public class DrugDetailActivity extends SwipeBackActivity {
                 }
                 break;
             case R.id.drug_btn_zan:
+                if (like.getDown().equals("1")){
+                    UIHelper.ToastMessage(mContext, "您已经踩过了~");
+                    return;
+                }
                 new ZUpRequest(mHandler, entity.getId());
                 showLoading(mContext);
                 break;
             case R.id.drug_btn_cai:
+                if (like.getUp().equals("1")){
+                    UIHelper.ToastMessage(mContext, "您已经赞过了~");
+                    return;
+                }
                 new ZDownRequest(mHandler, entity.getId());
                 showLoading(mContext);
                 break;

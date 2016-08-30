@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/space_142"
+        android:background="@color/white">
+
+        <ImageButton
+            android:id="@+id/remind_btn_goback"
+            android:layout_width="@dimen/space_120"
+            android:layout_height="match_parent"
+            android:background="@null"
+            android:src="@drawable/go_back_brack" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:text="打赏支持"
+            android:textSize="@dimen/gout_tsize_56" />
+
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/main_line" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/space_150"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="@dimen/space_340"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="打赏支持"
+            android:textColor="@color/text_color_3"
+            android:textSize="@dimen/space_46" />
+
+        <View
+            android:layout_width="1px"
+            android:layout_height="match_parent"
+            android:background="@color/main_line" />
+
+        <EditText
+            android:id="@+id/remind_edt_name"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@null"
+            android:hint="0.00元"
+            android:paddingLeft="@dimen/space_20"
+            android:singleLine="true"
+            android:textSize="@dimen/space_46" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/main_line" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/topic_edt_content"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/space_600"
+            android:layout_margin="@dimen/space_40"
+            android:background="@drawable/bg_edittext"
+            android:gravity="top|left"
+            android:hint="对作者说点什么..."
+            android:maxLength="600"
+            android:paddingLeft="@dimen/space_18"
+            android:paddingTop="@dimen/space_40"
+            android:singleLine="false"
+            android:textColorHint="@color/text_color_c" />
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/main_line" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/space_190">
+
+        <TextView
+            android:id="@+id/remind_tv_dtm"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:drawableLeft="@drawable/bg_weixin"
+            android:drawablePadding="@dimen/space_20"
+            android:gravity="center_vertical"
+            android:paddingLeft="@dimen/space_60"
+            android:paddingRight="@dimen/space_60"
+            android:text="微信支付"
+            android:textColor="@color/text_color_3"
+            android:textSize="@dimen/space_46" />
+
+        <CheckBox
+            android:id="@+id/checkbox"
+            android:layout_width="@dimen/space_160"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:checked="true" />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/main_line" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/space_190"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/nickname_btn"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/space_120"
+            android:layout_marginLeft="@dimen/space_60"
+            android:layout_marginRight="@dimen/space_60"
+            android:layout_marginTop="@dimen/space_40"
+            android:background="@drawable/btn_login_bg"
+            android:text="确定"
+            android:textColor="#ffffffff"
+            android:textSize="@dimen/space_50" />
+    </LinearLayout>
+
+
+</LinearLayout>

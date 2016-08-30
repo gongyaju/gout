@@ -21,6 +21,7 @@ import com.pu.gouthelper.activity.CenterMyInfoActivity;
 import com.pu.gouthelper.activity.CenterMyTopicActivity;
 import com.pu.gouthelper.activity.CenterRemindActivity;
 import com.pu.gouthelper.activity.CenterSettingActivity;
+import com.pu.gouthelper.activity.InformationActivity;
 import com.pu.gouthelper.activity.MyinfoActivity;
 import com.pu.gouthelper.base.BaseFragment;
 import com.pu.gouthelper.base.BitmapUtils;
@@ -54,7 +55,9 @@ public class HealthCenterFragment extends BaseFragment {
                 case MyInfoGetRequest.SUCCESS:
                     LoginResult login_msg = (LoginResult) msg.obj;
                     center_tv_toux.setText(login_msg.getMobile());
-                    BitmapUtils.getInstance().display(center_img_toux,login_msg.getAvatar());
+                    BitmapUtils.getInstance().display(center_img_toux, login_msg.getAvatar());
+                    SharedPreferences.getInstance().putString("avatar", login_msg.getAvatar());
+                    SharedPreferences.getInstance().putString("nickname", login_msg.getNickname());
                     break;
             }
         }
@@ -73,6 +76,10 @@ public class HealthCenterFragment extends BaseFragment {
         context = getActivity();
         initView();
         initData();
+        boolean firstTime = SharedPreferences.getInstance().getBoolean("first-time-center", true);
+        if (firstTime) {
+            startActivity(new Intent(context, InformationActivity.class));
+        }
 
     }
 

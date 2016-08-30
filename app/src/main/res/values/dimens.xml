@@ -63,7 +63,6 @@
 	<dimen name="space_400">400px</dimen>
 	<dimen name="space_480">480px</dimen>
 	<dimen name="space_580">580px</dimen>
-	<dimen name="space_80_minus">-80px</dimen>
 	<dimen name="space_510">510px</dimen>
 	<dimen name="space_270">270px</dimen>
 	<dimen name="space_290">290px</dimen>

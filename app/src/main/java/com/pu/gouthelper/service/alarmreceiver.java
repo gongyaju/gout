@@ -42,7 +42,7 @@ public class alarmreceiver extends BroadcastReceiver {
                 builder1.setContentText("不要太晚睡哦,这个时间喝一杯水刚刚好~");
                 break;
             default:
-                builder1.setContentText("喝水去~");
+                builder1.setContentText("来,喝一杯水，放松一下~");
                 break;
         }
         builder1.setWhen(System.currentTimeMillis()); //发送时间

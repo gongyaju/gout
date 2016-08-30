@@ -2,9 +2,12 @@ package com.pu.gouthelper.activity;
 
 import android.app.Dialog;
 import android.content.Context;
+import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.text.TextUtils;
 import android.view.View;
 import android.webkit.WebView;
 import android.widget.EditText;
@@ -27,6 +30,8 @@ import com.pu.gouthelper.utils.ShareUtils;
 import com.pu.gouthelper.webservice.CommentAddRequest;
 import com.pu.gouthelper.webservice.CommentListRequest;
 import com.pu.gouthelper.webservice.GoutKnowInfoRequest;
+import com.pu.gouthelper.webservice.ZDownRequest;
+import com.pu.gouthelper.webservice.ZUpRequest;
 
 import org.xutils.view.annotation.ContentView;
 import org.xutils.view.annotation.Event;
@@ -93,6 +98,21 @@ public class GoutMsgDetailActivity extends SwipeBackActivity implements Callback
                 case CommentListRequest.ERROR:
                     box.showCustomView("hint_no_message");
                     break;
+
+                case ZUpRequest.SUCCESS:
+                    Drawable drawable = mContext.getResources().getDrawable(R.drawable.zan_click);
+                    drawable.setBounds(0, 0, drawable.getMinimumWidth(), drawable.getMinimumHeight());//必须设置图片大小，否则不显示
+                    msg_tv_zan.setCompoundDrawables(drawable, null, null, null);
+                    break;
+                case ZDownRequest.SUCCESS:
+                    Drawable drawable1 = mContext.getResources().getDrawable(R.drawable.icon_zan);
+                    drawable1.setBounds(0, 0, drawable1.getMinimumWidth(), drawable1.getMinimumHeight());//必须设置图片大小，否则不显示
+                    msg_tv_zan.setCompoundDrawables(drawable1, null, null, null);
+                    break;
+                case ZDownRequest.ERROR:
+                case ZUpRequest.ERROR:
+                    UIHelper.ToastMessage(mContext, msg.obj + "");
+                    break;
             }
             endLoading();
         }
@@ -123,9 +143,14 @@ public class GoutMsgDetailActivity extends SwipeBackActivity implements Callback
     }
 
     private void setData() {
-        if (entity.getAuthor() != null && entity.getAuthor().getId().equals("2")) {
+        if (!TextUtils.isEmpty(entity.getAuthor().getId()) && entity.getAuthor().getId().equals("2")) {
             textView5.setText("网络");
             textView6.setText("本文章摘录于互联网");
+        }
+        if(entity.getLike()!=null&&entity.getLike().getUp().equals("1")){
+            Drawable drawable = mContext.getResources().getDrawable(R.drawable.zan_click);
+            drawable.setBounds(0, 0, drawable.getMinimumWidth(), drawable.getMinimumHeight());//必须设置图片大小，否则不显示
+            msg_tv_zan.setCompoundDrawables(drawable, null, null, null);
         }
         msg_tv_zan.setText(entity.getUps());
         noun_btn_title.setText(entity.getTitle());
@@ -136,7 +161,7 @@ public class GoutMsgDetailActivity extends SwipeBackActivity implements Callback
         new CommentListRequest(mHandler, "2", id, "" + F.PAGE_SIZE);
     }
 
-    @Event(value = {R.id.noun_btn_goback, R.id.say_bnt_send, R.id.btn_share}, type = View.OnClickListener.class)
+    @Event(value = {R.id.noun_btn_goback, R.id.say_bnt_send, R.id.btn_share,R.id.msg_tv_zan,R.id.goutmsg_tv_shang}, type = View.OnClickListener.class)
     private void onClick(View v) {
         switch (v.getId()) {
             case R.id.noun_btn_goback:
@@ -157,6 +182,18 @@ public class GoutMsgDetailActivity extends SwipeBackActivity implements Callback
                 break;
             case R.id.btn_share:
                 ShareUtils.share(this, "分享痛风助手到...");
+                break;
+            case R.id.msg_tv_zan:
+                if(entity.getLike()!=null&&entity.getLike().getUp().equals("1")){
+                    new ZDownRequest(mHandler, entity.getId());
+                }else{
+                    new ZUpRequest(mHandler, entity.getId());
+                }
+                showLoading(mContext);
+                break;
+            case R.id.goutmsg_tv_shang:
+                Intent intent=new Intent(this,GiveActivity.class);
+                startActivity(intent);
                 break;
         }
     }

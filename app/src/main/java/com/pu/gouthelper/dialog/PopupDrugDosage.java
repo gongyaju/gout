@@ -35,7 +35,7 @@ public class PopupDrugDosage extends PopupWindow {
     private Handler mHandler;
     public static final int OK = 0x26;
     private GridView doasge_gv;
-    private String[] doasge = {"1/4", "1/3", "1/2", "1", "1/4", "1/3", "1/2", "1", "1/4", "1/3", "1/2", "1"};
+    private String[] doasge = {"1/4", "1/2", "1", "2"};
     private List<Doasge> mList = new ArrayList<>();
     private DosageListAdapter dosageListAdapter;
     private Context mContext;
@@ -77,12 +77,11 @@ public class PopupDrugDosage extends PopupWindow {
         doasge_gv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Doasge entity = mList.get(position);
-                if (entity.isSelect()) {
-                    entity.setIsSelect(false);
-                } else {
-                    entity.setIsSelect(true);
+                for (Doasge d : mList) {
+                    d.setIsSelect(false);
                 }
+                Doasge entity = mList.get(position);
+                entity.setIsSelect(true);
                 dosageListAdapter.notifyDataSetChanged();
             }
         });

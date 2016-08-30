@@ -45,6 +45,10 @@ public class RemindAddActivity extends SwipeBackActivity {
     private LinearLayout remind_img_color;
     @ViewInject(R.id.remind_tv_dosage)
     private TextView remind_tv_dosage;
+    @ViewInject(R.id.remind_tv_days)
+    private TextView remind_tv_days;
+    @ViewInject(R.id.remind_tv_dtm)
+    private TextView remind_tv_dtm;
     @ViewInject(R.id.remind_edt_name)
     private EditText remind_edt_name;
 
@@ -70,12 +74,15 @@ public class RemindAddActivity extends SwipeBackActivity {
                     break;
                 case PopupDrugDosage.OK:
                     doasge = msg.obj + "";
+                    remind_tv_dosage.setText("服什么计量？" + doasge);
                     break;
                 case PopupDrugTime.OK:
-                    time = msg.obj+"";
+                    time = msg.obj + "";
+                    remind_tv_dtm.setText("每日都在何时使用？" + time);
                     break;
                 case PopupDrugDays.OK:
                     days = msg.obj + "";
+                    remind_tv_days.setText("需要服用多少天？" + Integer.parseInt(days));
                     break;
             }
 
@@ -121,7 +128,7 @@ public class RemindAddActivity extends SwipeBackActivity {
                 }
                 entity.setDosage(doasge);
                 entity.setTitle(name);
-                entity.setColor(color+"");
+                entity.setColor(color + "");
                 entity.setDtm(time);
                 entity.setTm(System.currentTimeMillis() / 1000 + "");
                 if (entity != null) {

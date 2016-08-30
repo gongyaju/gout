@@ -60,7 +60,7 @@
                     android:textColor="@color/white"
                     android:textSize="@dimen/space_46" />
 
-                <TextView
+                <ImageView
                     android:id="@+id/break_tv_click"
                     android:layout_width="@dimen/space_270"
                     android:layout_height="@dimen/space_270"
@@ -195,8 +195,9 @@
                 android:orientation="vertical">
 
                 <LinearLayout
+                    android:id="@+id/myinfo_ll_info"
                     android:layout_width="match_parent"
-                    android:layout_height="@dimen/space_420"
+                    android:layout_height="wrap_content"
                     android:background="@color/white"
                     android:orientation="vertical"
                     android:paddingLeft="@dimen/space_60"
@@ -247,7 +248,6 @@
                         android:id="@+id/goutmsg_tv_content"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:lines="2"
                         android:layout_marginTop="@dimen/space_20"
                         android:text="--"
                         android:textColor="@color/text_color_9"
@@ -261,7 +261,7 @@
 
                     <RelativeLayout
                         android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
+                        android:layout_height="@dimen/space_120"
                         android:layout_alignParentEnd="true"
                         android:layout_alignParentRight="true"
                         android:layout_alignParentTop="true">
@@ -322,7 +322,7 @@
                     android:layout_marginTop="@dimen/space_40"
                     android:paddingLeft="@dimen/space_60"
                     android:paddingRight="@dimen/space_60"
-                    android:text="中国棋手唐韦星执黑第203手不计点胜金志锡中国棋手唐韦星执黑第203手不计点胜金志锡中国棋手唐韦星执黑第203手不计点胜金志锡中国棋手唐韦星执黑第203手不计点胜金志锡"
+                    android:text="随着社会的进步，痛风病在现实生活当中经常见到，我们大家都知道痛风患者每日都需要控制食物中的嘌呤摄入量，那么，痛风患者可以吃豆腐吗？"
                     android:textColor="@color/text_color_6"
                     android:textSize="@dimen/space_36" />
 

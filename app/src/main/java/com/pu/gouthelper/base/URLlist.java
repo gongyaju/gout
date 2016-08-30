@@ -7,6 +7,10 @@ public class URLlist {
     public static final String URI_IP = "http://www.tfzs999.com";
 
     /**
+     * 推送注册
+     */
+    public static final String JPUSH = URI_IP + "/Mobile/Api/set_client_id";
+    /**
      * 首页轮播图
      */
     public static final String SLIDE_LIST = URI_IP + "/Mobile/Slide/lists";

@@ -19,6 +19,8 @@ import com.pu.gouthelper.fragment.InteractiveFragment;
 import com.pu.gouthelper.fragment.PurinSearchFragment;
 import com.pu.gouthelper.service.ClockService;
 import com.pu.gouthelper.ui.UIHelper;
+import com.pu.gouthelper.webservice.JpushRequest;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Timer;
@@ -52,6 +54,7 @@ public class MainActivity extends BaseFragmentActivity {
         F.SCREEN_SIZE(this);
         Intent intent = new Intent(this, ClockService.class);
         startService(intent);
+        new JpushRequest(this);
     }
 
     @Override

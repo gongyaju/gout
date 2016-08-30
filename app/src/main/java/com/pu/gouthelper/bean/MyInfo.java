@@ -10,7 +10,7 @@ public class MyInfo {
     private String history;  //              :'1'  //痛风历史  1 有过  2 无
     private String height;    //            :'180' //身高
     private String weight;    //          :'75'  //体重
-    private String tarea;     //          :'1,2'  //疼痛区域  这个数字，你们自己商定，每个区域，用数字标识，客户端保持一致就行了,多个区域，用英文逗号分隔
+    private String tarea;     //          :'1,2'  //疼痛区域  这个数字，你们自己商定，每个区域，用数字标识，客户端保持一致就行了,多个区域，用英文逗号分隔 1.肘 2.手指 3.膝盖 4.脚 5.踝
     private String drug;        //       :'1,2'  //用药历史，这里传的是药品的ID， 多个药品ID，用英文逗号分隔
 
     public String getNickname() {

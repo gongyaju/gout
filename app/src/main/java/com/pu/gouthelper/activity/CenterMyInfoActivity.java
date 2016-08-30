@@ -5,11 +5,14 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.text.TextUtils;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.pu.gouthelper.R;
+import com.pu.gouthelper.base.BitmapUtils;
 import com.pu.gouthelper.base.SharedPreferences;
 import com.pu.gouthelper.bean.Forecast;
 import com.pu.gouthelper.bean.ForecastNew;
@@ -23,6 +26,8 @@ import com.pu.gouthelper.webservice.ForecastRequest;
 import org.xutils.view.annotation.ContentView;
 import org.xutils.view.annotation.Event;
 import org.xutils.view.annotation.ViewInject;
+
+import me.nereo.multi_image_selector.bean.Image;
 
 /**
  * Created by Requiem on 2016/3/22.
@@ -49,6 +54,8 @@ public class CenterMyInfoActivity extends SwipeBackActivity {
     @ViewInject(R.id.myinfo_tv_nickname)
     private TextView myinfo_tv_nickname;
 
+    @ViewInject(R.id.break_tv_click)
+    private ImageView break_tv_click;
     @ViewInject(R.id.goutmsg_tv_title)
     private TextView goutmsg_tv_title;
     @ViewInject(R.id.goutmsg_tv_time)
@@ -60,7 +67,7 @@ public class CenterMyInfoActivity extends SwipeBackActivity {
     @ViewInject(R.id.msg_tv_msg)
     private TextView msg_tv_msg;
 
-
+    private ForecastNew forecastNew = null;
 
     private Handler mHandler = new Handler() {
         @Override
@@ -69,6 +76,9 @@ public class CenterMyInfoActivity extends SwipeBackActivity {
             switch (msg.what) {
                 case ForecastRequest.SUCCESS:
                     Forecast forecast = (Forecast) msg.obj;
+                    if (TextUtils.isEmpty(forecast.getMsg())) {
+                        myinfo_tv_msg.setVisibility(View.GONE);
+                    }
                     myinfo_tv_msg.setText(forecast.getMsg());
                     progressBar1_text.setText("安全类食物：" + forecast.getSecurity() + "次");
                     progressBar1.setProgress(forecast.getSecurity());
@@ -78,7 +88,7 @@ public class CenterMyInfoActivity extends SwipeBackActivity {
                     progressBar3.setProgress(forecast.getRisk());
                     break;
                 case ForecastNewsRequest.SUCCESS:
-                    ForecastNew forecastNew = (ForecastNew) msg.obj;
+                    forecastNew = (ForecastNew) msg.obj;
                     setForecastNew(forecastNew);
                     break;
                 case ForecastNewsRequest.ERROR:
@@ -100,6 +110,7 @@ public class CenterMyInfoActivity extends SwipeBackActivity {
 
 
     private void initView() {
+        BitmapUtils.getInstance().display(break_tv_click, SharedPreferences.getInstance().getString("avatar", ""));
         myinfo_tv_nickname.setText(SharedPreferences.getInstance().getString("nickname", "--"));
     }
 
@@ -112,12 +123,12 @@ public class CenterMyInfoActivity extends SwipeBackActivity {
     private void setForecastNew(ForecastNew forecastNew) {
         goutmsg_tv_title.setText(forecastNew.getTitle());
         goutmsg_tv_time.setText(DateUtil.date2String(Long.parseLong(forecastNew.getTm()) * 1000, "yyyy-MM-dd HH:mm"));
-        goutmsg_tv_content.setText(forecastNew.getContent());
+        goutmsg_tv_content.setText(forecastNew.getSummary());
         msg_tv_zan.setText(forecastNew.getUps());
         msg_tv_msg.setText(forecastNew.getComments());
     }
 
-    @Event(value = {R.id.break_btn_goback, R.id.break_btn_more, R.id.myinfo_btn_help, R.id.goutmsg_tv_change}, type = View.OnClickListener.class)
+    @Event(value = {R.id.break_btn_goback, R.id.break_btn_more, R.id.myinfo_btn_help, R.id.goutmsg_tv_change, R.id.myinfo_ll_info}, type = View.OnClickListener.class)
     private void onClick(View v) {
         switch (v.getId()) {
             case R.id.break_btn_goback:
@@ -134,6 +145,11 @@ public class CenterMyInfoActivity extends SwipeBackActivity {
                 //换一换
                 new ForecastNewsRequest(mHandler);
                 showLoading(mContext);
+                break;
+            case R.id.myinfo_ll_info:
+                Intent intent1 = new Intent(mContext, GoutMsgDetailActivity.class);
+                intent1.putExtra("id", forecastNew.getId());
+                startActivity(intent1);
                 break;
         }
     }

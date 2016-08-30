@@ -46,7 +46,12 @@ public class SubmitMyInfoRequest extends BaseRequest {
         sendPost(params);
     }
 
-
+    public SubmitMyInfoRequest(Handler mHandler, String nick) {
+        this.mHandler = mHandler;
+        RequestParams params = new RequestParams(URLlist.SUBMIT_MYINFO);
+        params.addBodyParameter("nickname",nick);
+        sendPost(params);
+    }
     public void onSuccessed(String result) {
         JSONObject object = JSON.parseObject(result);
         int state = object.getIntValue("state");
