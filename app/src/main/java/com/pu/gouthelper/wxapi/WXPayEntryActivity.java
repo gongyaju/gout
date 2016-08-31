@@ -21,7 +21,7 @@ public class WXPayEntryActivity extends BaseFragmentActivity implements IWXAPIEv
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        api = WXAPIFactory.createWXAPI(this, "wxe2bd4b20bf63fe19");
+        api = WXAPIFactory.createWXAPI(this, "wx7c5f5dad45203852");
         api.handleIntent(getIntent(), this);
     }
 
@@ -44,8 +44,8 @@ public class WXPayEntryActivity extends BaseFragmentActivity implements IWXAPIEv
             case 0:
                 UIHelper.ToastMessage(this, resp.errCode + "");
                 break;
-            case -1:    //可能是签名不一致导致
-                UIHelper.ToastMessage(this, "支付错误");
+            case -1:
+                UIHelper.ToastMessage(this, "APP签名不一致");
                 finish();
                 break;
             case -2:

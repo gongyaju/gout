@@ -36,7 +36,6 @@ public class Wechat {
         isWXAppInstalledAndSupported();
         if (!sIsWXAppInstalledAndSupported) {
             UIHelper.ToastMessage(context, "亲请安装微信,才能使用微信支付");
-//            mPayRun.setEnabled(true);
             return;
         }
         init();
@@ -55,7 +54,6 @@ public class Wechat {
         isWXAppInstalledAndSupported();
         if (!sIsWXAppInstalledAndSupported) {
             UIHelper.ToastMessage(context, "亲请安装微信,才能使用微信支付");
-//            mPayRun.setEnabled(true);
             return sIsWXAppInstalledAndSupported;
         }
         return sIsWXAppInstalledAndSupported;
@@ -68,13 +66,13 @@ public class Wechat {
         String ramdon = RamdonUtils.generateString(32);
         PayReq req = new PayReq();
         req.appId = "wx7c5f5dad45203852";//微信分配的公众账号ID
-        req.partnerId = "1285893401";     //微信支付分配的商户号
+        req.partnerId = "1372950802";     //微信支付分配的商户号
         req.prepayId = prepayId;         //微信返回的支付交易会话ID
         req.nonceStr = ramdon;        //随机字符串，不长于32位。推荐随机数生成算法
         req.timeStamp = time;         //时间戳
         req.packageValue = "Sign=WXPay";//暂填写固定值Sign=WXPay
-        String stringA = "appid=wx7c5f5dad45203852&noncestr=" + ramdon + "&package=Sign=WXPay&partnerid=1285893401&prepayid=" + prepayId + "&timestamp=" + time + "";
-        String stringSignTemp = stringA + "&key=huimin20151125pool2008lihuan2222";
+        String stringA = "appid=wx7c5f5dad45203852&noncestr=" + ramdon + "&package=Sign=WXPay&partnerid=1372950802&prepayid=" + prepayId + "&timestamp=" + time + "";
+        String stringSignTemp = stringA + "&key=tfzs999pool200820160816ma3he4222";
         req.sign = MD5.getMessageDigest(stringSignTemp.getBytes()).toUpperCase();//参数签名
         api = WXAPIFactory.createWXAPI(context, "wx7c5f5dad45203852");
         //发送参数

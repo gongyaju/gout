@@ -53,11 +53,12 @@
             android:background="@color/main_line" />
 
         <EditText
-            android:id="@+id/remind_edt_name"
+            android:id="@+id/give_tv_money"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@null"
             android:hint="0.00元"
+            android:inputType="numberDecimal"
             android:paddingLeft="@dimen/space_20"
             android:singleLine="true"
             android:textSize="@dimen/space_46" />
