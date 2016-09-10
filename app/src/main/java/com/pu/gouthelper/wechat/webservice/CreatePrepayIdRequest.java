@@ -14,6 +14,7 @@ import com.pu.gouthelper.base.MD5;
 import com.pu.gouthelper.base.NetUtils;
 import com.pu.gouthelper.base.RamdonUtils;
 import com.pu.gouthelper.base.SharedPreferences;
+import com.pu.gouthelper.base.Sign;
 import com.pu.gouthelper.base.URLlist;
 import com.pu.gouthelper.base.XMLBeanUtils;
 import com.pu.gouthelper.bean.AttackRecord;
@@ -41,6 +42,8 @@ public class CreatePrepayIdRequest {
      */
     public CreatePrepayIdRequest(Handler mHandler, Context context, String money) {
         this.mHandler = mHandler;
+        String signStr = Sign.getCertificateSHA1Fingerprint(context);
+        Logger.e(signStr);
         String ramdon = RamdonUtils.generateString(32);
         String orderid = "TF" + System.currentTimeMillis();
         String ip = AppUtils.getIP(context);

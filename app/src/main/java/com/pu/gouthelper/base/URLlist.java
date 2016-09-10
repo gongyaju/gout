@@ -170,5 +170,10 @@ public class URLlist {
      * 删除收藏地址
      */
     public static final String URL_USER_DEL_ADDRESS = URI_IP + "/Mobile/User/del_address";
+    /**
+     * 捐献列表
+     */
+    public static final String URL_REWARD_LIST = URI_IP + "/Mobile/reward/lists";
+
 
 }
