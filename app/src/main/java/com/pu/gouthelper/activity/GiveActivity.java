@@ -1,6 +1,9 @@
 package com.pu.gouthelper.activity;
 
+import android.content.BroadcastReceiver;
 import android.content.Context;
+import android.content.Intent;
+import android.content.IntentFilter;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -14,6 +17,7 @@ import com.pu.gouthelper.ui.UIHelper;
 import com.pu.gouthelper.ui.swipebacklayout.SwipeBackActivity;
 import com.pu.gouthelper.wechat.Wechat;
 import com.pu.gouthelper.wechat.webservice.CreatePrepayIdRequest;
+import com.pu.gouthelper.wxapi.WXPayEntryActivity;
 
 
 import org.xutils.view.annotation.ContentView;
@@ -56,7 +60,28 @@ public class GiveActivity extends SwipeBackActivity {
     }
 
     private void initData() {
+        IntentFilter dynamic_filter = new IntentFilter();
+        dynamic_filter.addAction(WXPayEntryActivity.BOADRDCAST_WXPAY);
+        registerReceiver(payResult, dynamic_filter);
+    }
 
+    private BroadcastReceiver payResult = new BroadcastReceiver() {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            if (intent.getAction().equals(WXPayEntryActivity.BOADRDCAST_WXPAY)) {    //动作检测
+                switch (intent.getIntExtra("wchat", -1)) {
+                    case 0:
+                        UIHelper.ToastMessage(context, "调用下一个接口~");
+                        break;
+                }
+            }
+        }
+    };
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        unregisterReceiver(payResult);
     }
 
     @Event(value = {R.id.remind_btn_goback, R.id.give_btn_sure}, type = View.OnClickListener.class)

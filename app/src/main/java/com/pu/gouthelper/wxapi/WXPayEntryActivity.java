@@ -15,8 +15,8 @@ import com.tencent.mm.sdk.openapi.WXAPIFactory;
 public class WXPayEntryActivity extends BaseFragmentActivity implements IWXAPIEventHandler {
 
     private static final String TAG = "MicroMsg.SDKSample.WXPayEntryActivity";
-
     private IWXAPI api;
+    public static final String BOADRDCAST_WXPAY = "com.pu.gout.wchatpay";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,7 +42,11 @@ public class WXPayEntryActivity extends BaseFragmentActivity implements IWXAPIEv
     public void onResp(BaseResp resp) {
         switch (resp.errCode) {
             case 0:
-                UIHelper.ToastMessage(this, resp.errCode + "");
+                Intent it = new Intent(BOADRDCAST_WXPAY);
+                it.putExtra("wchat", resp.errCode);
+                sendBroadcast(it);
+                UIHelper.ToastMessage(this, "支付成功");
+                finish();
                 break;
             case -1:
                 UIHelper.ToastMessage(this, "APP签名不一致");
