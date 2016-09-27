@@ -31,7 +31,9 @@
 
         <TextView
             android:id="@+id/purin_edt_search"
-            android:layout_width="@dimen/space_900"
+            android:layout_width="match_parent"
+            android:layout_marginLeft="@dimen/space_40"
+            android:layout_marginRight="@dimen/space_40"
             android:layout_height="@dimen/space_120"
             android:layout_marginBottom="@dimen/space_60"
             android:background="@drawable/bg_edittext"
@@ -41,7 +43,6 @@
             android:gravity="center_vertical"
             android:paddingLeft="@dimen/space_30"
             android:layout_alignParentBottom="true"
-            android:singleLine="true"
             android:text="输入你想知道的嘌呤含量的食物名称"
             android:textColor="@color/text_color_9"
             android:textColorHint="@color/text_color_c"

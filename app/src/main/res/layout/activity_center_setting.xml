@@ -106,9 +106,11 @@
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="1px"
+                    android:visibility="gone"
                     android:background="@drawable/list_view_divider" />
 
                 <TextView
+                    android:visibility="gone"
                     android:id="@+id/setting_tv_hlepme"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/space_142"

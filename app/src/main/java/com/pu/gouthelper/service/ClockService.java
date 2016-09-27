@@ -36,10 +36,7 @@ public class ClockService extends Service {
     }
 
     private void waterClock() {
-        setClock(0, 10, 0);
         setClock(1, 13, 0);
-        setClock(2, 17, 0);
-        setClock(3, 21, 0);
     }
 
     private void setClock(int flag, int hour, int minute) {
