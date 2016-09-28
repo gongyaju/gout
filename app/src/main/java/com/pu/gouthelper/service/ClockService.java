@@ -31,13 +31,10 @@ public class ClockService extends Service {
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
-        waterClock();
+
         return super.onStartCommand(intent, flags, startId);
     }
 
-    private void waterClock() {
-        setClock(1, 13, 0);
-    }
 
     private void setClock(int flag, int hour, int minute) {
         Intent intent = new Intent(this, alarmreceiver.class);

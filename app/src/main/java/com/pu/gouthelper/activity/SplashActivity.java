@@ -17,7 +17,6 @@ import android.widget.ImageView;
 
 import com.pu.gouthelper.R;
 import com.pu.gouthelper.base.SharedPreferences;
-import com.pu.gouthelper.service.ClockService;
 import com.pu.gouthelper.ui.UIHelper;
 import com.pu.gouthelper.ui.viewpagerindicator.CirclePageIndicator;
 import com.pu.gouthelper.webservice.LoginRequest;
