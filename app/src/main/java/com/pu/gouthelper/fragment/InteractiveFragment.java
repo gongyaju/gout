@@ -44,7 +44,7 @@ public class InteractiveFragment extends BaseFragment {
     private TopicListAdapter topicListAdapter;
     private List<Topic> topics = new ArrayList<>();
 
-    private int page = 0;
+    private int page = 1;
     private int datalength = 0;
 
     private Handler mHandler = new Handler() {
@@ -90,7 +90,7 @@ public class InteractiveFragment extends BaseFragment {
         listView.setOnRefreshListener(new PullToRefreshBase.OnRefreshListener<ListView>() {
             @Override
             public void onRefresh(PullToRefreshBase<ListView> refreshView) {
-                page = 0;
+                page = 1;
                 topics.clear();
                 loadData();
             }

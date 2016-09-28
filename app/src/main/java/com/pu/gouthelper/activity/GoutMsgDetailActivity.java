@@ -143,11 +143,11 @@ public class GoutMsgDetailActivity extends SwipeBackActivity implements Callback
     }
 
     private void setData() {
-        if (!TextUtils.isEmpty(entity.getAuthor().getId()) && entity.getAuthor().getId().equals("2")) {
-            textView5.setText("网络");
-            textView6.setText("本文章摘录于互联网");
-        }
-        if(entity.getLike()!=null&&entity.getLike().getUp().equals("1")){
+
+        textView5.setText(entity.getAuthor().getTitle());
+        textView6.setText(entity.getAuthor().getDesc());
+
+        if (entity.getLike() != null && entity.getLike().getUp().equals("1")) {
             Drawable drawable = mContext.getResources().getDrawable(R.drawable.zan_click);
             drawable.setBounds(0, 0, drawable.getMinimumWidth(), drawable.getMinimumHeight());//必须设置图片大小，否则不显示
             msg_tv_zan.setCompoundDrawables(drawable, null, null, null);
@@ -161,7 +161,7 @@ public class GoutMsgDetailActivity extends SwipeBackActivity implements Callback
         new CommentListRequest(mHandler, "2", id, "" + F.PAGE_SIZE);
     }
 
-    @Event(value = {R.id.noun_btn_goback, R.id.say_bnt_send, R.id.btn_share,R.id.msg_tv_zan,R.id.goutmsg_tv_shang}, type = View.OnClickListener.class)
+    @Event(value = {R.id.noun_btn_goback, R.id.say_bnt_send, R.id.btn_share, R.id.msg_tv_zan, R.id.goutmsg_tv_shang}, type = View.OnClickListener.class)
     private void onClick(View v) {
         switch (v.getId()) {
             case R.id.noun_btn_goback:
@@ -181,18 +181,18 @@ public class GoutMsgDetailActivity extends SwipeBackActivity implements Callback
                 showLoading(mContext);
                 break;
             case R.id.btn_share:
-                ShareUtils.share(this, entity.getTitle(),"");
+                ShareUtils.share(this, entity.getTitle(), "");
                 break;
             case R.id.msg_tv_zan:
-                if(entity.getLike()!=null&&entity.getLike().getUp().equals("1")){
+                if (entity.getLike() != null && entity.getLike().getUp().equals("1")) {
                     new ZDownRequest(mHandler, entity.getId());
-                }else{
+                } else {
                     new ZUpRequest(mHandler, entity.getId());
                 }
                 showLoading(mContext);
                 break;
             case R.id.goutmsg_tv_shang:
-                Intent intent=new Intent(this,GiveActivity.class);
+                Intent intent = new Intent(this, GiveActivity.class);
                 startActivity(intent);
                 break;
         }

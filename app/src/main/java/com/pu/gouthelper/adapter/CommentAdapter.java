@@ -13,6 +13,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.pu.gouthelper.R;
+import com.pu.gouthelper.base.BitmapUtils;
 import com.pu.gouthelper.base.BitmapView;
 import com.pu.gouthelper.bean.Comment;
 import com.pu.gouthelper.bean.GoutKnow;
@@ -58,7 +59,7 @@ public class CommentAdapter extends BaseAdapter implements View.OnClickListener 
         Comment entity = mlist.get(position);
         convertView = LayoutInflater.from(context).inflate(R.layout.item_comment, null);
         ImageView comment_img_icon = (ImageView) convertView.findViewById(R.id.comment_img_icon);
-        BitmapView.getInstance().display(comment_img_icon, entity.getUser().getAvatar());
+        BitmapUtils.getInstance().display(comment_img_icon, entity.getUser().getAvatar());
         ImageButton comment_btn_comm = (ImageButton) convertView.findViewById(R.id.comment_btn_comm);
         comment_btn_comm.setOnClickListener(this);
         comment_btn_comm.setTag(position);

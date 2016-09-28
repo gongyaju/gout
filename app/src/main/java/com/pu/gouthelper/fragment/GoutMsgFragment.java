@@ -44,7 +44,7 @@ public class GoutMsgFragment extends BaseFragment {
     private List<GoutKnow> goutKnowList = new ArrayList<>();
     private GoutMsgAdapter msgAdapter = null;
 
-    private int page = 0;
+    private int page = 1;
     private int pagesize = F.PAGE_SIZE;
     private int datalength = 0;
     private Handler mHandler = new Handler() {
@@ -89,7 +89,7 @@ public class GoutMsgFragment extends BaseFragment {
         listView.setOnRefreshListener(new PullToRefreshBase.OnRefreshListener<ListView>() {
             @Override
             public void onRefresh(PullToRefreshBase<ListView> refreshView) {
-                page = 0;
+                page = 1;
                 goutKnowList.clear();
                 loadData();
             }

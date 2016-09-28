@@ -67,21 +67,20 @@ public class TopicListAdapter extends BaseAdapter {
         topic_tv_read.setText(entity.getViews());
         TextView topic_tv_msg = (TextView) convertView.findViewById(R.id.topic_tv_msg);
         topic_tv_msg.setText(entity.getComments());
-        // View view = LayoutInflater.from(context).inflate(R.layout.item_topic_img, null);
         LinearLayout topic_gy_imgs = (LinearLayout) convertView.findViewById(R.id.topic_gy_imgs);
-        for (String url : entity.getAttrs()) {
-            ImageView imageView = new ImageView(context);
-            LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(280, LinearLayout.LayoutParams.MATCH_PARENT);
-            imageView.setLayoutParams(lp);
-            lp.setMargins(0, 0, 20, 0);
-            imageView.setScaleType(ImageView.ScaleType.FIT_CENTER);
-            BitmapView.getInstance().display(imageView, url);
-            topic_gy_imgs.addView(imageView);
+        if (entity.getAttrs().size()==0){
+            topic_gy_imgs.setVisibility(View.GONE);
+        }else{
+            for (String url : entity.getAttrs()) {
+                ImageView imageView = new ImageView(context);
+                LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(280, LinearLayout.LayoutParams.MATCH_PARENT);
+                imageView.setLayoutParams(lp);
+                lp.setMargins(0, 0, 20, 0);
+                imageView.setScaleType(ImageView.ScaleType.FIT_CENTER);
+                BitmapView.getInstance().display(imageView, url);
+                topic_gy_imgs.addView(imageView);
+            }
         }
-//        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(context);
-//        linearLayoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
-//        topic_gy_imgs.setLayoutManager(linearLayoutManager);
-//        topic_gy_imgs.setAdapter(new TopicImagesAdapter(context, entity.getAttrs()));
         return convertView;
     }
 }

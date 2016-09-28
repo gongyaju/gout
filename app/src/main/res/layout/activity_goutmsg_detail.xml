@@ -57,14 +57,15 @@
 
         <TextView
             android:id="@+id/textView5"
-            android:layout_width="@dimen/space_120"
-            android:layout_height="@dimen/space_50"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_centerVertical="true"
-            android:layout_marginLeft="23dp"
-            android:layout_marginStart="23dp"
-            android:background="@drawable/break_time"
+            android:layout_marginLeft="@dimen/space_40"
+            android:paddingRight="@dimen/space_10"
+            android:paddingBottom="4px"
+            android:paddingTop="4px"
+            android:paddingLeft="@dimen/space_10"
+            android:background="@drawable/shape_bottom_grenn"
             android:gravity="center"
             android:text="专家"
             android:textColor="@color/white"
@@ -74,10 +75,8 @@
             android:id="@+id/textView6"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignTop="@+id/textView5"
             android:layout_centerVertical="true"
-            android:layout_marginLeft="@dimen/space_40"
-            android:layout_toEndOf="@+id/textView5"
+            android:layout_marginLeft="@dimen/space_20"
             android:layout_toRightOf="@+id/textView5"
             android:gravity="center"
             android:text="本文章由权威专家撰写"
@@ -90,7 +89,6 @@
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
-            android:layout_alignTop="@+id/textView6"
             android:layout_centerVertical="true"
             android:drawableLeft="@drawable/icon_zan"
             android:drawablePadding="@dimen/space_20"
@@ -104,13 +102,15 @@
         android:layout_width="match_parent"
         android:layout_height="1px"
         android:background="@color/main_line" />
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
         <ScrollView
             android:layout_width="match_parent"
-            android:background="@color/white"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:background="@color/white">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -171,9 +171,8 @@
                     android:layout_height="match_parent"
                     android:layout_marginBottom="@dimen/space_200"
                     android:paddingLeft="@dimen/space_60"
-                    android:paddingTop="@dimen/space_60"
-                    android:paddingRight="@dimen/space_60"/>
-
+                    android:paddingRight="@dimen/space_60"
+                    android:paddingTop="@dimen/space_60" />
 
 
             </LinearLayout>

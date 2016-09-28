@@ -10,7 +10,7 @@ import com.orhanobut.logger.Logger;
  * Created by requiem on 16/03/05.
  */
 public class F {
-    public static int PAGE_SIZE = 1000;
+    public static int PAGE_SIZE = 10;
 
 
     public static void SCREEN_SIZE(Activity c) {
