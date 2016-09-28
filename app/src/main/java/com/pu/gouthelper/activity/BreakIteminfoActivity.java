@@ -50,7 +50,7 @@ public class BreakIteminfoActivity extends SwipeBackActivity {
         break_tv_content.setText(entity.getDesc());
     }
 
-    @Event(value = {R.id.break_btn_goback, R.id.psw_btn_submit,R.id.break_tv_share1,R.id.break_tv_share2,R.id.break_tv_share3}, type = View.OnClickListener.class)
+    @Event(value = {R.id.break_btn_goback, R.id.psw_btn_submit, R.id.break_tv_share1, R.id.break_tv_share2, R.id.break_tv_share3}, type = View.OnClickListener.class)
     private void onClick(View v) {
         switch (v.getId()) {
             case R.id.break_btn_goback:
@@ -59,7 +59,7 @@ public class BreakIteminfoActivity extends SwipeBackActivity {
             case R.id.break_tv_share1:
             case R.id.break_tv_share2:
             case R.id.break_tv_share3:
-                ShareUtils.share(this, "分享痛风助手到...");
+                ShareUtils.share(this, entity.getDesc(), "");
                 break;
         }
     }

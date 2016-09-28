@@ -181,7 +181,7 @@ public class GoutMsgDetailActivity extends SwipeBackActivity implements Callback
                 showLoading(mContext);
                 break;
             case R.id.btn_share:
-                ShareUtils.share(this, "分享痛风助手到...");
+                ShareUtils.share(this, entity.getTitle(),"");
                 break;
             case R.id.msg_tv_zan:
                 if(entity.getLike()!=null&&entity.getLike().getUp().equals("1")){

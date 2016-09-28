@@ -81,14 +81,14 @@ public class TopicDetailActivity extends SwipeBackActivity implements TitlePopup
     private CommentAdapter adapter = null;
     private List<Comment> mList = new ArrayList<>();
     private DynamicBox box;
-
+    private TopicDetail detail;
     private Handler mHandler = new Handler() {
         @Override
         public void handleMessage(Message msg) {
             super.handleMessage(msg);
             switch (msg.what) {
                 case TopicDetailRequest.SUCCESS:
-                    TopicDetail detail = (TopicDetail) msg.obj;
+                    detail = (TopicDetail) msg.obj;
                     if (detail != null) {
                         setData(detail);
                     }
@@ -169,10 +169,10 @@ public class TopicDetailActivity extends SwipeBackActivity implements TitlePopup
                 finish();
                 break;
             case R.id.btn_share:
-                ShareUtils.share(this, "分享痛风助手到...");
+                ShareUtils.share(this, detail.getTitle(), "");
                 break;
             case R.id.topic_tv_share:
-                ShareUtils.share(this, "分享痛风助手到...");
+                ShareUtils.share(this, detail.getTitle(), "");
                 break;
             case R.id.group_discuss_submit:
                 String content = group_discuss.getText().toString().trim();

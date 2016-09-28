@@ -72,7 +72,7 @@ public class PurinDetailActivity extends SwipeBackActivity {
     private PagerSlidingTabStrip tabs;
     private ViewPager pager;
     private Context mContext;
-
+    private PurinFoodInfoEntity entity;
     private PurinDetailTabOneFragment purinDetailTabOneFragment;
     private PurinDetailTabTwoFragment purinDetailTabTwoFragment;
 
@@ -83,7 +83,7 @@ public class PurinDetailActivity extends SwipeBackActivity {
             switch (msg.what) {
                 case PurinListInfoRequest.SUCCESS:
                     JSONObject object = JSON.parseObject(msg.obj + "");
-                    PurinFoodInfoEntity entity = JSONObject.parseObject(object.getString("data"), PurinFoodInfoEntity.class);
+                    entity = JSONObject.parseObject(object.getString("data"), PurinFoodInfoEntity.class);
                     JSONObject jsonObject = object.getJSONObject("correlation");
                     List<PurinNews> pList = JSONArray.parseArray(jsonObject.getString("news"), PurinNews.class);
                     entity.setPurinNews(pList);
@@ -175,14 +175,14 @@ public class PurinDetailActivity extends SwipeBackActivity {
         purinDetailTabTwoFragment.setdata(entity.getPurinNews());
     }
 
-    @Event(value = {R.id.detail_btn_goback,R.id.btn_share}, type = View.OnClickListener.class)
+    @Event(value = {R.id.detail_btn_goback, R.id.btn_share}, type = View.OnClickListener.class)
     private void onClick(View v) {
         switch (v.getId()) {
             case R.id.detail_btn_goback:
                 finish();
                 break;
             case R.id.btn_share:
-                ShareUtils.share(this, "分享痛风助手到...");
+                ShareUtils.share(this, entity.getTitle(),"");
                 break;
         }
     }
