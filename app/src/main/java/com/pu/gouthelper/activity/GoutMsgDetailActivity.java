@@ -11,6 +11,8 @@ import android.text.TextUtils;
 import android.view.View;
 import android.webkit.WebView;
 import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -18,6 +20,7 @@ import com.orhanobut.logger.Logger;
 import com.pu.gouthelper.R;
 import com.pu.gouthelper.adapter.Callback;
 import com.pu.gouthelper.adapter.CommentAdapter;
+import com.pu.gouthelper.base.BitmapView;
 import com.pu.gouthelper.base.F;
 import com.pu.gouthelper.base.StringUtils;
 import com.pu.gouthelper.bean.Comment;
@@ -67,6 +70,10 @@ public class GoutMsgDetailActivity extends SwipeBackActivity implements Callback
     private TextView textView6;
     @ViewInject(R.id.msg_tv_zan)
     private TextView msg_tv_zan;
+    @ViewInject(R.id.detail_tv_dashangcount)
+    private TextView detail_tv_dashangcount;
+    @ViewInject(R.id.detail_img_pics)
+    private LinearLayout detail_img_pics;
     private DynamicBox box;
     private List<Comment> mList = new ArrayList<>();
     private CommentAdapter adapter = null;
@@ -119,9 +126,23 @@ public class GoutMsgDetailActivity extends SwipeBackActivity implements Callback
                     break;
                 case RewardListRequest.SUCCESS:
                     List<RewardEntity> mList = (List<RewardEntity>) msg.obj;
-                    Logger.e(mList.size() + "");
+                    detail_tv_dashangcount.setText(mList.size() + "");
+                    if (mList != null && mList.size() == 0) {
+                        detail_img_pics.setVisibility(View.GONE);
+                    }
+                    for (RewardEntity rewardEntity : mList) {
+                        ImageView imageView = new ImageView(mContext);
+                        LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(100, LinearLayout.LayoutParams.MATCH_PARENT);
+                        imageView.setLayoutParams(lp);
+                        lp.setMargins(0, 0, 10, 0);
+                        imageView.setScaleType(ImageView.ScaleType.FIT_CENTER);
+                        BitmapView.getInstance().display(imageView, rewardEntity.getUser().getAvatar());
+                        detail_img_pics.addView(imageView);
+                    }
                     break;
                 case RewardListRequest.ERROR:
+                    detail_tv_dashangcount.setText("0");
+                    detail_img_pics.setVisibility(View.GONE);
                     break;
             }
             endLoading();
@@ -153,18 +174,20 @@ public class GoutMsgDetailActivity extends SwipeBackActivity implements Callback
     }
 
     private void setData() {
-
-        textView5.setText(entity.getAuthor().getTitle());
-        textView6.setText(entity.getAuthor().getDesc());
-
-        if (entity.getLike() != null && entity.getLike().getUp().equals("1")) {
-            Drawable drawable = mContext.getResources().getDrawable(R.drawable.zan_click);
-            drawable.setBounds(0, 0, drawable.getMinimumWidth(), drawable.getMinimumHeight());//必须设置图片大小，否则不显示
-            msg_tv_zan.setCompoundDrawables(drawable, null, null, null);
+        try {
+            textView5.setText(entity.getAuthor().getTitle());
+            textView6.setText(entity.getAuthor().getDesc());
+            if (entity.getLike() != null && entity.getLike().getUp().equals("1")) {
+                Drawable drawable = mContext.getResources().getDrawable(R.drawable.zan_click);
+                drawable.setBounds(0, 0, drawable.getMinimumWidth(), drawable.getMinimumHeight());//必须设置图片大小，否则不显示
+                msg_tv_zan.setCompoundDrawables(drawable, null, null, null);
+            }
+            msg_tv_zan.setText(entity.getUps());
+            noun_btn_title.setText(entity.getTitle());
+            detail_web_content.loadDataWithBaseURL(null, entity.getContent(), "text/html", "utf-8", null);
+        } catch (Exception e) {
+            e.printStackTrace();
         }
-        msg_tv_zan.setText(entity.getUps());
-        noun_btn_title.setText(entity.getTitle());
-        detail_web_content.loadDataWithBaseURL(null, entity.getContent(), "text/html", "utf-8", null);
     }
 
     public void getCommentList(String id) {
