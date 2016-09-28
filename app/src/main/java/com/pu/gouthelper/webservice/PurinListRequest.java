@@ -34,7 +34,7 @@ public class PurinListRequest extends BaseRequest {
         RequestParams params = new RequestParams(URLlist.PURIN_LIST);
         params.addBodyParameter("len", "12");
         params.addBodyParameter("type", type);
-        sendGet(params,true);
+        sendGet(params);
     }
 
     /**

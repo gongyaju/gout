@@ -22,18 +22,20 @@ import java.util.List;
  * 捐献列表
  */
 public class RewardListRequest extends BaseRequest {
-    public static final int SUCCESS = 0x16;
-    public static final int ERROR = 0x15;
+    public static final int SUCCESS = 0x46;
+    public static final int ERROR = 0x425;
     private Handler mHandler;
 
     /**
      * @param mHandler
      * @param len:size
      */
-    public RewardListRequest(Handler mHandler, String len) {
+    public RewardListRequest(Handler mHandler, String len, String type, String cid) {
         this.mHandler = mHandler;
-        RequestParams params = new RequestParams(URLlist.DRUG_CLOCK);
+        RequestParams params = new RequestParams(URLlist.URL_REWARD_LIST);
         params.addBodyParameter("len", len);
+        params.addBodyParameter("type", type);
+        params.addBodyParameter("id", cid);
         sendGet(params);
     }
 

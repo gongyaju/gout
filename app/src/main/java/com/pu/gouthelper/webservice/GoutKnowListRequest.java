@@ -39,7 +39,7 @@ public class GoutKnowListRequest extends BaseRequest {
         params.addBodyParameter("len", len);
         params.addBodyParameter("cid", cid);
         params.addBodyParameter("p", p);
-        sendGet(params, true);
+        sendGet(params);
     }
 
 

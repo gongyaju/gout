@@ -23,6 +23,7 @@ import com.pu.gouthelper.webservice.GoutDrugListRequest;
 import com.pu.gouthelper.webservice.MessageRequest;
 
 import org.xutils.view.annotation.ContentView;
+import org.xutils.view.annotation.Event;
 import org.xutils.view.annotation.ViewInject;
 
 import java.util.ArrayList;
@@ -82,7 +83,7 @@ public class CenterMessageActivity extends SwipeBackActivity {
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 try {
                     Intent intent = new Intent(mContext, TopicDetailActivity.class);
-                    intent.putExtra("id", mList.get(i-1).getId());
+                    intent.putExtra("id", mList.get(i - 1).getContent().getSid()+"");
                     startActivity(intent);
                 } catch (Exception e) {
                     e.printStackTrace();
@@ -91,4 +92,12 @@ public class CenterMessageActivity extends SwipeBackActivity {
         });
     }
 
+    @Event(value = {R.id.mytopic_btn_goback}, type = View.OnClickListener.class)
+    private void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.mytopic_btn_goback:
+                finish();
+                break;
+        }
+    }
 }

@@ -1,6 +1,8 @@
 package com.pu.gouthelper.base;
 
 
+import android.util.Log;
+
 import com.orhanobut.logger.Logger;
 
 import org.xutils.common.Callback;
@@ -56,7 +58,7 @@ public class BaseRequest {
             @Override
             public void onSuccess(String result) {
                 try {
-                    Logger.json(result);
+                    Log.e("GET", result);
                     onSuccessed(result);
                 } catch (Exception e) {
                     e.printStackTrace();
@@ -106,7 +108,7 @@ public class BaseRequest {
             @Override
             public void onSuccess(String result) {
                 try {
-                    Logger.json(result);
+                    Log.e("POST",result);
                     onSuccessed(result);
                 } catch (Exception e) {
                     e.printStackTrace();

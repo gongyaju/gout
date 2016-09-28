@@ -190,7 +190,7 @@ public class TopicDetailActivity extends SwipeBackActivity implements TitlePopup
         for (String url : data.getAttrs()) {
             ImageView imageView = new ImageView(mContext);
             LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(
-                    LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+                    LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
             lp.setMargins(10, 20, 30, 20);
             imageView.setLayoutParams(lp);
             BitmapView.getInstance().display(imageView, url);

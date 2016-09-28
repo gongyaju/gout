@@ -54,7 +54,7 @@
                     android:id="@+id/drug_img_pic"
                     android:layout_width="match_parent"
                     android:scaleType="fitCenter"
-                    android:layout_height="@dimen/space_680" />
+                    android:layout_height="@dimen/space_420" />
 
                 <LinearLayout
                     android:id="@+id/drug_liner_vs"

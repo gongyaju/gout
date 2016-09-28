@@ -35,7 +35,7 @@ public class TopicListRequest extends BaseRequest {
         RequestParams params = new RequestParams(URLlist.GOUT_TOPIC_LIST);
         params.addBodyParameter("len", F.PAGE_SIZE+"");
         params.addBodyParameter("p", page);
-        sendGet(params, true);
+        sendGet(params);
     }
 
 

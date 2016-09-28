@@ -35,8 +35,10 @@ public class TopicSendRequest extends BaseRequest {
         RequestParams params = new RequestParams(URLlist.GOUT_TOPIC_ADD);
         params.addBodyParameter("title", title);
         params.addBodyParameter("content", content);
-        for (int i = 0; i < mSelectPath.size(); i++) {
-            params.addBodyParameter("pic" + i, new File(mSelectPath.get(i)));
+        if (mSelectPath != null && mSelectPath.size() > 0) {
+            for (int i = 0; i < mSelectPath.size(); i++) {
+                params.addBodyParameter("pic" + i, new File(mSelectPath.get(i)));
+            }
         }
         sendPost(params);
     }

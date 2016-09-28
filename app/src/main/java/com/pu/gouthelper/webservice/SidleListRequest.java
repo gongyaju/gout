@@ -35,7 +35,7 @@ public class SidleListRequest extends BaseRequest {
         RequestParams params = new RequestParams(URLlist.SLIDE_LIST);
         params.addBodyParameter("cid", cid);
         params.addBodyParameter("len", len);
-        sendGet(params, true);
+        sendGet(params);
     }
 
 

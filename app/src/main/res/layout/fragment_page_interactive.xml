@@ -43,8 +43,9 @@
         android:id="@+id/gout_ls_msg"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:divider="@color/gray_white"
-        android:dividerHeight="@dimen/space_20"
+        android:divider="@color/gray_light"
+        android:background="@color/gray_light"
+        android:dividerHeight="@dimen/space_30"
         ptr:ptrAnimationStyle="flip"
         ptr:ptrHeaderTextColor="@color/gray"
         ptr:ptrListViewExtrasEnabled="true" />

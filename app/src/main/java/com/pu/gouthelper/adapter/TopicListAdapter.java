@@ -73,7 +73,7 @@ public class TopicListAdapter extends BaseAdapter {
         }else{
             for (String url : entity.getAttrs()) {
                 ImageView imageView = new ImageView(context);
-                LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(280, LinearLayout.LayoutParams.MATCH_PARENT);
+                LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(234, LinearLayout.LayoutParams.MATCH_PARENT);
                 imageView.setLayoutParams(lp);
                 lp.setMargins(0, 0, 20, 0);
                 imageView.setScaleType(ImageView.ScaleType.FIT_CENTER);

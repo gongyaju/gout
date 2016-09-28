@@ -33,7 +33,7 @@ public class MessageRequest extends BaseRequest {
         this.mHandler = mHandler;
         RequestParams params = new RequestParams(URLlist.USER_MESSAGE);
         params.addBodyParameter("len", len);
-        sendGet(params,true);
+        sendGet(params);
     }
 
 

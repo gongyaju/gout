@@ -31,7 +31,7 @@
                         android:layout_height="wrap_content"
                         android:text="通用名称："
                         android:textColor="@color/text_color_6"
-                        android:textSize="@dimen/space_36" />
+                        android:textSize="@dimen/space_40" />
 
                     <TextView
                         android:id="@+id/drug_tv_name"
@@ -39,7 +39,7 @@
                         android:layout_height="wrap_content"
                         android:text="--"
                         android:textColor="@color/text_color_6"
-                        android:textSize="@dimen/space_36" />
+                        android:textSize="@dimen/space_40" />
 
                 </LinearLayout>
 
@@ -54,7 +54,7 @@
                         android:layout_height="wrap_content"
                         android:text="英文名称："
                         android:textColor="@color/text_color_6"
-                        android:textSize="@dimen/space_36" />
+                        android:textSize="@dimen/space_40" />
 
                     <TextView
                         android:id="@+id/drug_tv_englishname"
@@ -62,7 +62,7 @@
                         android:layout_height="wrap_content"
                         android:text="--"
                         android:textColor="@color/text_color_6"
-                        android:textSize="@dimen/space_36" />
+                        android:textSize="@dimen/space_40" />
 
                 </LinearLayout>
 
@@ -77,7 +77,7 @@
                         android:layout_height="wrap_content"
                         android:text="商品名称："
                         android:textColor="@color/text_color_6"
-                        android:textSize="@dimen/space_36" />
+                        android:textSize="@dimen/space_40" />
 
                     <TextView
                         android:id="@+id/drug_tv_shopname"
@@ -85,7 +85,7 @@
                         android:layout_height="wrap_content"
                         android:text="--"
                         android:textColor="@color/text_color_6"
-                        android:textSize="@dimen/space_36" />
+                        android:textSize="@dimen/space_40" />
 
                 </LinearLayout>
             </LinearLayout>
@@ -102,21 +102,22 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/space_80"
+                    android:background="@color/gray_light"
                     android:gravity="center"
                     android:text="成    分"
-                    android:background="@color/gray_white"
                     android:textColor="@color/mian_green"
-                    android:textSize="@dimen/space_36" />
+                    android:textSize="@dimen/space_40" />
 
                 <TextView
                     android:id="@+id/drug_tv_chengfen"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="--"
-                    android:layout_marginTop="@dimen/space_20"
                     android:layout_marginBottom="@dimen/space_20"
+                    android:layout_marginTop="@dimen/space_20"
+                    android:lineSpacingExtra="@dimen/space_8"
+                    android:text="--"
                     android:textColor="@color/text_color_6"
-                    android:textSize="@dimen/space_36" />
+                    android:textSize="@dimen/space_40" />
 
             </LinearLayout>
 
@@ -132,24 +133,24 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/space_80"
+                    android:background="@color/gray_light"
                     android:gravity="center"
                     android:text="适  应  症"
-                    android:background="@color/gray_white"
                     android:textColor="@color/mian_green"
-                    android:textSize="@dimen/space_36" />
+                    android:textSize="@dimen/space_40" />
 
                 <TextView
-                    android:layout_marginTop="@dimen/space_20"
-                    android:layout_marginBottom="@dimen/space_20"
                     android:id="@+id/drug_tv_syz"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/space_20"
+                    android:layout_marginTop="@dimen/space_20"
+                    android:lineSpacingExtra="@dimen/space_8"
                     android:text="--"
                     android:textColor="@color/text_color_6"
-                    android:textSize="@dimen/space_36" />
+                    android:textSize="@dimen/space_40" />
 
             </LinearLayout>
-
 
 
             <LinearLayout
@@ -163,20 +164,22 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/space_80"
+                    android:background="@color/gray_light"
                     android:gravity="center"
                     android:text="使用方法"
-                    android:background="@color/gray_white"
                     android:textColor="@color/mian_green"
-                    android:textSize="@dimen/space_36" />
+                    android:textSize="@dimen/space_40" />
+
                 <TextView
                     android:id="@+id/drug_tv_use"
                     android:layout_width="wrap_content"
-                    android:layout_marginTop="@dimen/space_20"
-                    android:layout_marginBottom="@dimen/space_20"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/space_20"
+                    android:layout_marginTop="@dimen/space_20"
+                    android:lineSpacingExtra="@dimen/space_8"
                     android:text="--"
                     android:textColor="@color/text_color_6"
-                    android:textSize="@dimen/space_36" />
+                    android:textSize="@dimen/space_40" />
 
             </LinearLayout>
 
@@ -188,24 +191,26 @@
                 android:layout_marginRight="@dimen/space_60"
                 android:gravity="center_vertical"
                 android:orientation="vertical">
+
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/space_80"
+                    android:background="@color/gray_light"
                     android:gravity="center"
                     android:text="禁        忌"
-                    android:background="@color/gray_white"
                     android:textColor="@color/mian_green"
-                    android:textSize="@dimen/space_36" />
+                    android:textSize="@dimen/space_40" />
 
                 <TextView
                     android:id="@+id/drug_tv_jinji"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/space_20"
                     android:layout_marginBottom="@dimen/space_20"
+                    android:layout_marginTop="@dimen/space_20"
+                    android:lineSpacingExtra="@dimen/space_8"
                     android:text="--"
                     android:textColor="@color/text_color_6"
-                    android:textSize="@dimen/space_36" />
+                    android:textSize="@dimen/space_40" />
 
             </LinearLayout>
 
@@ -217,24 +222,26 @@
                 android:layout_marginRight="@dimen/space_60"
                 android:gravity="center_vertical"
                 android:orientation="vertical">
+
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/space_80"
+                    android:background="@color/gray_light"
                     android:gravity="center"
                     android:text="不良反应"
-                    android:background="@color/gray_white"
                     android:textColor="@color/mian_green"
-                    android:textSize="@dimen/space_36" />
+                    android:textSize="@dimen/space_40" />
 
                 <TextView
                     android:id="@+id/drug_tv_adverse"
-                    android:layout_marginTop="@dimen/space_20"
-                    android:layout_marginBottom="@dimen/space_20"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/space_20"
+                    android:layout_marginTop="@dimen/space_20"
+                    android:lineSpacingExtra="@dimen/space_8"
                     android:text="--"
                     android:textColor="@color/text_color_6"
-                    android:textSize="@dimen/space_36" />
+                    android:textSize="@dimen/space_40" />
 
             </LinearLayout>
 
@@ -246,24 +253,26 @@
                 android:layout_marginRight="@dimen/space_60"
                 android:gravity="center_vertical"
                 android:orientation="vertical">
+
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/space_80"
+                    android:background="@color/gray_light"
                     android:gravity="center"
                     android:text="相互作用"
-                    android:background="@color/gray_white"
                     android:textColor="@color/mian_green"
-                    android:textSize="@dimen/space_36" />
+                    android:textSize="@dimen/space_40" />
 
                 <TextView
                     android:id="@+id/drug_tv_interaction"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/space_20"
                     android:layout_marginBottom="@dimen/space_20"
+                    android:layout_marginTop="@dimen/space_20"
+                    android:lineSpacingExtra="@dimen/space_8"
                     android:text="--"
                     android:textColor="@color/text_color_6"
-                    android:textSize="@dimen/space_36" />
+                    android:textSize="@dimen/space_40" />
 
             </LinearLayout>
 
@@ -279,20 +288,22 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/space_80"
+                    android:background="@color/gray_light"
                     android:gravity="center"
                     android:text="毒        理"
-                    android:background="@color/gray_white"
                     android:textColor="@color/mian_green"
-                    android:textSize="@dimen/space_36" />
+                    android:textSize="@dimen/space_40" />
+
                 <TextView
                     android:id="@+id/drug_tv_toxicology"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/space_20"
                     android:layout_marginBottom="@dimen/space_20"
+                    android:layout_marginTop="@dimen/space_20"
+                    android:lineSpacingExtra="@dimen/space_8"
                     android:text="--"
                     android:textColor="@color/text_color_6"
-                    android:textSize="@dimen/space_36" />
+                    android:textSize="@dimen/space_40" />
 
             </LinearLayout>
 
@@ -304,24 +315,26 @@
                 android:layout_marginRight="@dimen/space_60"
                 android:gravity="center_vertical"
                 android:orientation="vertical">
+
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/space_80"
+                    android:background="@color/gray_light"
                     android:gravity="center"
                     android:text="药物分类"
-                    android:background="@color/gray_white"
                     android:textColor="@color/mian_green"
-                    android:textSize="@dimen/space_36" />
+                    android:textSize="@dimen/space_40" />
 
                 <TextView
                     android:id="@+id/drug_tv_classify"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/space_20"
+                    android:layout_marginTop="@dimen/space_20"
+                    android:lineSpacingExtra="@dimen/space_8"
                     android:text="--"
                     android:textColor="@color/text_color_6"
-                    android:layout_marginTop="@dimen/space_20"
-                    android:layout_marginBottom="@dimen/space_20"
-                    android:textSize="@dimen/space_36" />
+                    android:textSize="@dimen/space_40" />
 
             </LinearLayout>
 
@@ -332,24 +345,26 @@
                 android:layout_marginRight="@dimen/space_60"
                 android:gravity="center_vertical"
                 android:orientation="vertical">
+
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/space_80"
+                    android:background="@color/gray_light"
                     android:gravity="center"
                     android:text="批准文号"
-                    android:background="@color/gray_white"
                     android:textColor="@color/mian_green"
-                    android:textSize="@dimen/space_36" />
+                    android:textSize="@dimen/space_40" />
 
                 <TextView
                     android:id="@+id/drug_tv_appnum"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/space_20"
+                    android:layout_marginTop="@dimen/space_20"
+                    android:lineSpacingExtra="@dimen/space_8"
                     android:text="--"
                     android:textColor="@color/text_color_6"
-                    android:layout_marginTop="@dimen/space_20"
-                    android:layout_marginBottom="@dimen/space_20"
-                    android:textSize="@dimen/space_36" />
+                    android:textSize="@dimen/space_40" />
 
             </LinearLayout>
 
@@ -365,20 +380,22 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/space_80"
+                    android:background="@color/gray_light"
                     android:gravity="center"
                     android:text="生产厂家"
-                    android:background="@color/gray_white"
                     android:textColor="@color/mian_green"
-                    android:textSize="@dimen/space_36" />
+                    android:textSize="@dimen/space_40" />
+
                 <TextView
                     android:id="@+id/drug_tv_manufacturer"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/space_20"
+                    android:layout_marginTop="@dimen/space_20"
+                    android:lineSpacingExtra="@dimen/space_8"
                     android:text="--"
                     android:textColor="@color/text_color_6"
-                    android:layout_marginTop="@dimen/space_20"
-                    android:layout_marginBottom="@dimen/space_20"
-                    android:textSize="@dimen/space_36" />
+                    android:textSize="@dimen/space_40" />
 
             </LinearLayout>
         </LinearLayout>

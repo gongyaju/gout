@@ -32,7 +32,7 @@ public class TopicDetailRequest extends BaseRequest {
         this.mHandler = mHandler;
         RequestParams params = new RequestParams(URLlist.GOUT_TOPIC_INFO);
         params.addBodyParameter("id", id);
-        sendGet(params, true);
+        sendGet(params);
     }
 
 

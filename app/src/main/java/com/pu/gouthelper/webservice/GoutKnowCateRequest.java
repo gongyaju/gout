@@ -27,7 +27,7 @@ public class GoutKnowCateRequest extends BaseRequest {
     public GoutKnowCateRequest(Handler mHandler) {
         this.mHandler = mHandler;
         RequestParams params = new RequestParams(URLlist.GOUT_MSG_CATE);
-        sendGet(params,true);
+        sendGet(params);
     }
 
 

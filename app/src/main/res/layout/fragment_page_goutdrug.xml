@@ -48,6 +48,7 @@
         <com.pu.gouthelper.ui.pulltorefresh.PullToRefreshListView xmlns:ptr="http://schemas.android.com/apk/res-auto"
             android:id="@+id/gout_ls_msg"
             android:layout_width="match_parent"
+            android:background="@color/gray_light"
             android:layout_height="match_parent"
             ptr:ptrAnimationStyle="flip"
             android:divider="@null"

@@ -21,7 +21,7 @@ public class GoutMessage {
     private String tuid;
     private String type;
     private String title;
-    private String content;
+    private MessageContent content;
     private String tm;
     /**
      * id : 1
@@ -51,9 +51,7 @@ public class GoutMessage {
         this.title = title;
     }
 
-    public void setContent(String content) {
-        this.content = content;
-    }
+
 
     public void setTm(String tm) {
         this.tm = tm;
@@ -83,9 +81,6 @@ public class GoutMessage {
         return title;
     }
 
-    public String getContent() {
-        return content;
-    }
 
     public String getTm() {
         return tm;
@@ -95,4 +90,11 @@ public class GoutMessage {
         return user;
     }
 
+    public MessageContent getContent() {
+        return content;
+    }
+
+    public void setContent(MessageContent content) {
+        this.content = content;
+    }
 }

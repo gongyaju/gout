@@ -17,7 +17,9 @@ import com.pu.gouthelper.bean.DrugDetail;
 
 import org.xutils.view.annotation.ViewInject;
 
-
+/**
+ * 药品说明书
+ */
 public class DrugDetailTabOneFragment extends BaseFragment {
 
 

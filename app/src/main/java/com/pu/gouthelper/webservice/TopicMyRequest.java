@@ -33,7 +33,7 @@ public class TopicMyRequest extends BaseRequest {
         this.mHandler = mHandler;
         RequestParams params = new RequestParams(URLlist.GOUT_USER_TOPIC);
         params.addBodyParameter("len", len);
-        sendGet(params, true);
+        sendGet(params);
     }
 
 

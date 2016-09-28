@@ -34,6 +34,7 @@
 
             <ImageButton
                 android:id="@+id/topic_btn_send"
+                android:visibility="gone"
                 android:layout_width="@dimen/space_150"
                 android:layout_height="match_parent"
                 android:layout_alignParentEnd="true"

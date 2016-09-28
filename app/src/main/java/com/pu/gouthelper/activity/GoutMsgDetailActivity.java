@@ -14,6 +14,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.orhanobut.logger.Logger;
 import com.pu.gouthelper.R;
 import com.pu.gouthelper.adapter.Callback;
 import com.pu.gouthelper.adapter.CommentAdapter;
@@ -21,6 +22,7 @@ import com.pu.gouthelper.base.F;
 import com.pu.gouthelper.base.StringUtils;
 import com.pu.gouthelper.bean.Comment;
 import com.pu.gouthelper.bean.GoutKnowDetail;
+import com.pu.gouthelper.bean.RewardEntity;
 import com.pu.gouthelper.bean.UserEntity;
 import com.pu.gouthelper.common.CommentFun;
 import com.pu.gouthelper.ui.MyListView;
@@ -30,6 +32,7 @@ import com.pu.gouthelper.utils.ShareUtils;
 import com.pu.gouthelper.webservice.CommentAddRequest;
 import com.pu.gouthelper.webservice.CommentListRequest;
 import com.pu.gouthelper.webservice.GoutKnowInfoRequest;
+import com.pu.gouthelper.webservice.RewardListRequest;
 import com.pu.gouthelper.webservice.ZDownRequest;
 import com.pu.gouthelper.webservice.ZUpRequest;
 
@@ -75,6 +78,7 @@ public class GoutMsgDetailActivity extends SwipeBackActivity implements Callback
             switch (msg.what) {
                 case GoutKnowInfoRequest.SUCCESS:
                     entity = (GoutKnowDetail) msg.obj;
+                    new RewardListRequest(mHandler, F.PAGE_SIZE + "", "2", entity.getId());
                     if (entity != null) {
                         setData();
                     }
@@ -112,6 +116,12 @@ public class GoutMsgDetailActivity extends SwipeBackActivity implements Callback
                 case ZDownRequest.ERROR:
                 case ZUpRequest.ERROR:
                     UIHelper.ToastMessage(mContext, msg.obj + "");
+                    break;
+                case RewardListRequest.SUCCESS:
+                    List<RewardEntity> mList = (List<RewardEntity>) msg.obj;
+                    Logger.e(mList.size() + "");
+                    break;
+                case RewardListRequest.ERROR:
                     break;
             }
             endLoading();
@@ -185,9 +195,9 @@ public class GoutMsgDetailActivity extends SwipeBackActivity implements Callback
                 break;
             case R.id.msg_tv_zan:
                 if (entity.getLike() != null && entity.getLike().getUp().equals("1")) {
-                    new ZDownRequest(mHandler, entity.getId());
+                    new ZDownRequest(mHandler, entity.getCid());
                 } else {
-                    new ZUpRequest(mHandler, entity.getId());
+                    new ZUpRequest(mHandler, entity.getCid());
                 }
                 showLoading(mContext);
                 break;
