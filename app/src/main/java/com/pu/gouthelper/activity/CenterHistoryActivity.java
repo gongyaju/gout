@@ -92,19 +92,19 @@ public class CenterHistoryActivity extends SwipeBackActivity {
             StringBuilder builder = new StringBuilder();
             //1.肘 2.手指 3.膝盖 4.脚 5.踝
             if (login_msg.getTarea().contains("1")) {
-                builder.append("肘"+" ");
+                builder.append("肘" + " ");
             }
             if (login_msg.getTarea().contains("2")) {
-                builder.append("手指"+" ");
+                builder.append("手指" + " ");
             }
             if (login_msg.getTarea().contains("3")) {
-                builder.append("膝盖"+" ");
+                builder.append("膝盖" + " ");
             }
             if (login_msg.getTarea().contains("4")) {
-                builder.append("脚"+" ");
+                builder.append("脚" + " ");
             }
             if (login_msg.getTarea().contains("5")) {
-                builder.append("踝"+" ");
+                builder.append("踝" + " ");
             }
             history_tv_buwei.setText("发作部位：" + builder.toString());
         } catch (Exception e) {
@@ -112,10 +112,13 @@ public class CenterHistoryActivity extends SwipeBackActivity {
         }
     }
 
-    @Event(value = {R.id.history_btn_close}, type = View.OnClickListener.class)
+    @Event(value = {R.id.history_btn_close, R.id.history_btn_goback}, type = View.OnClickListener.class)
     private void onClick(View v) {
         switch (v.getId()) {
             case R.id.history_btn_close:
+                finish();
+                break;
+            case R.id.history_btn_goback:
                 finish();
                 break;
         }

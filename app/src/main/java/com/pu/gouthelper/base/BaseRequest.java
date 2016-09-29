@@ -58,7 +58,7 @@ public class BaseRequest {
             @Override
             public void onSuccess(String result) {
                 try {
-                    Log.e("GET", result);
+                    Logger.json("GET", result);
                     onSuccessed(result);
                 } catch (Exception e) {
                     e.printStackTrace();
@@ -108,7 +108,7 @@ public class BaseRequest {
             @Override
             public void onSuccess(String result) {
                 try {
-                    Log.e("POST",result);
+                    Logger.json("POST", result);
                     onSuccessed(result);
                 } catch (Exception e) {
                     e.printStackTrace();

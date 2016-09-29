@@ -218,9 +218,9 @@ public class GoutMsgDetailActivity extends SwipeBackActivity implements Callback
                 break;
             case R.id.msg_tv_zan:
                 if (entity.getLike() != null && entity.getLike().getUp().equals("1")) {
-                    new ZDownRequest(mHandler, entity.getCid());
+                    new ZDownRequest(mHandler, entity.getId());
                 } else {
-                    new ZUpRequest(mHandler, entity.getCid());
+                    new ZUpRequest(mHandler, entity.getId());
                 }
                 showLoading(mContext);
                 break;
