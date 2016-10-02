@@ -12,6 +12,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.text.TextUtils;
 import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -21,6 +22,7 @@ import android.widget.ImageView;
 
 
 import com.pu.gouthelper.R;
+import com.pu.gouthelper.activity.GoutMsgDetailActivity;
 import com.pu.gouthelper.activity.ImageGalleryActivity;
 import com.pu.gouthelper.activity.PurinSearchActivity;
 import com.pu.gouthelper.activity.SosActivity;
@@ -42,7 +44,9 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-
+/**
+ * 首页嘌呤查询
+ */
 public class PurinSearchFragment extends BaseFragment {
 
     private static String[] TITLES;
@@ -179,9 +183,17 @@ public class PurinSearchFragment extends BaseFragment {
             item.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent intent = new Intent(mContext, WebViewActivity.class);
-                    intent.putExtra("url", mList.get(pos).getUrl());
-                    startActivity(intent);
+                    SlideEntity entity=mList.get(pos);
+                    if (!TextUtils.isEmpty(entity.getSid())){
+                        Intent intent = new Intent(mContext, GoutMsgDetailActivity.class);
+                        intent.putExtra("id", entity.getSid());
+                        startActivity(intent);
+                    }else{
+                        Intent intent = new Intent(mContext, WebViewActivity.class);
+                        intent.putExtra("url", entity.getUrl());
+                        startActivity(intent);
+                    }
+
                 }
             });
 

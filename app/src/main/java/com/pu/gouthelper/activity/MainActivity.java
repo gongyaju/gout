@@ -9,6 +9,8 @@ import android.support.v4.app.FragmentTransaction;
 import android.view.KeyEvent;
 import android.widget.RadioGroup;
 
+import com.pgyersdk.crash.PgyCrashManager;
+import com.pgyersdk.update.PgyUpdateManager;
 import com.pu.gouthelper.R;
 import com.pu.gouthelper.base.F;
 import com.pu.gouthelper.common.AppManager;
@@ -52,6 +54,8 @@ public class MainActivity extends BaseFragmentActivity {
         }
         F.SCREEN_SIZE(this);
         new JpushRequest(this);
+        PgyCrashManager.register(this);
+        PgyUpdateManager.register(this);
     }
 
     @Override
@@ -154,6 +158,13 @@ public class MainActivity extends BaseFragmentActivity {
             return true;
         }
         return super.onKeyDown(keyCode, event);
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        PgyUpdateManager.unregister();
+        PgyCrashManager.unregister();
     }
 
     /**

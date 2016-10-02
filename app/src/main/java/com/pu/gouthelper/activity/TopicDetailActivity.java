@@ -186,13 +186,24 @@ public class TopicDetailActivity extends SwipeBackActivity implements TitlePopup
         }
     }
 
-    public void setData(TopicDetail data) {
-        for (String url : data.getAttrs()) {
+    public void setData(final TopicDetail data) {
+        for (int i=0;i<data.getAttrs().size();i++){
+            String url=data.getAttrs().get(i);
             ImageView imageView = new ImageView(mContext);
             LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(
                     LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
             lp.setMargins(10, 20, 30, 20);
             imageView.setLayoutParams(lp);
+            final int finalI = i;
+            imageView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent=new Intent(mContext,ImagePagerActivity.class);
+                    intent.putStringArrayListExtra(ImagePagerActivity.EXTRA_IMAGE_URLS,(ArrayList<String>) data.getAttrs());
+                    intent.putExtra(ImagePagerActivity.EXTRA_IMAGE_INDEX, finalI);
+                    startActivity(intent);
+                }
+            });
             BitmapView.getInstance().display(imageView, url);
             topicdetail_img_pic.addView(imageView);
         }

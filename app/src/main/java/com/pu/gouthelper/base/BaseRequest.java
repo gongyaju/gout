@@ -3,6 +3,7 @@ package com.pu.gouthelper.base;
 
 import android.util.Log;
 
+import com.alibaba.fastjson.JSON;
 import com.orhanobut.logger.Logger;
 
 import org.xutils.common.Callback;
@@ -58,7 +59,7 @@ public class BaseRequest {
             @Override
             public void onSuccess(String result) {
                 try {
-                    Logger.json("GET", result);
+                    Log.d("GET", result);
                     onSuccessed(result);
                 } catch (Exception e) {
                     e.printStackTrace();
@@ -108,7 +109,7 @@ public class BaseRequest {
             @Override
             public void onSuccess(String result) {
                 try {
-                    Logger.json("POST", result);
+                    Log.d("POST", result);
                     onSuccessed(result);
                 } catch (Exception e) {
                     e.printStackTrace();

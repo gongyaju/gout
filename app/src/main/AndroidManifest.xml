@@ -101,6 +101,9 @@
             android:name=".activity.DrugSearchActivity"
             android:screenOrientation="portrait" />
         <activity
+            android:name=".activity.ImagePagerActivity"
+            android:screenOrientation="portrait" />
+        <activity
             android:name=".activity.WriteBreakRecordActivity"
             android:screenOrientation="portrait" />
         <activity
@@ -313,6 +316,11 @@
             android:name="JPUSH_APPKEY"
             android:value="b056b02e79ddbfb495b277a7" />
         <!--  </>值来自开发者平台取得的AppKey-->
+
+        <!--蒲公英升级-->
+        <meta-data
+            android:name="PGYER_APPID"
+            android:value="bec04cd0efd67658604260b01f56afd8"/>
     </application>
 
     <permission
@@ -344,4 +352,5 @@
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
     <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
     <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" /> <!-- 允许程序录制音频 -->
 </manifest>

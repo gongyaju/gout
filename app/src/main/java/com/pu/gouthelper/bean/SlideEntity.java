@@ -6,16 +6,18 @@ package com.pu.gouthelper.bean;
 public class SlideEntity {
 
     /**
-     * id : 2
-     * title : test
-     * pic : http://www.tfzs999.com/attachment/2016/02/145526585359822.jpg
-     * url : http://www.baidu.com
+     * "id": "10",
+     * "title": "写给痛风新手",
+     * "pic": "http://images.tfzs999.com/attachment/2016/09/147411303948576.jpg",
+     * "url": "#",
+     * "sid": "29"
      */
 
     private String id;
     private String title;
     private String pic;
     private String url;
+    private String sid;
 
     public String getId() {
         return id;
@@ -47,5 +49,13 @@ public class SlideEntity {
 
     public void setUrl(String url) {
         this.url = url;
+    }
+
+    public String getSid() {
+        return sid;
+    }
+
+    public void setSid(String sid) {
+        this.sid = sid;
     }
 }
