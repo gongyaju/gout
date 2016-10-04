@@ -16,6 +16,7 @@ import com.pu.gouthelper.R;
 import com.pu.gouthelper.bean.Comment;
 import com.pu.gouthelper.bean.UserEntity;
 
+import java.util.EmptyStackException;
 import java.util.List;
 
 
@@ -67,30 +68,49 @@ public class CommentReplyAdapter extends BaseAdapter {
 
         TextView tv_comment_reply_text = (TextView) convertView
                 .findViewById(R.id.tv_comment_reply_text);
-        TextView tv_comment_reply_writer = (TextView) convertView
-                .findViewById(R.id.tv_comment_reply_writer);
-        TextView tv_comment_reply1 = (TextView) convertView
-                .findViewById(R.id.tv_comment_reply1);
-        TextView tv_comment_reply2 = (TextView) convertView
-                .findViewById(R.id.tv_comment_reply2);
+//        TextView tv_comment_reply_writer = (TextView) convertView
+//                .findViewById(R.id.tv_comment_reply_writer);
+//        TextView tv_comment_reply1 = (TextView) convertView
+//                .findViewById(R.id.tv_comment_reply1);
+//        TextView tv_comment_reply2 = (TextView) convertView
+//                .findViewById(R.id.tv_comment_reply2);
 
         Comment.ListEntity reply = getItem(position);
-        tv_comment_reply_text.setText(reply.getContent());
+        // tv_comment_reply_text.setText(reply.getContent());
         UserEntity to_user = reply.getMemo().getTuser();
         UserEntity user = reply.getMemo().getUser();
-        if (to_user == null || user == null) {
-            tv_comment_reply_writer.setText(louzhu + ":");
-            tv_comment_reply_writer.setTextColor(context.getResources().getColor(R.color.mian_green));
-        } else {
-            to_user.setCid(reply.getId());
-            user.setCid(reply.getId());
-            tv_comment_reply1.setText(user.getNickname());
-            tv_comment_reply2.setText(to_user.getNickname()+":");
-            tv_comment_reply1.setTag(user);
-            tv_comment_reply2.setTag(to_user);
-            tv_comment_reply1.setOnClickListener(replyToReplyListener);
-            tv_comment_reply2.setOnClickListener(replyToReplyListener);
+        ForegroundColorSpan blueSpan = new ForegroundColorSpan(context.getResources().getColor(R.color.mian_green));
+        ForegroundColorSpan blueSpan2 = new ForegroundColorSpan(context.getResources().getColor(R.color.mian_green));
+        SpannableStringBuilder builder = null;
+        try {
+            if (to_user == null || user == null) {
+
+                tv_comment_reply_text.setText(louzhu + ":" + reply.getContent());
+                builder = new SpannableStringBuilder(tv_comment_reply_text.getText().toString());
+                builder.setSpan(blueSpan, 0, louzhu.length() + 1, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+                tv_comment_reply_text.setText(builder);
+//            tv_comment_reply_writer.setText(louzhu + ":");
+//            tv_comment_reply_writer.setTextColor(context.getResources().getColor(R.color.mian_green));
+            } else {
+                to_user.setCid(reply.getId());
+                user.setCid(reply.getId());
+                tv_comment_reply_text.setText(user.getNickname() + "回复" + to_user.getNickname() + ":" + reply.getContent());
+                builder = new SpannableStringBuilder(tv_comment_reply_text.getText().toString());
+                builder.setSpan(blueSpan2, 0, user.getNickname().length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+                builder.setSpan(blueSpan, user.getNickname().length() + 2, user.getNickname().length() + to_user.getNickname().length() + 3, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+                tv_comment_reply_text.setText(builder);
+//            tv_comment_reply1.setText(user.getNickname());
+//            tv_comment_reply2.setText(to_user.getNickname()+":");
+                tv_comment_reply_text.setTag(user);
+//            tv_comment_reply2.setTag(to_user);
+//            tv_comment_reply1.setOnClickListener(replyToReplyListener);
+                tv_comment_reply_text.setOnClickListener(replyToReplyListener);
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
         }
+
         return convertView;
     }
 

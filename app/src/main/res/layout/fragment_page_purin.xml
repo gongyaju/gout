@@ -25,8 +25,8 @@
             android:visibility="gone"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
-            android:layout_marginBottom="5dp"
-            android:padding="5dp" />
+            android:layout_marginBottom="4dp"
+            android:padding="4dp" />
 
 
         <TextView
@@ -53,13 +53,13 @@
     <com.pu.gouthelper.ui.tabstrip.PagerSlidingTabStrip
         android:id="@+id/tabs"
         android:layout_width="match_parent"
-        android:layout_height="140px"
+        android:layout_height="@dimen/space_140"
         app:pstsDividerColor="@color/main_line"
         app:pstsIndicatorColor="@color/mian_green"
-        app:pstsIndicatorHeight="8px"
-        app:pstsTabPaddingLeftRight="80px"
+        app:pstsIndicatorHeight="@dimen/space_8"
+        app:pstsTabPaddingLeftRight="@dimen/space_80"
         app:pstsUnderlineColor="@color/gray_light"
-        app:pstsUnderlineHeight="8px"
+        app:pstsUnderlineHeight="@dimen/space_8"
         app:selectedTabTextColor="@color/mian_green"
         app:tabTextColor="@color/black"
         app:tabTextSize="@dimen/gout_tsize_46" />

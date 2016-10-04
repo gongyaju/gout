@@ -125,11 +125,12 @@
                         android:id="@+id/topicdetail_tv_content"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/space_18"
-                        android:lines="2"
+                        android:layout_marginTop="@dimen/space_30"
+                        android:layout_marginBottom="@dimen/space_30"
+                        android:lineSpacingExtra="@dimen/space_10"
                         android:text="--"
                         android:textColor="@color/text_color_3"
-                        android:textSize="@dimen/space_40" />
+                        android:textSize="@dimen/space_42" />
 
                     <LinearLayout
                         android:id="@+id/topicdetail_img_pic"

@@ -35,6 +35,8 @@ public class GiveActivity extends SwipeBackActivity {
     private Context mContext;
     @ViewInject(R.id.give_tv_money)
     private EditText give_tv_money;
+    @ViewInject(R.id.topic_edt_content)
+    private EditText topic_edt_content;
     private Handler mHandler = new Handler() {
         @Override
         public void handleMessage(Message msg) {
@@ -46,8 +48,8 @@ public class GiveActivity extends SwipeBackActivity {
                 case CreatePrepayIdRequest.ERROR:
                     UIHelper.ToastMessage(mContext, msg.obj + "");
                     break;
-
             }
+            endLoading();
 
         }
     };
@@ -71,7 +73,8 @@ public class GiveActivity extends SwipeBackActivity {
             if (intent.getAction().equals(WXPayEntryActivity.BOADRDCAST_WXPAY)) {    //动作检测
                 switch (intent.getIntExtra("wchat", -1)) {
                     case 0:
-                        UIHelper.ToastMessage(context, "调用下一个接口~");
+                        finish();
+                        //UIHelper.ToastMessage(context, "调用下一个接口~");
                         break;
                 }
             }
@@ -92,11 +95,17 @@ public class GiveActivity extends SwipeBackActivity {
                 break;
             case R.id.give_btn_sure:
                 String money = give_tv_money.getText().toString().trim();
+                String content=topic_edt_content.getText().toString().trim();
                 if (TextUtils.isEmpty(money)) {
                     UIHelper.ToastMessage(mContext, "请输入打赏金额~");
                     return;
                 }
+                if (TextUtils.isEmpty(content)) {
+                    UIHelper.ToastMessage(mContext, "对作者说点什么吧~");
+                    return;
+                }
                 new CreatePrepayIdRequest(mHandler, mContext, money);
+                showLoading(this);
                 break;
         }
     }

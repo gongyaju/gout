@@ -2,29 +2,10 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginTop="5dp"
-    android:padding="5dp"
+    android:layout_marginTop="4dp"
+    android:padding="4dp"
     android:orientation="horizontal" >
-    <TextView
-        android:id="@+id/tv_comment_reply1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="@color/mian_green"
-        android:textSize="@dimen/space_36" />
-    <TextView
-        android:id="@+id/tv_comment_reply_writer"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="@color/text_color_6"
-        android:text="回复"
-        android:textSize="@dimen/space_36"  />
-    <TextView
-        android:id="@+id/tv_comment_reply2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:paddingRight="@dimen/space_20"
-        android:textColor="@color/mian_green"
-        android:textSize="@dimen/space_36" />
+
     <TextView
         android:id="@+id/tv_comment_reply_text"
         android:layout_width="wrap_content"

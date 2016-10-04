@@ -12,6 +12,8 @@
         android:orientation="vertical">
 
         <LinearLayout
+            android:paddingTop="@dimen/space_20"
+            android:paddingBottom="@dimen/space_30"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
@@ -82,14 +84,10 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/space_20"
-                    android:lines="2"
+                    android:lines="3"
                     android:text="111111111111"
                     android:textColor="@color/text_color_6"
                     android:textSize="@dimen/gout_tsize_36" />
-
-
-
-
             </LinearLayout>
         </LinearLayout>
 
