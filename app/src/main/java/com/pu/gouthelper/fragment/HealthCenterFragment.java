@@ -60,8 +60,8 @@ public class HealthCenterFragment extends BaseFragment {
                     SharedPreferences.getInstance().putString("avatar", login_msg.getAvatar());
                     SharedPreferences.getInstance().putString("nickname", login_msg.getNickname());
                     if (TextUtils.isEmpty(login_msg.getHeight()) || TextUtils.isEmpty(login_msg.getBirthday())
-                            || TextUtils.isEmpty(login_msg.getHistory()) || TextUtils.isEmpty(login_msg.getDrug())
-                            || TextUtils.isEmpty(login_msg.getWeight()) || TextUtils.isEmpty(login_msg.getHistory())) {
+                            || TextUtils.isEmpty(login_msg.getHistory()) || TextUtils.isEmpty(login_msg.getWeight())
+                            || TextUtils.isEmpty(login_msg.getHistory())) {
                         startActivity(new Intent(context, InformationActivity.class));
                     }
                     break;

@@ -40,16 +40,18 @@ public class CreatePrepayIdRequest {
     /**
      * @param mHandler
      */
-    public CreatePrepayIdRequest(Handler mHandler, Context context, String money) {
+    public CreatePrepayIdRequest(Handler mHandler, Context context, String money, String type, String sid) {
         this.mHandler = mHandler;
         String signStr = Sign.getCertificateSHA1Fingerprint(context);
         Logger.e(signStr);
         String ramdon = RamdonUtils.generateString(32);
         String orderid = "TF" + System.currentTimeMillis();
         String ip = AppUtils.getIP(context);
+        String attach = SharedPreferences.getInstance().getString("userid", "") + "_" + orderid + "_" + type + "_" + sid;
         Map<String, String> map = new HashMap<>();
         map.put("appid", "wx7c5f5dad45203852");
-        map.put("body", "tongfeng");
+        map.put("attach", attach);
+        map.put("body", "痛风助手");
         map.put("mch_id", "1372950802");
         map.put("nonce_str", ramdon);
         map.put("notify_url", "http://www.tfzs999.com/notify/weixin");
@@ -57,7 +59,7 @@ public class CreatePrepayIdRequest {
         map.put("spbill_create_ip", ip);//终端IP
         map.put("total_fee", money);
         map.put("trade_type", "APP");
-        String stringA = "appid=wx7c5f5dad45203852&body=tongfeng&mch_id=1372950802&nonce_str=" + ramdon + "&notify_url=http://www.tfzs999.com/notify/weixin&out_trade_no=" + orderid + "&spbill_create_ip=" + ip + "&total_fee=" + money + "&trade_type=APP";
+        String stringA = "appid=wx7c5f5dad45203852&attach=" + attach + "&body=痛风助手&mch_id=1372950802&nonce_str=" + ramdon + "&notify_url=http://www.tfzs999.com/notify/weixin&out_trade_no=" + orderid + "&spbill_create_ip=" + ip + "&total_fee=" + money + "&trade_type=APP";
         String stringSignTemp = stringA + "&key=tfzs999pool200820160816ma3he4222";
         String sign = MD5.getMessageDigest(stringSignTemp.getBytes()).toUpperCase();//参数签名
         map.put("sign", sign);

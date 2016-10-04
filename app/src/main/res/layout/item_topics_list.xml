@@ -55,11 +55,7 @@
     <RelativeLayout
         android:id="@+id/container"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:clickable="false"
-        android:descendantFocusability="blocksDescendants"
-        android:focusable="false"
-        android:focusableInTouchMode="false">
+        android:layout_height="wrap_content">
 
         <TextView
             android:id="@+id/topic_tv_content"
@@ -73,10 +69,11 @@
             android:textSize="@dimen/space_40" />
 
         <HorizontalScrollView
+            android:id="@+id/horizonscroll"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/topic_tv_content"
-            android:layout_marginBottom="@dimen/space_20"
+            android:layout_marginBottom="@dimen/space_30"
             android:scrollbars="none">
 
             <LinearLayout
@@ -84,10 +81,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/space_240"
                 android:layout_centerVertical="true"
-                android:clickable="false"
-                android:descendantFocusability="blocksDescendants"
-                android:focusable="false"
-                android:focusableInTouchMode="false"
                 android:orientation="horizontal" />
         </HorizontalScrollView>
 

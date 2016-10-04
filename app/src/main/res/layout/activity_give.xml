@@ -57,7 +57,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@null"
-            android:hint="0.00元"
+            android:text="1.00"
             android:inputType="numberDecimal"
             android:paddingLeft="@dimen/space_20"
             android:singleLine="true"

@@ -174,6 +174,13 @@ public class URLlist {
      * 捐献列表
      */
     public static final String URL_REWARD_LIST = URI_IP + "/Mobile/reward/lists";
-
+    /**
+     * 踩 news/Mobile/News/down
+     */
+    public static final String URL_NEWS_UP = URI_IP + "/Mobile/News/up";
+    /**
+     * 赞  news
+     */
+    public static final String URL_NEWS_DOWN = URI_IP + "/Mobile/News/down";
 
 }

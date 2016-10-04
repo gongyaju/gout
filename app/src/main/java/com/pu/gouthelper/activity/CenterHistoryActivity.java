@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.pu.gouthelper.R;
+import com.pu.gouthelper.bean.Drug;
 import com.pu.gouthelper.bean.LoginResult;
 import com.pu.gouthelper.ui.UIHelper;
 import com.pu.gouthelper.ui.swipebacklayout.SwipeBackActivity;
@@ -18,6 +19,8 @@ import com.pu.gouthelper.webservice.MyInfoGetRequest;
 import org.xutils.view.annotation.ContentView;
 import org.xutils.view.annotation.Event;
 import org.xutils.view.annotation.ViewInject;
+
+import java.util.List;
 
 /**
  * Created by Requiem on 2016/3/22.
@@ -87,7 +90,12 @@ public class CenterHistoryActivity extends SwipeBackActivity {
             history_tv_weight.setText("体重：" + login_msg.getWeight() + "KG");
             history_tv_breaktime.setText("上次发作时间：" + DateUtil.date2String(Long.parseLong(login_msg.getTm()) *
                     1000, "yyyy-MM-dd HH:mm"));
-            history_tv_durg.setText("服用药物：" + login_msg.getDrug());
+            StringBuilder durglist = new StringBuilder();
+            for (Drug drug : login_msg.getDrug()) {
+                durglist.append(drug.getTitle() + "  ");
+            }
+            history_tv_durg.setText("服用药物：" + durglist.toString());
+
             history_tv_other.setText("有无其他病史：无");
             StringBuilder builder = new StringBuilder();
             //1.肘 2.手指 3.膝盖 4.脚 5.踝

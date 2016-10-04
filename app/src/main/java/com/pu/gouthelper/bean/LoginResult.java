@@ -1,5 +1,7 @@
 package com.pu.gouthelper.bean;
 
+import java.util.List;
+
 /**
  * Created by Requiem on 2016/4/17.
  */
@@ -33,7 +35,7 @@ public class LoginResult {
     private String height;
     private String weight;
     private String tarea;
-    private String drug;
+    private List<Drug> drug;
     private String state;
     private String tm;
 
@@ -125,13 +127,7 @@ public class LoginResult {
         this.tarea = tarea;
     }
 
-    public String getDrug() {
-        return drug;
-    }
 
-    public void setDrug(String drug) {
-        this.drug = drug;
-    }
 
     public String getState() {
         return state;
@@ -147,5 +143,13 @@ public class LoginResult {
 
     public void setTm(String tm) {
         this.tm = tm;
+    }
+
+    public List<Drug> getDrug() {
+        return drug;
+    }
+
+    public void setDrug(List<Drug> drug) {
+        this.drug = drug;
     }
 }

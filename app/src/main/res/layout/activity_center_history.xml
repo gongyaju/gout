@@ -149,14 +149,20 @@
             android:layout_width="match_parent"
             android:layout_height="@dimen/space_140">
 
-            <TextView
-                android:id="@+id/history_tv_durg"
+            <HorizontalScrollView
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:gravity="center_vertical"
-                android:text="服用药物：--"
-                android:textColor="@color/text_color_6"
-                android:textSize="@dimen/space_46" />
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/history_tv_durg"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:text="服用药物：--"
+                    android:textColor="@color/text_color_6"
+                    android:textSize="@dimen/space_46" />
+            </HorizontalScrollView>
+
         </RelativeLayout>
 
         <View

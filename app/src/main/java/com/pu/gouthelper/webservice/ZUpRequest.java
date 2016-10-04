@@ -30,7 +30,15 @@ public class ZUpRequest extends BaseRequest {
         params.addBodyParameter("id", id);
         sendPost(params);
     }
-
+    /**
+     * @param mHandler
+     */
+    public ZUpRequest(Handler mHandler, String id,String news) {
+        this.mHandler = mHandler;
+        RequestParams params = new RequestParams(URLlist.URL_NEWS_UP);
+        params.addBodyParameter("id", id);
+        sendPost(params);
+    }
 
     public void onSuccessed(String result) {
         JSONObject object = JSON.parseObject(result);

@@ -114,11 +114,13 @@ public class GoutMsgDetailActivity extends SwipeBackActivity implements Callback
                     Drawable drawable = mContext.getResources().getDrawable(R.drawable.zan_click);
                     drawable.setBounds(0, 0, drawable.getMinimumWidth(), drawable.getMinimumHeight());//必须设置图片大小，否则不显示
                     msg_tv_zan.setCompoundDrawables(drawable, null, null, null);
+                    new GoutKnowInfoRequest(mHandler, id);
                     break;
                 case ZDownRequest.SUCCESS:
                     Drawable drawable1 = mContext.getResources().getDrawable(R.drawable.icon_zan);
                     drawable1.setBounds(0, 0, drawable1.getMinimumWidth(), drawable1.getMinimumHeight());//必须设置图片大小，否则不显示
                     msg_tv_zan.setCompoundDrawables(drawable1, null, null, null);
+                    new GoutKnowInfoRequest(mHandler, id);
                     break;
                 case ZDownRequest.ERROR:
                 case ZUpRequest.ERROR:
@@ -181,6 +183,10 @@ public class GoutMsgDetailActivity extends SwipeBackActivity implements Callback
                 Drawable drawable = mContext.getResources().getDrawable(R.drawable.zan_click);
                 drawable.setBounds(0, 0, drawable.getMinimumWidth(), drawable.getMinimumHeight());//必须设置图片大小，否则不显示
                 msg_tv_zan.setCompoundDrawables(drawable, null, null, null);
+            }else{
+                Drawable drawable1 = mContext.getResources().getDrawable(R.drawable.icon_zan);
+                drawable1.setBounds(0, 0, drawable1.getMinimumWidth(), drawable1.getMinimumHeight());//必须设置图片大小，否则不显示
+                msg_tv_zan.setCompoundDrawables(drawable1, null, null, null);
             }
             msg_tv_zan.setText(entity.getUps());
             noun_btn_title.setText(entity.getTitle());
@@ -217,15 +223,17 @@ public class GoutMsgDetailActivity extends SwipeBackActivity implements Callback
                 ShareUtils.share(this, entity.getTitle(), "");
                 break;
             case R.id.msg_tv_zan:
-                if (entity.getLike() != null && entity.getLike().getUp().equals("1")) {
-                    new ZDownRequest(mHandler, entity.getId());
+                if (entity.getLike() != null && entity.getLike().getDown().equals("0")) {
+                    new ZUpRequest(mHandler, entity.getId(), "");
                 } else {
-                    new ZUpRequest(mHandler, entity.getId());
+                    new ZDownRequest(mHandler, entity.getId(), "");
                 }
                 showLoading(mContext);
                 break;
             case R.id.goutmsg_tv_shang:
                 Intent intent = new Intent(this, GiveActivity.class);
+                intent.putExtra("sid",entity.getId());
+                intent.putExtra("type","2");
                 startActivity(intent);
                 break;
         }

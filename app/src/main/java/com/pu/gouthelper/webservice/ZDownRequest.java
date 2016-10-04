@@ -31,6 +31,12 @@ public class ZDownRequest extends BaseRequest {
         sendPost(params);
     }
 
+    public ZDownRequest(Handler mHandler, String id,String news) {
+        this.mHandler = mHandler;
+        RequestParams params = new RequestParams(URLlist.URL_NEWS_DOWN);
+        params.addBodyParameter("id", id);
+        sendPost(params);
+    }
 
     public void onSuccessed(String result) {
         JSONObject object = JSON.parseObject(result);

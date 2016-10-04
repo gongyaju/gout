@@ -7,7 +7,9 @@ import android.content.IntentFilter;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.text.Editable;
 import android.text.TextUtils;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.EditText;
 
@@ -58,6 +60,7 @@ public class GiveActivity extends SwipeBackActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mContext = this;
+        setPricePoint(give_tv_money);
         initData();
     }
 
@@ -94,20 +97,65 @@ public class GiveActivity extends SwipeBackActivity {
                 finish();
                 break;
             case R.id.give_btn_sure:
-                String money = give_tv_money.getText().toString().trim();
-                String content=topic_edt_content.getText().toString().trim();
-                if (TextUtils.isEmpty(money)) {
-                    UIHelper.ToastMessage(mContext, "请输入打赏金额~");
-                    return;
+                try {
+                    String money = give_tv_money.getText().toString().trim();
+                    String content = topic_edt_content.getText().toString().trim();
+                    if (TextUtils.isEmpty(money)) {
+                        UIHelper.ToastMessage(mContext, "请输入打赏金额~");
+                        return;
+                    }
+                    if (TextUtils.isEmpty(content)) {
+                        UIHelper.ToastMessage(mContext, "对作者说点什么吧~");
+                        return;
+                    }
+                    money =(int)(Double.parseDouble(money) * 100 )+"";
+                    new CreatePrepayIdRequest(mHandler, mContext, money, getIntent().getStringExtra("type"), getIntent().getStringExtra("sid"));
+                    showLoading(this);
+                } catch (Exception e) {
+                    e.printStackTrace();
                 }
-                if (TextUtils.isEmpty(content)) {
-                    UIHelper.ToastMessage(mContext, "对作者说点什么吧~");
-                    return;
-                }
-                new CreatePrepayIdRequest(mHandler, mContext, money);
-                showLoading(this);
+
                 break;
         }
     }
 
+    public void setPricePoint(final EditText editText) {
+
+        editText.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before,
+                                      int count) {
+                if (s.toString().contains(".")) {
+                    if (s.length() - 1 - s.toString().indexOf(".") > 2) {
+                        s = s.toString().subSequence(0,
+                                s.toString().indexOf(".") + 3);
+                        editText.setText(s);
+                        editText.setSelection(s.length());
+                    }
+                }
+                if (s.toString().trim().substring(0).equals(".")) {
+                    s = "0" + s;
+                    editText.setText(s);
+                    editText.setSelection(2);
+                }
+                if (s.toString().startsWith("0") && s.toString().trim().length() > 1) {
+                    if (!s.toString().substring(1, 2).equals(".")) {
+                        editText.setText(s.subSequence(0, 1));
+                        editText.setSelection(1);
+                        return;
+                    }
+                }
+            }
+
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                // TODO Auto-generated method stub
+            }
+        });
+    }
 }

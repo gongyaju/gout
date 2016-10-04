@@ -49,17 +49,16 @@ public class BaseRequest {
         params.setConnectTimeout(1000 * 30);
 
         if (isCache) {
-            params.setCacheMaxAge(1000 * 60 * 100);
-            params.setCacheDirName(x.app().getCacheDir().getAbsolutePath());
-            params.setCacheSize(1024 * 1024 * 5);
+//            params.setCacheMaxAge(1000 * 60 * 100);
+//            params.setCacheDirName(x.app().getCacheDir().getAbsolutePath());
+//            params.setCacheSize(1024 * 1024 * 5);
         }
         Logger.e(params.getUri());
-        Logger.w(params.toJSONString());
+//        Logger.w(params.toJSONString());
         cancelable = x.http().get(params, new Callback.CommonCallback<String>() {
             @Override
             public void onSuccess(String result) {
                 try {
-                    Log.d("GET", result);
                     onSuccessed(result);
                 } catch (Exception e) {
                     e.printStackTrace();
@@ -99,17 +98,16 @@ public class BaseRequest {
         params.setMaxRetryCount(0);
         params.setConnectTimeout(1000 * 30);
         if (bcache) {
-            params.setCacheMaxAge(1000 * 60 * 100);
-            params.setCacheDirName(x.app().getCacheDir().getAbsolutePath());
-            params.setCacheSize(1024 * 1024 * 5);
+//            params.setCacheMaxAge(1000 * 60 * 100);
+//            params.setCacheDirName(x.app().getCacheDir().getAbsolutePath());
+//            params.setCacheSize(1024 * 1024 * 5);
         }
         Logger.e(params.getUri());
-        Logger.w(params.toJSONString());
+        //Logger.w(params.toJSONString());
         cancelable = x.http().post(params, new Callback.CommonCallback<String>() {
             @Override
             public void onSuccess(String result) {
                 try {
-                    Log.d("POST", result);
                     onSuccessed(result);
                 } catch (Exception e) {
                     e.printStackTrace();
