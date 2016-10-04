@@ -5,6 +5,7 @@
     android:background="@color/main_background"
     android:fitsSystemWindows="true"
     android:orientation="vertical">
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="@dimen/space_142"
@@ -12,144 +13,155 @@
         android:gravity="center"
         android:text="设置"
         android:textSize="@dimen/gout_tsize_56" />
+
     <View
         android:layout_width="match_parent"
         android:layout_height="1px"
         android:background="@color/main_line" />
 
-        <ScrollView
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
-            <LinearLayout
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
+                android:background="@drawable/list_item_selector"
+                android:paddingLeft="@dimen/space_60"
+                android:layout_marginTop="@dimen/space_20"
+                android:paddingRight="@dimen/space_60"
+                android:layout_height="@dimen/space_142">
 
                 <TextView
                     android:id="@+id/setting_tv_msg"
                     android:layout_width="match_parent"
-
-                    android:layout_height="@dimen/space_142"
-                    android:layout_marginTop="@dimen/space_20"
-                    android:background="@drawable/list_item_selector"
-                    android:drawablePadding="@dimen/space_60"
-                    android:drawableRight="@drawable/ic_setting_arrow"
+                    android:layout_height="match_parent"
                     android:gravity="center_vertical"
-                    android:paddingLeft="@dimen/space_60"
-                    android:paddingRight="@dimen/space_60"
                     android:text="新消息通知"
                     android:textColor="@color/text_color_black"
                     android:textSize="@dimen/gout_tsize_46" />
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1px"
-                    android:layout_marginLeft="@dimen/space_60"
-                    android:background="@drawable/list_view_divider" />
-
-                <TextView
-                    android:id="@+id/setting_tv_psw"
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/space_142"
-                    android:background="@drawable/list_item_selector"
-                    android:drawablePadding="@dimen/space_60"
-                    android:drawableRight="@drawable/ic_setting_arrow"
-                    android:gravity="center_vertical"
-                    android:paddingLeft="@dimen/space_60"
-                    android:paddingRight="@dimen/space_60"
-                    android:text="密码修改"
-                    android:textColor="@color/text_color_black"
-                    android:textSize="@dimen/gout_tsize_46" />
+                <Switch
+                    android:id="@+id/open"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textOff="关闭"
+                    android:textOn="打开" />
+            </RelativeLayout>
 
 
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:layout_marginLeft="@dimen/space_60"
+                android:background="@drawable/list_view_divider" />
+
+            <TextView
+                android:id="@+id/setting_tv_psw"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/space_142"
+                android:background="@drawable/list_item_selector"
+                android:drawablePadding="@dimen/space_60"
+                android:drawableRight="@drawable/ic_setting_arrow"
+                android:gravity="center_vertical"
+                android:paddingLeft="@dimen/space_60"
+                android:paddingRight="@dimen/space_60"
+                android:text="密码修改"
+                android:textColor="@color/text_color_black"
+                android:textSize="@dimen/gout_tsize_46" />
 
 
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1px"
-                    android:background="@drawable/list_view_divider" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:background="@drawable/list_view_divider" />
 
-                <TextView
-                    android:id="@+id/setting_tv_complain"
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/space_142"
-                    android:layout_marginTop="@dimen/space_20"
-                    android:background="@drawable/list_item_selector"
-                    android:drawablePadding="@dimen/space_60"
-                    android:drawableRight="@drawable/ic_setting_arrow"
-                    android:gravity="center_vertical"
-                    android:paddingLeft="@dimen/space_60"
-                    android:paddingRight="@dimen/space_60"
-                    android:text="意见反馈"
-                    android:textColor="@color/text_color_black"
-                    android:textSize="@dimen/gout_tsize_46" />
+            <TextView
+                android:id="@+id/setting_tv_complain"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/space_142"
+                android:layout_marginTop="@dimen/space_20"
+                android:background="@drawable/list_item_selector"
+                android:drawablePadding="@dimen/space_60"
+                android:drawableRight="@drawable/ic_setting_arrow"
+                android:gravity="center_vertical"
+                android:paddingLeft="@dimen/space_60"
+                android:paddingRight="@dimen/space_60"
+                android:text="意见反馈"
+                android:textColor="@color/text_color_black"
+                android:textSize="@dimen/gout_tsize_46" />
 
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1px"
-                    android:background="@drawable/list_view_divider" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:background="@drawable/list_view_divider" />
 
-                <TextView
-                    android:id="@+id/setting_tv_us"
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/space_142"
-                    android:background="@drawable/list_item_selector"
-                    android:drawablePadding="@dimen/space_60"
-                    android:drawableRight="@drawable/ic_setting_arrow"
-                    android:gravity="center_vertical"
-                    android:paddingLeft="@dimen/space_60"
-                    android:paddingRight="@dimen/space_60"
-                    android:text="关于我们"
-                    android:textColor="@color/text_color_black"
-                    android:textSize="@dimen/gout_tsize_46" />
+            <TextView
+                android:id="@+id/setting_tv_us"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/space_142"
+                android:background="@drawable/list_item_selector"
+                android:drawablePadding="@dimen/space_60"
+                android:drawableRight="@drawable/ic_setting_arrow"
+                android:gravity="center_vertical"
+                android:paddingLeft="@dimen/space_60"
+                android:paddingRight="@dimen/space_60"
+                android:text="关于我们"
+                android:textColor="@color/text_color_black"
+                android:textSize="@dimen/gout_tsize_46" />
 
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1px"
-                    android:visibility="gone"
-                    android:background="@drawable/list_view_divider" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:background="@drawable/list_view_divider"
+                android:visibility="gone" />
 
-                <TextView
-                    android:visibility="gone"
-                    android:id="@+id/setting_tv_hlepme"
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/space_142"
-                    android:background="@drawable/list_item_selector"
-                    android:drawablePadding="@dimen/space_60"
-                    android:drawableRight="@drawable/ic_setting_arrow"
-                    android:gravity="center_vertical"
-                    android:paddingLeft="@dimen/space_60"
-                    android:paddingRight="@dimen/space_60"
-                    android:text="帮助评分"
-                    android:textColor="@color/text_color_black"
-                    android:textSize="@dimen/gout_tsize_46" />
+            <TextView
+                android:id="@+id/setting_tv_hlepme"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/space_142"
+                android:background="@drawable/list_item_selector"
+                android:drawablePadding="@dimen/space_60"
+                android:drawableRight="@drawable/ic_setting_arrow"
+                android:gravity="center_vertical"
+                android:paddingLeft="@dimen/space_60"
+                android:paddingRight="@dimen/space_60"
+                android:text="帮助评分"
+                android:textColor="@color/text_color_black"
+                android:textSize="@dimen/gout_tsize_46"
+                android:visibility="gone" />
 
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1px"
-                    android:background="@drawable/list_view_divider" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:background="@drawable/list_view_divider" />
 
-                <TextView
-                    android:id="@+id/setting_tv_exit"
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/space_142"
-                    android:background="@drawable/list_item_selector"
-                    android:drawablePadding="@dimen/space_60"
-                    android:gravity="center"
-                    android:layout_marginTop="@dimen/space_20"
-                    android:paddingLeft="@dimen/space_60"
-                    android:paddingRight="@dimen/space_60"
-                    android:text="退出我的账号"
-                    android:textColor="@color/text_color_black"
-                    android:textSize="@dimen/gout_tsize_46" />
+            <TextView
+                android:id="@+id/setting_tv_exit"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/space_142"
+                android:layout_marginTop="@dimen/space_20"
+                android:background="@drawable/list_item_selector"
+                android:drawablePadding="@dimen/space_60"
+                android:gravity="center"
+                android:paddingLeft="@dimen/space_60"
+                android:paddingRight="@dimen/space_60"
+                android:text="退出我的账号"
+                android:textColor="@color/text_color_black"
+                android:textSize="@dimen/gout_tsize_46" />
 
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1px"
-                    android:layout_marginBottom="@dimen/space_20"
-                    android:background="@drawable/list_view_divider" />
-            </LinearLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:layout_marginBottom="@dimen/space_20"
+                android:background="@drawable/list_view_divider" />
+        </LinearLayout>
 
-        </ScrollView>
+    </ScrollView>
 
 </LinearLayout>

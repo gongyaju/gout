@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.support.v4.app.Fragment;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -58,6 +59,11 @@ public class HealthCenterFragment extends BaseFragment {
                     BitmapUtils.getInstance().display(center_img_toux, login_msg.getAvatar());
                     SharedPreferences.getInstance().putString("avatar", login_msg.getAvatar());
                     SharedPreferences.getInstance().putString("nickname", login_msg.getNickname());
+                    if (TextUtils.isEmpty(login_msg.getHeight()) || TextUtils.isEmpty(login_msg.getBirthday())
+                            || TextUtils.isEmpty(login_msg.getHistory()) || TextUtils.isEmpty(login_msg.getDrug())
+                            || TextUtils.isEmpty(login_msg.getWeight()) || TextUtils.isEmpty(login_msg.getHistory())) {
+                        startActivity(new Intent(context, InformationActivity.class));
+                    }
                     break;
             }
         }
@@ -76,11 +82,6 @@ public class HealthCenterFragment extends BaseFragment {
         context = getActivity();
         initView();
         initData();
-        boolean firstTime = SharedPreferences.getInstance().getBoolean("first-time-center", true);
-        if (firstTime) {
-            startActivity(new Intent(context, InformationActivity.class));
-        }
-
     }
 
     private void initView() {

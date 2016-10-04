@@ -22,6 +22,7 @@ package com.pu.gouthelper.utils;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
+import android.text.TextUtils;
 
 import com.pu.gouthelper.R;
 import com.pu.gouthelper.activity.MainActivity;
@@ -36,7 +37,10 @@ import cn.sharesdk.onekeyshare.OnekeyShare;
 public class ShareUtils {
 
 
-    public static void share(Context context, String extraText,String url) {
+    public static void share(Context context, String extraText, String url) {
+        if (TextUtils.isEmpty(url)) {
+            url = "http://www.tfzs999.com/wap.html?from=timeline&isappinstalled=1";
+        }
         ShareSDK.initSDK(context);
         OnekeyShare oks = new OnekeyShare();
         //关闭sso授权

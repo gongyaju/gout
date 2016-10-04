@@ -1,6 +1,6 @@
 package com.pu.gouthelper.activity;
 
-import android.content.Intent;
+
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -8,6 +8,7 @@ import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
@@ -16,10 +17,19 @@ import android.widget.Button;
 import android.widget.ImageView;
 
 import com.pu.gouthelper.R;
+import com.pu.gouthelper.base.BitmapUtils;
+import com.pu.gouthelper.base.BitmapView;
 import com.pu.gouthelper.base.SharedPreferences;
+import com.pu.gouthelper.bean.SlideEntity;
 import com.pu.gouthelper.ui.UIHelper;
 import com.pu.gouthelper.ui.viewpagerindicator.CirclePageIndicator;
+import com.pu.gouthelper.utils.BitmapUtil;
 import com.pu.gouthelper.webservice.LoginRequest;
+import com.pu.gouthelper.webservice.SidleListRequest;
+
+import org.xutils.x;
+
+import java.util.List;
 
 import cn.jpush.android.api.JPushInterface;
 
@@ -29,6 +39,7 @@ import cn.jpush.android.api.JPushInterface;
  */
 public class SplashActivity extends FragmentActivity {
 
+    private ImageView guideImage;
     private Button btnHome;
     private CirclePageIndicator indicator;
     private ViewPager pager;
@@ -39,6 +50,7 @@ public class SplashActivity extends FragmentActivity {
             R.drawable.splash_page3,
             R.drawable.splash_page4
     };
+
     private Handler mHandler = new Handler() {
         @Override
         public void handleMessage(Message msg) {
@@ -54,6 +66,16 @@ public class SplashActivity extends FragmentActivity {
                     SplashActivity.this.finish();
                     UIHelper.ToastMessage(SplashActivity.this, msg.obj + "");
                     break;
+                case SidleListRequest.SUCCESS:
+                    try {
+                        List<SlideEntity> mList = (List<SlideEntity>) msg.obj;
+                        if (mList != null && mList.size() > 0) {
+                            x.image().bind(guideImage, mList.get(0).getPic());
+                        }
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                    break;
             }
         }
     };
@@ -62,6 +84,8 @@ public class SplashActivity extends FragmentActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
+        guideImage = (ImageView) findViewById(R.id.guideImage);
+        new SidleListRequest(mHandler, "2", "1");
         /**
          * / 初始化 JPush。如果已经初始化，但没有登录成功，则执行重新登录。
          */
@@ -87,14 +111,13 @@ public class SplashActivity extends FragmentActivity {
     }
 
     private void initLaunchLogo() {
-        ImageView guideImage = (ImageView) findViewById(R.id.guideImage);
         guideImage.setVisibility(View.VISIBLE);
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
                 String user = SharedPreferences.getInstance().getString("username", "");
                 String psw = SharedPreferences.getInstance().getString("password", "");
-                if (TextUtils.isEmpty(user) ||TextUtils.isEmpty(psw)) {
+                if (TextUtils.isEmpty(user) || TextUtils.isEmpty(psw)) {
                     SharedPreferences.getInstance().putString("username", "");
                     SharedPreferences.getInstance().putString("password", "");
                     SharedPreferences.getInstance().getString("userid", "");
@@ -106,7 +129,7 @@ public class SplashActivity extends FragmentActivity {
                 }
 
             }
-        }, 1500);
+        }, 3000);
     }
 
     private void initGuideGallery() {

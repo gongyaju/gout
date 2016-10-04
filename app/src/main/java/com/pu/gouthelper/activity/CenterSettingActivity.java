@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.view.View;
+import android.widget.CompoundButton;
+import android.widget.Switch;
 
 import com.pu.gouthelper.R;
 import com.pu.gouthelper.base.SharedPreferences;
@@ -13,6 +15,7 @@ import com.pu.gouthelper.ui.swipebacklayout.SwipeBackActivity;
 
 import org.xutils.view.annotation.ContentView;
 import org.xutils.view.annotation.Event;
+import org.xutils.view.annotation.ViewInject;
 
 /**
  * Created by Requiem on 2016/3/22.
@@ -20,16 +23,8 @@ import org.xutils.view.annotation.Event;
  */
 @ContentView(R.layout.activity_center_setting)
 public class CenterSettingActivity extends SwipeBackActivity {
-    private Handler mHandler = new Handler() {
-        @Override
-        public void handleMessage(Message msg) {
-            super.handleMessage(msg);
-            switch (msg.what) {
-
-            }
-            endLoading();
-        }
-    };
+    @ViewInject(R.id.open)
+    private Switch open;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,7 +35,13 @@ public class CenterSettingActivity extends SwipeBackActivity {
 
 
     private void initView() {
-
+        open.setChecked(SharedPreferences.getInstance().getBoolean("center_set_msgopen", true));
+        open.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                SharedPreferences.getInstance().putBoolean("center_set_msgopen", isChecked);
+            }
+        });
     }
 
     private void initData() {
@@ -50,7 +51,7 @@ public class CenterSettingActivity extends SwipeBackActivity {
     private void onClick(View v) {
         switch (v.getId()) {
             case R.id.setting_tv_msg:
-                UIHelper.ToastMessage(this, "setting_tv_msg");
+
                 break;
             case R.id.setting_tv_psw:
                 startActivity(new Intent(this, SettingPasswordActivity.class));
