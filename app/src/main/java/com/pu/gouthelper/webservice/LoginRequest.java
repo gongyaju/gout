@@ -39,7 +39,6 @@ public class LoginRequest extends BaseRequest {
     public void onSuccessed(String result) {
         JSONObject object = JSON.parseObject(result);
         int state = object.getIntValue("state");
-        // {"state":1,"date":{"id":"3","mobile":"18710278553","nickname":"","avatar":"","age":"0","sex":"0","birthday":"0","history":"0","height":"0","weight":"0","tarea":"","drug":"","state":"1","tm":"1458391324"}}
         if (state == 1) {
             LoginResult login_msg = JSON.parseObject(object.getString("date"), LoginResult.class);
             SharedPreferences.getInstance().putString("mobile", login_msg.getMobile());

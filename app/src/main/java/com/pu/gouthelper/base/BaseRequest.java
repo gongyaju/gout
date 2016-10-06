@@ -54,7 +54,7 @@ public class BaseRequest {
 //            params.setCacheSize(1024 * 1024 * 5);
         }
         Logger.e(params.getUri());
-//        Logger.w(params.toJSONString());
+        Logger.w(params.toJSONString());
         cancelable = x.http().get(params, new Callback.CommonCallback<String>() {
             @Override
             public void onSuccess(String result) {
@@ -103,7 +103,7 @@ public class BaseRequest {
 //            params.setCacheSize(1024 * 1024 * 5);
         }
         Logger.e(params.getUri());
-        //Logger.w(params.toJSONString());
+        Logger.w(params.toJSONString());
         cancelable = x.http().post(params, new Callback.CommonCallback<String>() {
             @Override
             public void onSuccess(String result) {

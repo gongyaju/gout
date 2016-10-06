@@ -58,7 +58,6 @@ public class SplashActivity extends FragmentActivity {
             switch (msg.what) {
                 case LoginRequest.SUCCESS:
                     UIHelper.showHome(SplashActivity.this);
-                    SharedPreferences.getInstance().putString("userid", "3");
                     finish();
                     break;
                 case LoginRequest.ERROR:
@@ -117,12 +116,12 @@ public class SplashActivity extends FragmentActivity {
             public void run() {
                 String user = SharedPreferences.getInstance().getString("username", "");
                 String psw = SharedPreferences.getInstance().getString("password", "");
+                SharedPreferences.getInstance().putString("userid", "");
                 if (TextUtils.isEmpty(user) || TextUtils.isEmpty(psw)) {
+                    UIHelper.showLogin(SplashActivity.this);
                     SharedPreferences.getInstance().putString("username", "");
                     SharedPreferences.getInstance().putString("password", "");
-                    SharedPreferences.getInstance().getString("userid", "");
                     SharedPreferences.getInstance().putString("mobile", "");
-                    UIHelper.showLogin(SplashActivity.this);
                     SplashActivity.this.finish();
                 } else {
                     new LoginRequest(mHandler, user, psw);
