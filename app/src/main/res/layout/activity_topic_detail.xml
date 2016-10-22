@@ -9,9 +9,9 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:paddingTop="@dimen/space_40"
         android:layout_height="@dimen/space_180"
-        android:background="@color/white">
+        android:background="@color/white"
+        android:paddingTop="@dimen/space_40">
 
         <ImageButton
             android:id="@+id/topic_btn_goback"
@@ -125,8 +125,10 @@
                         android:id="@+id/topicdetail_tv_content"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/space_30"
                         android:layout_marginBottom="@dimen/space_30"
+                        android:layout_marginLeft="@dimen/space_20"
+                        android:layout_marginRight="@dimen/space_20"
+                        android:layout_marginTop="@dimen/space_30"
                         android:lineSpacingExtra="@dimen/space_10"
                         android:text="--"
                         android:textColor="@color/text_color_3"
@@ -136,15 +138,17 @@
                         android:id="@+id/topicdetail_img_pic"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/space_20"
+                        android:layout_marginRight="@dimen/space_20"
                         android:orientation="vertical" />
 
 
                     <RelativeLayout
-                        android:visibility="gone"
                         android:layout_width="match_parent"
                         android:layout_height="@dimen/space_142"
                         android:paddingLeft="@dimen/space_30"
-                        android:paddingRight="@dimen/space_30">
+                        android:paddingRight="@dimen/space_30"
+                        android:visibility="gone">
 
                         <TextView
                             android:id="@+id/topic_tv_read"

@@ -7,9 +7,9 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:paddingTop="@dimen/space_40"
         android:layout_height="@dimen/space_180"
-        android:background="@color/main_background">
+        android:background="@color/main_background"
+        android:paddingTop="@dimen/space_40">
 
         <ImageButton
             android:id="@+id/remind_btn_goback"
@@ -27,7 +27,7 @@
             android:text="新增提醒计划"
             android:textSize="@dimen/gout_tsize_56" />
 
-        <ImageButton
+        <Button
             android:id="@+id/remind_btn_add"
             android:layout_width="@dimen/space_150"
             android:layout_height="match_parent"
@@ -35,7 +35,10 @@
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
             android:background="@null"
-            android:src="@drawable/keyao_add" />
+            android:textSize="@dimen/gout_tsize_40"
+            android:paddingTop="@dimen/space_40"
+            android:text="确定"
+            android:textColor="@color/text_color_6" />
 
     </RelativeLayout>
 
@@ -71,10 +74,12 @@
             android:paddingLeft="@dimen/space_20"
             android:singleLine="true"
             android:textSize="@dimen/space_46" />
+
         <View
             android:layout_width="1px"
             android:layout_height="match_parent"
             android:background="@color/main_line" />
+
         <LinearLayout
             android:id="@+id/remind_img_color"
             android:layout_width="match_parent"

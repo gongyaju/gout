@@ -22,6 +22,7 @@ import com.pu.gouthelper.adapter.Callback;
 import com.pu.gouthelper.adapter.CommentAdapter;
 import com.pu.gouthelper.base.BitmapView;
 import com.pu.gouthelper.base.F;
+import com.pu.gouthelper.base.SDCardUtils;
 import com.pu.gouthelper.base.StringUtils;
 import com.pu.gouthelper.bean.Comment;
 import com.pu.gouthelper.bean.GoutKnowDetail;
@@ -220,7 +221,8 @@ public class GoutMsgDetailActivity extends SwipeBackActivity implements Callback
                 showLoading(mContext);
                 break;
             case R.id.btn_share:
-                ShareUtils.share(this, entity.getTitle(), "");
+                String path = SDCardUtils.getCurrentScreen(this);
+                ShareUtils.share(this, entity.getTitle(), "",path);
                 break;
             case R.id.msg_tv_zan:
                 if (entity.getLike() != null && entity.getLike().getDown().equals("0")) {

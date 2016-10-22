@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.pu.gouthelper.R;
+import com.pu.gouthelper.base.SDCardUtils;
 import com.pu.gouthelper.bean.AttackRecord;
 import com.pu.gouthelper.ui.swipebacklayout.SwipeBackActivity;
 import com.pu.gouthelper.utils.DateUtil;
@@ -59,7 +60,8 @@ public class BreakIteminfoActivity extends SwipeBackActivity {
             case R.id.break_tv_share1:
             case R.id.break_tv_share2:
             case R.id.break_tv_share3:
-                ShareUtils.share(this, entity.getDesc(), "");
+                String path = SDCardUtils.getCurrentScreen(this);
+                ShareUtils.share(this, entity.getDesc(), "",path);
                 break;
         }
     }

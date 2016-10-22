@@ -19,6 +19,7 @@ import com.pu.gouthelper.adapter.CommentAdapter;
 import com.pu.gouthelper.base.BitmapUtils;
 import com.pu.gouthelper.base.BitmapView;
 import com.pu.gouthelper.base.F;
+import com.pu.gouthelper.base.SDCardUtils;
 import com.pu.gouthelper.base.StringUtils;
 import com.pu.gouthelper.bean.ActionItem;
 import com.pu.gouthelper.bean.Comment;
@@ -169,10 +170,9 @@ public class TopicDetailActivity extends SwipeBackActivity implements TitlePopup
                 finish();
                 break;
             case R.id.btn_share:
-                ShareUtils.share(this, detail.getTitle(), "");
-                break;
             case R.id.topic_tv_share:
-                ShareUtils.share(this, detail.getTitle(), "");
+                String path = SDCardUtils.getCurrentScreen(this);
+                ShareUtils.share(this, detail.getTitle(), "",path);
                 break;
             case R.id.group_discuss_submit:
                 String content = group_discuss.getText().toString().trim();

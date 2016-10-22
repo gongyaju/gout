@@ -7,9 +7,9 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:paddingTop="@dimen/space_40"
         android:layout_height="@dimen/space_180"
-        android:background="@color/main_background">
+        android:background="@color/main_background"
+        android:paddingTop="@dimen/space_40">
 
         <ImageButton
             android:id="@+id/drug_btn_goback"
@@ -53,7 +53,8 @@
                 <ImageView
                     android:id="@+id/drug_img_pic"
                     android:layout_width="match_parent"
-                    android:scaleType="fitCenter"
+                    android:background="@color/white"
+                    android:src="@drawable/ic_launcher"
                     android:layout_height="@dimen/space_420" />
 
                 <LinearLayout
@@ -233,12 +234,12 @@
             android:id="@+id/rl_bottom"
             android:layout_width="fill_parent"
             android:layout_height="@dimen/space_160"
-            android:visibility="gone"
             android:layout_alignParentBottom="true"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:background="@drawable/edt_shape"
-            android:gravity="center_vertical">
+            android:gravity="center_vertical"
+            android:visibility="gone">
 
             <Button
                 android:id="@+id/group_discuss_submit"

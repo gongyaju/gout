@@ -40,6 +40,7 @@ import com.pu.gouthelper.webservice.CommentAddRequest;
 import com.pu.gouthelper.webservice.GoutDrugInfoRequest;
 import com.pu.gouthelper.webservice.ZDownRequest;
 import com.pu.gouthelper.webservice.ZUpRequest;
+import com.squareup.picasso.Picasso;
 
 import org.xutils.view.annotation.ContentView;
 import org.xutils.view.annotation.Event;
@@ -204,7 +205,7 @@ public class DrugDetailActivity extends SwipeBackActivity {
     }
 
     private void setDate(DrugDetail entity) {
-        BitmapView.getInstance().display(drug_img_pic, entity.getPic());
+        Picasso.with(this).load(entity.getPic()).into(drug_img_pic);
         drug_tv_title.setText(entity.getTitle());
         drug_tv_price.setText("￥" + entity.getMin_price() + "-" + "￥" + entity.getMax_price());
         drug_btn_zan.setText(entity.getUps());

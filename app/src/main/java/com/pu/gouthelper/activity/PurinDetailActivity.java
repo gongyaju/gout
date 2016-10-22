@@ -1,6 +1,8 @@
 package com.pu.gouthelper.activity;
 
+import android.app.Activity;
 import android.content.Context;
+import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -22,6 +24,8 @@ import com.pu.gouthelper.R;
 import com.pu.gouthelper.base.BitmapUtils;
 import com.pu.gouthelper.base.BitmapView;
 import com.pu.gouthelper.base.F;
+import com.pu.gouthelper.base.SDCardUtils;
+import com.pu.gouthelper.base.ScreenUtils;
 import com.pu.gouthelper.bean.PurinFoodInfoEntity;
 import com.pu.gouthelper.bean.PurinNews;
 import com.pu.gouthelper.bean.PurinRecipe;
@@ -40,6 +44,7 @@ import org.xutils.view.annotation.ContentView;
 import org.xutils.view.annotation.Event;
 import org.xutils.view.annotation.ViewInject;
 
+import java.io.IOException;
 import java.util.List;
 
 
@@ -182,7 +187,8 @@ public class PurinDetailActivity extends SwipeBackActivity {
                 finish();
                 break;
             case R.id.btn_share:
-                ShareUtils.share(this, entity.getTitle(),"");
+                String path = SDCardUtils.getCurrentScreen(this);
+                ShareUtils.share(this, entity.getTitle(), "",path);
                 break;
         }
     }
