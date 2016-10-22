@@ -3,6 +3,8 @@ package com.pu.gouthelper.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
@@ -13,6 +15,7 @@ import com.pgyersdk.crash.PgyCrashManager;
 import com.pgyersdk.update.PgyUpdateManager;
 import com.pu.gouthelper.R;
 import com.pu.gouthelper.base.F;
+import com.pu.gouthelper.bean.RemindEntity;
 import com.pu.gouthelper.common.AppManager;
 import com.pu.gouthelper.fragment.GoutDrugFragment;
 import com.pu.gouthelper.fragment.GoutMsgFragment;
@@ -20,10 +23,14 @@ import com.pu.gouthelper.fragment.HealthCenterFragment;
 import com.pu.gouthelper.fragment.InteractiveFragment;
 import com.pu.gouthelper.fragment.PurinSearchFragment;
 import com.pu.gouthelper.ui.UIHelper;
+import com.pu.gouthelper.utils.AlarmManagerUtil;
+import com.pu.gouthelper.webservice.DelClockRequest;
+import com.pu.gouthelper.webservice.DrugClockRequest;
 import com.pu.gouthelper.webservice.JpushRequest;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -40,6 +47,22 @@ public class MainActivity extends BaseFragmentActivity {
 
     private ArrayList<String> fragmentTags;
     private FragmentManager fragmentManager;
+
+    private Handler mHandler = new Handler() {
+        @Override
+        public void handleMessage(Message msg) {
+            super.handleMessage(msg);
+            switch (msg.what) {
+                case DrugClockRequest.SUCCESS:
+                    List<RemindEntity> clockList = (List<RemindEntity>) msg.obj;
+                    AlarmManagerUtil.setAlarm(MainActivity.this, 1, 17, 30, 3, 0, "提醒内容", 2);
+                    AlarmManagerUtil.setAlarm(MainActivity.this, 1, 17, 31, 2, 0, "提醒内容", 2);
+                    AlarmManagerUtil.setAlarm(MainActivity.this, 1, 17, 32, 1, 0, "提醒内容", 2);
+                    break;
+            }
+
+        }
+    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -80,6 +103,8 @@ public class MainActivity extends BaseFragmentActivity {
     private void initData() {
         currIndex = 0;
         fragmentTags = new ArrayList<>(Arrays.asList("1", "2", "3", "4", "5"));
+
+        new DrugClockRequest(mHandler, "40");
     }
 
     private void initView() {

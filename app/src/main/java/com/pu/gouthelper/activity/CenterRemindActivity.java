@@ -88,9 +88,7 @@ public class CenterRemindActivity extends SwipeBackActivity {
         new DrugClockRequest(mHandler, "40");
         showLoading(mContext);
 
-        AlarmManagerUtil.setAlarm(this, 1, 17, 30, 3, 0, "提醒内容", 2);
-        AlarmManagerUtil.setAlarm(this, 1, 17, 31, 2, 0, "提醒内容", 2);
-        AlarmManagerUtil.setAlarm(this, 1, 17, 32, 1, 0, "提醒内容", 2);
+
     }
 
     private void initData() {
