@@ -26,22 +26,22 @@ public class alarmreceiver extends BroadcastReceiver {
         Notification.Builder builder1 = new Notification.Builder(context);
         builder1.setSmallIcon(R.drawable.ic_launcher); //设置图标
         builder1.setContentTitle("喝水提醒"); //设置标题
-
-        switch (intent.getIntExtra("flag", 0)) {
-            case 0:
-                builder1.setContentText("来,喝一杯水，放松一下~");
-                break;
-            case 1:
-                builder1.setContentText("午后一杯水，提提精神吧~");
-                break;
-            case 2:
-                builder1.setContentText("不管晚饭吃不吃,都先来一杯水润润胃吧~" + intent.getFlags());
-                break;
-            case 3:
-                builder1.setContentText("不要太晚睡哦,这个时间喝一杯水刚刚好~" + intent.getFlags());
-                break;
-
-        }
+        builder1.setContentText("来,喝一杯水，放松一下~");
+//        switch (intent.getIntExtra("flag", 0)) {
+//            case 0:
+//                builder1.setContentText("来,喝一杯水，放松一下~");
+//                break;
+//            case 1:
+//                builder1.setContentText("午后一杯水，提提精神吧~");
+//                break;
+//            case 2:
+//                builder1.setContentText("不管晚饭吃不吃,都先来一杯水润润胃吧~" + intent.getFlags());
+//                break;
+//            case 3:
+//                builder1.setContentText("不要太晚睡哦,这个时间喝一杯水刚刚好~" + intent.getFlags());
+//                break;
+//
+//        }
         builder1.setWhen(System.currentTimeMillis()); //发送时间
         builder1.setDefaults(Notification.DEFAULT_ALL); //设置默认的提示音，振动方式，灯光
         builder1.setAutoCancel(true);//打开程序后图标消失

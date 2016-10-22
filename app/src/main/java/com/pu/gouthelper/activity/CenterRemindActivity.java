@@ -24,6 +24,7 @@ import com.pu.gouthelper.adapter.RemindAdapter;
 import com.pu.gouthelper.bean.RemindEntity;
 import com.pu.gouthelper.ui.UIHelper;
 import com.pu.gouthelper.ui.swipebacklayout.SwipeBackActivity;
+import com.pu.gouthelper.utils.AlarmManagerUtil;
 import com.pu.gouthelper.webservice.DelClockRequest;
 import com.pu.gouthelper.webservice.DrugClockRequest;
 
@@ -86,6 +87,10 @@ public class CenterRemindActivity extends SwipeBackActivity {
         initData();
         new DrugClockRequest(mHandler, "40");
         showLoading(mContext);
+
+        AlarmManagerUtil.setAlarm(this, 1, 17, 30, 3, 0, "提醒内容", 2);
+        AlarmManagerUtil.setAlarm(this, 1, 17, 31, 2, 0, "提醒内容", 2);
+        AlarmManagerUtil.setAlarm(this, 1, 17, 32, 1, 0, "提醒内容", 2);
     }
 
     private void initData() {
