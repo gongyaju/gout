@@ -1,12 +1,16 @@
 package com.pu.gouthelper.activity;
 
 import android.content.Intent;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.view.View;
 import android.widget.CompoundButton;
 import android.widget.Switch;
+import android.widget.TextClock;
+import android.widget.TextView;
 
 import com.pu.gouthelper.R;
 import com.pu.gouthelper.base.SharedPreferences;
@@ -25,6 +29,8 @@ import org.xutils.view.annotation.ViewInject;
 public class CenterSettingActivity extends SwipeBackActivity {
     @ViewInject(R.id.open)
     private Switch open;
+    @ViewInject(R.id.setting_tv_version)
+    private TextView setting_tv_version;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,13 +51,29 @@ public class CenterSettingActivity extends SwipeBackActivity {
     }
 
     private void initData() {
+        setting_tv_version.setText(getVersion());
     }
 
-    @Event(value = {R.id.setting_tv_msg, R.id.setting_tv_psw, R.id.setting_tv_complain, R.id.setting_tv_us, R.id.setting_tv_hlepme, R.id.setting_tv_exit}, type = View.OnClickListener.class)
+    public String getVersion() {
+        try {
+            PackageManager manager = this.getPackageManager();
+            PackageInfo info = manager.getPackageInfo(this.getPackageName(), 0);
+            String version = info.versionName;
+            return "当前版本号：" + version;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return "";
+        }
+    }
+
+    @Event(value = {R.id.remind_btn_goback, R.id.setting_tv_msg, R.id.setting_tv_psw, R.id.setting_tv_complain, R.id.setting_tv_us, R.id.setting_tv_hlepme, R.id.setting_tv_exit}, type = View.OnClickListener.class)
     private void onClick(View v) {
         switch (v.getId()) {
             case R.id.setting_tv_msg:
 
+                break;
+            case R.id.remind_btn_goback:
+                finish();
                 break;
             case R.id.setting_tv_psw:
                 startActivity(new Intent(this, SettingPasswordActivity.class));

@@ -4,26 +4,30 @@
     android:layout_height="match_parent"
     android:background="@color/text_color_c"
     android:orientation="vertical">
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
         <LinearLayout
             android:layout_width="match_parent"
-            android:background="@color/gray_light"
             android:layout_height="match_parent"
+            android:background="@color/gray_light"
             android:orientation="vertical">
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:gravity="center_vertical"
+                android:layout_height="@dimen/space_260"
                 android:background="@color/white"
-                android:layout_height="@dimen/space_260">
+                android:gravity="center_vertical">
+
                 <ImageView
-                    android:src="@drawable/ic_setting_touxiang"
                     android:id="@+id/center_img_toux"
                     android:layout_width="@dimen/space_190"
+                    android:layout_height="@dimen/space_190"
                     android:layout_marginLeft="@dimen/space_60"
-                    android:layout_height="@dimen/space_190" />
+                    android:src="@drawable/ic_setting_touxiang" />
+
                 <TextView
                     android:id="@+id/center_tv_toux"
                     android:layout_width="match_parent"
@@ -147,20 +151,26 @@
                 android:layout_marginLeft="@dimen/space_60"
                 android:background="@drawable/list_view_divider" />
 
-            <TextView
-                android:id="@+id/center_tv_msg"
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/space_190"
-                android:background="@drawable/list_item_selector"
-                android:drawableLeft="@drawable/ic_setting_msg"
-                android:drawablePadding="@dimen/space_60"
-                android:drawableRight="@drawable/ic_setting_arrow"
-                android:gravity="center_vertical"
-                android:paddingLeft="@dimen/space_60"
-                android:paddingRight="@dimen/space_60"
-                android:text="我的消息"
-                android:textColor="@color/text_color_black"
-                android:textSize="@dimen/gout_tsize_46" />
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/center_tv_msg"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/space_190"
+                    android:background="@drawable/list_item_selector"
+                    android:drawableLeft="@drawable/ic_setting_msg"
+                    android:drawablePadding="@dimen/space_60"
+                    android:drawableRight="@drawable/ic_setting_arrow"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="@dimen/space_60"
+                    android:paddingRight="@dimen/space_60"
+                    android:text="我的消息"
+                    android:textColor="@color/text_color_black"
+                    android:textSize="@dimen/gout_tsize_46" />
+
+            </RelativeLayout>
 
             <View
                 android:layout_width="match_parent"
@@ -172,12 +182,12 @@
                 android:id="@+id/center_tv_score"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/space_190"
+                android:layout_marginTop="@dimen/space_20"
                 android:background="@drawable/list_item_selector"
                 android:drawableLeft="@drawable/ic_setting_scoreshop"
                 android:drawablePadding="@dimen/space_60"
                 android:drawableRight="@drawable/ic_setting_arrow"
                 android:gravity="center_vertical"
-                android:layout_marginTop="@dimen/space_20"
                 android:paddingLeft="@dimen/space_60"
                 android:paddingRight="@dimen/space_60"
                 android:text="积分商城"
@@ -208,8 +218,8 @@
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1px"
-                android:layout_marginLeft="@dimen/space_60"
                 android:layout_marginBottom="@dimen/space_20"
+                android:layout_marginLeft="@dimen/space_60"
                 android:background="@drawable/list_view_divider" />
         </LinearLayout>
 
