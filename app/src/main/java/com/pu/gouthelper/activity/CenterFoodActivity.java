@@ -19,6 +19,7 @@ import com.pu.gouthelper.ui.swipebacklayout.SwipeBackActivity;
 import com.pu.gouthelper.webservice.GoutRecipeListRequest;
 
 import org.xutils.view.annotation.ContentView;
+import org.xutils.view.annotation.Event;
 import org.xutils.view.annotation.ViewInject;
 
 import java.util.ArrayList;
@@ -99,4 +100,12 @@ public class CenterFoodActivity extends SwipeBackActivity {
     }
 
 
+    @Event(value = {R.id.mytopic_btn_goback}, type = View.OnClickListener.class)
+    private void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.mytopic_btn_goback:
+                finish();
+                break;
+        }
+    }
 }

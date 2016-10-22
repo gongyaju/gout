@@ -60,7 +60,6 @@ public class AddressActivity extends SwipeBackActivity {
                 case UserAddressListRequest.ERROR:
                     mlist.clear();
                     adapter.notifyDataSetChanged();
-                    UIHelper.ToastMessage(mContext, msg.obj + "");
                     endLoading();
                     break;
                 case UserDelImageRequest.SUCCESS:
