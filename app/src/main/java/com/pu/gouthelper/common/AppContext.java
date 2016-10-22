@@ -54,7 +54,7 @@ public class AppContext extends Application {
     private void initLog() {
         Logger.init("GOUT")
                 .hideThreadInfo()
-                .setLogLevel(LogLevel.FULL)
+                .setLogLevel(LogLevel.NONE)
                 .setMethodCount(2);
 
     }

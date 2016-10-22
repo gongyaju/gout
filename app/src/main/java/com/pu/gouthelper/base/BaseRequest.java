@@ -102,13 +102,12 @@ public class BaseRequest {
 //            params.setCacheDirName(x.app().getCacheDir().getAbsolutePath());
 //            params.setCacheSize(1024 * 1024 * 5);
         }
-        Logger.e(params.getUri());
-        Logger.w(params.toJSONString());
+//        Logger.e(params.getUri());
+//        Logger.w(params.toJSONString());
         cancelable = x.http().post(params, new Callback.CommonCallback<String>() {
             @Override
             public void onSuccess(String result) {
                 try {
-                    Logger.json(result);
                     onSuccessed(result);
                 } catch (Exception e) {
                     e.printStackTrace();
