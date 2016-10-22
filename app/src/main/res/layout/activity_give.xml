@@ -3,12 +3,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    android:fitsSystemWindows="true"
     android:orientation="vertical">
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="@dimen/space_142"
+        android:paddingTop="@dimen/space_40"
+        android:layout_height="@dimen/space_180"
         android:background="@color/white">
 
         <ImageButton
@@ -37,12 +37,13 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="@dimen/space_150"
+        android:paddingLeft="@dimen/space_50"
         android:orientation="horizontal">
 
         <TextView
             android:layout_width="@dimen/space_340"
             android:layout_height="match_parent"
-            android:gravity="center"
+            android:gravity="center_vertical"
             android:text="打赏支持"
             android:textColor="@color/text_color_3"
             android:textSize="@dimen/space_46" />
@@ -78,7 +79,10 @@
             android:id="@+id/topic_edt_content"
             android:layout_width="match_parent"
             android:layout_height="@dimen/space_600"
-            android:layout_margin="@dimen/space_40"
+            android:layout_marginTop="@dimen/space_40"
+            android:layout_marginBottom="@dimen/space_40"
+            android:layout_marginRight="@dimen/space_50"
+            android:layout_marginLeft="@dimen/space_50"
             android:background="@drawable/bg_edittext"
             android:gravity="top|left"
             android:hint="对作者说点什么..."

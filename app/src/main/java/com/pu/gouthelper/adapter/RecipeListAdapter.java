@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
+import android.widget.RatingBar;
 import android.widget.TextView;
 
 import com.pu.gouthelper.R;
@@ -49,10 +50,15 @@ public class RecipeListAdapter extends BaseAdapter {
         ImageView recipe_img_icon = (ImageView) convertView.findViewById(R.id.recipe_img_icon);
         BitmapView.getInstance().display(recipe_img_icon, entity.getPic());
         TextView recipe_tv_title = (TextView) convertView.findViewById(R.id.recipe_tv_title);
-        TextView recipe_tv_step= (TextView) convertView.findViewById(R.id.recipe_tv_step);
-
-        recipe_tv_title.setText(entity.getTitle());
-        recipe_tv_step.setText("3步/炒");
+        TextView recipe_tv_step = (TextView) convertView.findViewById(R.id.recipe_tv_step);
+        RatingBar app_ratingbar = (RatingBar) convertView.findViewById(R.id.app_ratingbar);
+        try {
+            app_ratingbar.setNumStars(Integer.parseInt(entity.getRecom()));
+            recipe_tv_title.setText(entity.getTitle());
+            recipe_tv_step.setText(entity.getSteps() + "步/" + entity.getCate());
+        } catch (Exception E) {
+            E.printStackTrace();
+        }
 
         return convertView;
     }

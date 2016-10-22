@@ -3,12 +3,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/main_background"
-    android:fitsSystemWindows="true"
     android:orientation="vertical">
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="@dimen/space_142"
+        android:paddingTop="@dimen/space_40"
+        android:layout_height="@dimen/space_180"
         android:background="@color/white">
 
         <ImageButton

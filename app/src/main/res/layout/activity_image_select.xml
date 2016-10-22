@@ -3,12 +3,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background_color"
-    android:fitsSystemWindows="true"
     android:orientation="vertical">
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="@dimen/space_142"
+        android:paddingTop="@dimen/space_40"
+        android:layout_height="@dimen/space_180"
         android:background="@color/main_background">
 
         <ImageButton
@@ -30,6 +30,7 @@
         <ImageButton
             android:id="@+id/remind_btn_add"
             android:layout_width="@dimen/space_150"
+            android:paddingTop="@dimen/space_20"
             android:layout_height="match_parent"
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"

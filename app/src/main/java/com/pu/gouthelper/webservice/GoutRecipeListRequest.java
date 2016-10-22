@@ -39,6 +39,7 @@ public class GoutRecipeListRequest extends BaseRequest {
 
     public void onSuccessed(String result) {
         JSONObject object = JSON.parseObject(result);
+
         int state = object.getIntValue("state");
         if (state == 1) {
             List<Recipe> mList = JSONArray.parseArray(object.getString("data"), Recipe.class);

@@ -6,6 +6,8 @@
 
     <LinearLayout
         android:layout_width="match_parent"
+        android:layout_marginTop="@dimen/space_30"
+        android:layout_marginBottom="@dimen/space_30"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
@@ -13,7 +15,7 @@
             android:id="@+id/recipe_img_icon"
             android:layout_width="@dimen/space_260"
             android:layout_height="@dimen/space_260"
-            android:layout_margin="@dimen/space_30"
+            android:layout_marginRight="@dimen/space_30"
             android:scaleType="fitCenter"
             android:src="@drawable/ic_launcher" />
 
@@ -54,7 +56,6 @@
                     android:maxHeight="@dimen/space_30"
                     android:minHeight="@dimen/space_30"
                     android:numStars="5"
-                    android:paddingRight="@dimen/space_10"
                     android:progressDrawable="@drawable/food_rating_bar_full"
                     android:rating="4" />
 
