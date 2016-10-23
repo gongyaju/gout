@@ -108,7 +108,7 @@ public class BaseRequest {
             @Override
             public void onSuccess(String result) {
                 try {
-                    Logger.json(result);
+                    Logger.w(result);
                     onSuccessed(result);
                 } catch (Exception e) {
                     e.printStackTrace();

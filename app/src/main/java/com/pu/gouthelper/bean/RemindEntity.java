@@ -6,6 +6,21 @@ import java.util.List;
  * Created by Requiem on 2016/4/24.
  */
 public class RemindEntity {
+    /**
+     * clockList = {ArrayList@4753}  size = 2
+     * 0 = {RemindEntity@4763}
+     * 1 = {RemindEntity@4764}
+     * color = "-16777216"
+     * days = "21"
+     * dosage = "1.00"
+     * dtm = "["16:00","17:00","2:00","无"]"
+     * id = "68"
+     * title = "安慕希"
+     * tm = "1472543301"
+     * uid = "3"
+     * shadow$_klass_ = {Class@4646} "class com.pu.gouthelper.bean.RemindEntity"
+     * shadow$_monitor_ = -2108383282
+     */
     private String id;//": "1",
     private String uid;//": "1",
     private String title;//": "\u5403\u836f",  //标题
@@ -46,7 +61,6 @@ public class RemindEntity {
     public void setDosage(String dosage) {
         this.dosage = dosage;
     }
-
 
 
     public String getDays() {

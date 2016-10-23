@@ -11,6 +11,7 @@ import android.support.v4.app.FragmentTransaction;
 import android.view.KeyEvent;
 import android.widget.RadioGroup;
 
+import com.alibaba.fastjson.JSON;
 import com.pgyersdk.crash.PgyCrashManager;
 import com.pgyersdk.update.PgyUpdateManager;
 import com.pu.gouthelper.R;
@@ -54,10 +55,16 @@ public class MainActivity extends BaseFragmentActivity {
             super.handleMessage(msg);
             switch (msg.what) {
                 case DrugClockRequest.SUCCESS:
-                    List<RemindEntity> clockList = (List<RemindEntity>) msg.obj;
-                    AlarmManagerUtil.setAlarm(MainActivity.this, 1, 17, 30, 3, 0, "提醒内容", 2);
-                    AlarmManagerUtil.setAlarm(MainActivity.this, 1, 17, 31, 2, 0, "提醒内容", 2);
-                    AlarmManagerUtil.setAlarm(MainActivity.this, 1, 17, 32, 1, 0, "提醒内容", 2);
+                    try {
+                        List<RemindEntity> clockList = (List<RemindEntity>) msg.obj;
+                        for (RemindEntity remindEntity : clockList) {
+                            List<String> arr = JSON.parseArray(remindEntity.getDtm(), String.class);
+                        }
+                        AlarmManagerUtil.setAlarm(MainActivity.this, 1, 17, 30, 3, 0, "提醒内容", 2);
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+
                     break;
             }
 
