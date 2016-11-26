@@ -9,7 +9,7 @@ import org.xutils.view.annotation.ContentView;
 import org.xutils.view.annotation.Event;
 
 /**
- * Created by Requiem on 2016/3/22.
+ * Created by Requiem on 2016/3/22
  * 关于我们
  */
 @ContentView(R.layout.activity_setting_aboutus)
